@@ -1,36 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Employee Scoring Next.js Application
 
-## Getting Started
+A comprehensive employee scoring and management system built with Next.js, featuring integration with Notion databases for employee data management.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Employee Management**: Add, edit, and view employee profiles
+- **Scoring System**: Track and manage employee performance scores
+- **Team Dashboard**: Visualize team performance and statistics
+- **Notion Integration**: Sync employee data from Notion databases
+- **Authentication**: Secure login system with NextAuth
+- **Interactive Maps**: Team location visualization
+- **Real-time Updates**: Live data synchronization
+
+## Tech Stack
+
+- **Frontend**: Next.js 14, React, TypeScript
+- **Styling**: Tailwind CSS, shadcn/ui components
+- **Authentication**: NextAuth.js
+- **Database**: PostgreSQL with Prisma ORM
+- **Charts**: Recharts for data visualization
+- **Maps**: Leaflet for geographic visualization
+
+## Prerequisites
+
+- Node.js 18+ 
+- PostgreSQL database
+- Notion API token (if using Notion integration)
+
+## Environment Variables
+
+Create a `.env.local` file in the root directory with the following variables:
+
+```env
+# Database
+DATABASE_URL="postgresql://username:password@localhost:5432/employee_scoring"
+
+# NextAuth
+NEXTAUTH_SECRET="your-nextauth-secret"
+NEXTAUTH_URL="http://localhost:3000"
+
+# Notion Integration (optional)
+NOTION_TOKEN="your-notion-api-token"
+NOTION_DATABASE_ID="your-notion-database-id"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+```bash
+git clone https://github.com/ecoglito/employee-scoring-nextjs.git
+cd employee-scoring-nextjs
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Install dependencies:
+```bash
+npm install
+```
 
-## Learn More
+3. Set up your database:
+```bash
+npx prisma migrate dev
+npx prisma generate
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Run the development server:
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Notion Integration
 
-## Deploy on Vercel
+To use the Notion integration features:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Create a Notion integration at [https://www.notion.so/my-integrations](https://www.notion.so/my-integrations)
+2. Get your API token and database ID
+3. Set the environment variables `NOTION_TOKEN` and `NOTION_DATABASE_ID`
+4. Run the sync script:
+```bash
+NOTION_TOKEN="your-token" node scripts/notion-sync.js
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `node scripts/notion-sync.js` - Sync data from Notion
+
+## Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Add your environment variables in Vercel dashboard
+4. Deploy!
+
+### Other Platforms
+
+The application can be deployed on any platform that supports Next.js applications like:
+- Netlify
+- Railway
+- AWS
+- Digital Ocean
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## Security
+
+- Never commit API tokens or secrets to the repository
+- Use environment variables for all sensitive configurations
+- The Notion sync script requires the `NOTION_TOKEN` environment variable
+
+## License
+
+This project is licensed under the MIT License.

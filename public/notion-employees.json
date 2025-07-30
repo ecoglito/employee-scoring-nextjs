@@ -1,0 +1,681 @@
+[
+  {
+    "id": 355148,
+    "notionId": "23bb3298-c3ce-807c-9901-d38fab5de04f",
+    "name": "Arnie Goldberg",
+    "position": "Head of Design",
+    "email": "oliver@liquidlabs.inc",
+    "phone": null,
+    "level": null,
+    "step": null,
+    "team": [
+      "Product"
+    ],
+    "skills": [],
+    "tags": [
+      "UI/UX",
+      "Mobile",
+      "Brand",
+      "Creative"
+    ],
+    "group": [
+      "PSG"
+    ],
+    "baseSalary": null,
+    "billableRate": null,
+    "startDate": null,
+    "timezone": "EST",
+    "reportsTo": [],
+    "manages": [],
+    "profile": [],
+    "notionAccount": [],
+    "tenure": null,
+    "locationFactor": "Error: Unknown Location",
+    "stepFactor": 0.970873786408,
+    "levelFactor": 0.869565217391,
+    "totalSalary": null,
+    "syncedAt": "2025-07-30T01:05:10.822Z",
+    "createdAt": "2025-07-30T01:05:10.822Z",
+    "updatedAt": "2025-07-30T01:05:10.822Z"
+  },
+  {
+    "id": 441490,
+    "notionId": "23bb3298-c3ce-8001-ab45-d06c2ba09c20",
+    "name": "Oliver Adams",
+    "position": "SWE Intern",
+    "email": "oliver@liquidlabs.inc",
+    "phone": null,
+    "level": null,
+    "step": null,
+    "team": [
+      "Backend"
+    ],
+    "skills": [],
+    "tags": [
+      "APIs & SDKs"
+    ],
+    "group": [
+      "Engineering"
+    ],
+    "baseSalary": null,
+    "billableRate": null,
+    "startDate": null,
+    "timezone": "EST",
+    "reportsTo": [
+      "239b3298-c3ce-81cf-a972-f4573ea2e4e7"
+    ],
+    "manages": [],
+    "profile": [],
+    "notionAccount": [],
+    "tenure": null,
+    "locationFactor": "Error: Unknown Location",
+    "stepFactor": 0.970873786408,
+    "levelFactor": 0.869565217391,
+    "totalSalary": null,
+    "syncedAt": "2025-07-30T01:05:10.822Z",
+    "createdAt": "2025-07-30T01:05:10.822Z",
+    "updatedAt": "2025-07-30T01:05:10.822Z"
+  },
+  {
+    "id": 406716,
+    "notionId": "239b3298-c3ce-81bb-971f-e092bb0fda81",
+    "name": "Enzo Coglitore",
+    "position": "CEO & Co-Founder",
+    "email": "enzo@liquidlabs.inc",
+    "phone": null,
+    "level": 4,
+    "step": 2,
+    "team": [
+      "Exec"
+    ],
+    "skills": [
+      "Coaching",
+      "Mentoring",
+      "Solution architecture",
+      "Strategy",
+      "Vision"
+    ],
+    "tags": [],
+    "group": [
+      "PSG",
+      "Engineering"
+    ],
+    "baseSalary": 110000,
+    "billableRate": 250,
+    "startDate": "2021-04-12",
+    "timezone": "EST",
+    "reportsTo": [],
+    "manages": [],
+    "profile": [
+      {
+        "name": "undraw_Male_avatar_g98d.png",
+        "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a530306f-69b8-4a7e-9383-a7399d20fcc7/4f8bf235-2627-45ac-8daa-b37543e9e99f/undraw_Male_avatar_g98d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46656C37XKO%2F20250730%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250730T010510Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBfxZwWD1x3wSTdgJI35lgZ8KpuFgVOp8ectko6T3CxPAiEAgAh%2Bo5fIGhOBXcd%2BTDi1UeTW9j3Zx6v%2BfExXt8d5ERUqiAQIsf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGb%2FWla5I7CB%2B0tinyrcA%2FYtJEz3Z%2Fo0CvgyXW3T9U%2Bz79sogeB8OKxgB4Sch3vsVy%2BYB7anz34zY6rGgUEvXxyPoqQaWRnSFnBASnL4FbFNF7hhobyplXte9KUKm9J156X1A755yTK7DveTZm9spJyW1XRaxdk2hB5JRX9eH6VM9V1dUyQXfUavZtljqmfQXyhbtqUrIrPCoaF0UTchE90HP8h8I0miDr6gdeuG3KQy0qWqi0Pt0%2FNkhbNs5vHDE5qWugfkIx8zD9of5z2%2FmrVu%2FARdO26GMLzpyc%2BgyvQ65lmuJ3JOq4DeSdifEdqxXOXoWTfN69sZRcJY2Ng6NBjBdJThZpC8gco80uH9uCnAs95XgPnyJFSfMVH%2FpUWfd8PX%2Bb2LCpCtcr1CYk8oX1042w0Pb%2BIpU4eT%2BcmK6RdeIpnIQi4EhhgxA7uuKiXFgOvmCb%2Bi3Pd5SyIG1i7LXx%2BwICqh8Iv1MV%2BUhbXi9CY%2Bhh902na2F2c4kp2l6ioN3Y623robXSXuKj8w8Gq9CQmhHDvKWOoI0Z937vbAgxJl0WGIMfST6IyT3sT3S%2BNdViutaq%2BPudSwiy7zy0%2BeFub1uG6gJE2YWIVvp4jhETbEhC%2BcW8sDccz8%2BGvvECUd1lQEq2r3jZ5zofMbMIq4pcQGOqUBZ9taYBvfeCwqxiw7WEpPw4vAB8vW45W8VxMl0oxSocFqDuS1eWhLfIZwwNL2X65EBuHF7gFBvZTt%2FFQqtG050hR6Kn6x7Q3UWr8R90%2FW4wXsvEWSoxNi5TSw6jkMxgRSysS8Jw0JY%2BdIUdxMhvjaoWi9Z5ybcj%2BWbwklIeZQ05NkywUdvja%2FXugPNaw6cl80Rr%2FzNECXhizwlA94gvKKHj73wsGp&X-Amz-Signature=7e26f0390167be46b0f41d92af85db9fb9efe572d9f1c8bbcb9a4a1623d9dbb0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+      }
+    ],
+    "notionAccount": [],
+    "tenure": "4.3 years",
+    "locationFactor": "Error: Unknown Location",
+    "stepFactor": 1.03,
+    "levelFactor": 1.520875,
+    "totalSalary": null,
+    "syncedAt": "2025-07-30T01:05:10.822Z",
+    "createdAt": "2025-07-30T01:05:10.822Z",
+    "updatedAt": "2025-07-30T01:05:10.822Z"
+  },
+  {
+    "id": 195616,
+    "notionId": "239b3298-c3ce-8108-9284-f3cb196856c7",
+    "name": "Matt Adams",
+    "position": "Founding Infrastructure Engineer",
+    "email": "matt@liquidlabs.inc",
+    "phone": null,
+    "level": null,
+    "step": null,
+    "team": [
+      "Infrastructure & DevOps"
+    ],
+    "skills": [],
+    "tags": [
+      "DevOps",
+      "Observability",
+      "Load Testing",
+      "Deployments",
+      "Databases"
+    ],
+    "group": [
+      "Engineering"
+    ],
+    "baseSalary": null,
+    "billableRate": null,
+    "startDate": null,
+    "timezone": "EST",
+    "reportsTo": [],
+    "manages": [],
+    "profile": [],
+    "notionAccount": [],
+    "tenure": null,
+    "locationFactor": "Error: Unknown Location",
+    "stepFactor": 0.970873786408,
+    "levelFactor": 0.869565217391,
+    "totalSalary": null,
+    "syncedAt": "2025-07-30T01:05:10.822Z",
+    "createdAt": "2025-07-30T01:05:10.822Z",
+    "updatedAt": "2025-07-30T01:05:10.822Z"
+  },
+  {
+    "id": 36096,
+    "notionId": "239b3298-c3ce-810e-940b-fb46ff696011",
+    "name": "Rayan B.",
+    "position": "Head of Product",
+    "email": "rayan@liquidlabs.inc",
+    "phone": null,
+    "level": null,
+    "step": null,
+    "team": [
+      "Product"
+    ],
+    "skills": [],
+    "tags": [
+      "UI/UX",
+      "Product roadmap",
+      "Mobile",
+      "Customer Support",
+      "Brand"
+    ],
+    "group": [
+      "PSG"
+    ],
+    "baseSalary": null,
+    "billableRate": null,
+    "startDate": null,
+    "timezone": "CEST",
+    "reportsTo": [],
+    "manages": [],
+    "profile": [],
+    "notionAccount": [],
+    "tenure": null,
+    "locationFactor": "Error: Unknown Location",
+    "stepFactor": 0.970873786408,
+    "levelFactor": 0.869565217391,
+    "totalSalary": null,
+    "syncedAt": "2025-07-30T01:05:10.822Z",
+    "createdAt": "2025-07-30T01:05:10.822Z",
+    "updatedAt": "2025-07-30T01:05:10.822Z"
+  },
+  {
+    "id": 61575,
+    "notionId": "239b3298-c3ce-811e-aae9-e4acb678b854",
+    "name": "Jb/Nd",
+    "position": "Founding Smart Contract Engineer",
+    "email": "ledger@liquidlabs.inc",
+    "phone": null,
+    "level": null,
+    "step": null,
+    "team": [
+      "Smart Contracts"
+    ],
+    "skills": [],
+    "tags": [
+      "Launchpad",
+      "Router",
+      "CLOB",
+      "Audits",
+      "Customer Support"
+    ],
+    "group": [
+      "Engineering"
+    ],
+    "baseSalary": null,
+    "billableRate": null,
+    "startDate": null,
+    "timezone": "EST",
+    "reportsTo": [],
+    "manages": [],
+    "profile": [],
+    "notionAccount": [],
+    "tenure": null,
+    "locationFactor": "Error: Unknown Location",
+    "stepFactor": 0.970873786408,
+    "levelFactor": 0.869565217391,
+    "totalSalary": null,
+    "syncedAt": "2025-07-30T01:05:10.822Z",
+    "createdAt": "2025-07-30T01:05:10.822Z",
+    "updatedAt": "2025-07-30T01:05:10.822Z"
+  },
+  {
+    "id": 905749,
+    "notionId": "239b3298-c3ce-811e-b401-cdb3cd863ac7",
+    "name": "Majin",
+    "position": "Community Manager",
+    "email": "majin@liquidlabs.inc",
+    "phone": null,
+    "level": null,
+    "step": null,
+    "team": [
+      "Growth"
+    ],
+    "skills": [],
+    "tags": [
+      "Twitter",
+      "Discord",
+      "Announcements",
+      "Creative",
+      "Socials"
+    ],
+    "group": [
+      "PSG"
+    ],
+    "baseSalary": null,
+    "billableRate": null,
+    "startDate": null,
+    "timezone": "PST",
+    "reportsTo": [],
+    "manages": [],
+    "profile": [],
+    "notionAccount": [],
+    "tenure": null,
+    "locationFactor": "Error: Unknown Location",
+    "stepFactor": 0.970873786408,
+    "levelFactor": 0.869565217391,
+    "totalSalary": null,
+    "syncedAt": "2025-07-30T01:05:10.822Z",
+    "createdAt": "2025-07-30T01:05:10.822Z",
+    "updatedAt": "2025-07-30T01:05:10.822Z"
+  },
+  {
+    "id": 43529,
+    "notionId": "239b3298-c3ce-813f-89c3-d3fa4ce37b6a",
+    "name": "Ryan (Rite / 💀)",
+    "position": "Founding Smart Contract Engineer",
+    "email": "r@liquidlabs.inc",
+    "phone": null,
+    "level": null,
+    "step": null,
+    "team": [
+      "Smart Contracts"
+    ],
+    "skills": [],
+    "tags": [
+      "CLOB",
+      "Perps",
+      "Vault",
+      "Audits",
+      "Customer Support"
+    ],
+    "group": [
+      "Engineering"
+    ],
+    "baseSalary": null,
+    "billableRate": null,
+    "startDate": null,
+    "timezone": "PST",
+    "reportsTo": [],
+    "manages": [],
+    "profile": [],
+    "notionAccount": [],
+    "tenure": null,
+    "locationFactor": "Error: Unknown Location",
+    "stepFactor": 0.970873786408,
+    "levelFactor": 0.869565217391,
+    "totalSalary": null,
+    "syncedAt": "2025-07-30T01:05:10.822Z",
+    "createdAt": "2025-07-30T01:05:10.822Z",
+    "updatedAt": "2025-07-30T01:05:10.822Z"
+  },
+  {
+    "id": 219560,
+    "notionId": "239b3298-c3ce-8166-afe4-df2d976af04d",
+    "name": "Justin Moon",
+    "position": "COO",
+    "email": "justin@liquidlabs.inc",
+    "phone": null,
+    "level": null,
+    "step": null,
+    "team": [
+      "Exec"
+    ],
+    "skills": [],
+    "tags": [
+      "Business Development",
+      "Legal",
+      "Operations",
+      "Institutional",
+      "Foundation",
+      "Vault",
+      "Risk",
+      "Liquidity"
+    ],
+    "group": [
+      "PSG"
+    ],
+    "baseSalary": null,
+    "billableRate": null,
+    "startDate": null,
+    "timezone": "EST",
+    "reportsTo": [],
+    "manages": [],
+    "profile": [],
+    "notionAccount": [],
+    "tenure": null,
+    "locationFactor": "Error: Unknown Location",
+    "stepFactor": 0.970873786408,
+    "levelFactor": 0.869565217391,
+    "totalSalary": null,
+    "syncedAt": "2025-07-30T01:05:10.822Z",
+    "createdAt": "2025-07-30T01:05:10.822Z",
+    "updatedAt": "2025-07-30T01:05:10.822Z"
+  },
+  {
+    "id": 114591,
+    "notionId": "239b3298-c3ce-816e-a29c-c584d2de48fe",
+    "name": "Nate Burbage",
+    "position": "Backend Lead & Co-Founder ",
+    "email": "nate@liquidlabs.inc",
+    "phone": null,
+    "level": null,
+    "step": null,
+    "team": [
+      "Backend"
+    ],
+    "skills": [],
+    "tags": [
+      "Indexers",
+      "Aggregator",
+      "Databases",
+      "System Design",
+      "DevOps",
+      "Deployments",
+      "Optimizations"
+    ],
+    "group": [
+      "Engineering"
+    ],
+    "baseSalary": null,
+    "billableRate": null,
+    "startDate": null,
+    "timezone": "EST",
+    "reportsTo": [],
+    "manages": [],
+    "profile": [],
+    "notionAccount": [],
+    "tenure": null,
+    "locationFactor": "Error: Unknown Location",
+    "stepFactor": 0.970873786408,
+    "levelFactor": 0.869565217391,
+    "totalSalary": null,
+    "syncedAt": "2025-07-30T01:05:10.822Z",
+    "createdAt": "2025-07-30T01:05:10.822Z",
+    "updatedAt": "2025-07-30T01:05:10.822Z"
+  },
+  {
+    "id": 330345,
+    "notionId": "239b3298-c3ce-8177-be4e-f9feb02005e6",
+    "name": "Stephán Thomas",
+    "position": "Quantitative Data Scientist",
+    "email": "stephan@liquidlabs.inc",
+    "phone": null,
+    "level": null,
+    "step": null,
+    "team": [
+      "Science"
+    ],
+    "skills": [],
+    "tags": [
+      "Vault",
+      "R&D",
+      "Risk",
+      "Liquidity"
+    ],
+    "group": [
+      "PSG"
+    ],
+    "baseSalary": null,
+    "billableRate": null,
+    "startDate": null,
+    "timezone": "EST",
+    "reportsTo": [],
+    "manages": [],
+    "profile": [],
+    "notionAccount": [],
+    "tenure": null,
+    "locationFactor": "Error: Unknown Location",
+    "stepFactor": 0.970873786408,
+    "levelFactor": 0.869565217391,
+    "totalSalary": null,
+    "syncedAt": "2025-07-30T01:05:10.822Z",
+    "createdAt": "2025-07-30T01:05:10.822Z",
+    "updatedAt": "2025-07-30T01:05:10.822Z"
+  },
+  {
+    "id": 154681,
+    "notionId": "239b3298-c3ce-818b-8894-f4196b71e7f4",
+    "name": "Matteo Lunghi",
+    "position": "CTO & Co-Founder",
+    "email": "m@liquidlabs.inc",
+    "phone": null,
+    "level": null,
+    "step": null,
+    "team": [
+      "Exec"
+    ],
+    "skills": [],
+    "tags": [],
+    "group": [
+      "Engineering",
+      "PSG"
+    ],
+    "baseSalary": null,
+    "billableRate": null,
+    "startDate": null,
+    "timezone": "EST",
+    "reportsTo": [],
+    "manages": [],
+    "profile": [],
+    "notionAccount": [],
+    "tenure": null,
+    "locationFactor": "Error: Unknown Location",
+    "stepFactor": 0.970873786408,
+    "levelFactor": 0.869565217391,
+    "totalSalary": null,
+    "syncedAt": "2025-07-30T01:05:10.822Z",
+    "createdAt": "2025-07-30T01:05:10.822Z",
+    "updatedAt": "2025-07-30T01:05:10.822Z"
+  },
+  {
+    "id": 514818,
+    "notionId": "239b3298-c3ce-81cf-a972-f4573ea2e4e7",
+    "name": "Moses Lee",
+    "position": "Frontend Lead & Co-Founder",
+    "email": "moses@liquidlabs.inc",
+    "phone": null,
+    "level": null,
+    "step": null,
+    "team": [
+      "Full Stack"
+    ],
+    "skills": [],
+    "tags": [
+      "UI/UX",
+      "APIs & SDKs",
+      "Customer Support",
+      "Integrations",
+      "EIPs"
+    ],
+    "group": [
+      "Engineering"
+    ],
+    "baseSalary": null,
+    "billableRate": null,
+    "startDate": null,
+    "timezone": "EST",
+    "reportsTo": [],
+    "manages": [
+      "23bb3298-c3ce-8001-ab45-d06c2ba09c20"
+    ],
+    "profile": [],
+    "notionAccount": [],
+    "tenure": null,
+    "locationFactor": "Error: Unknown Location",
+    "stepFactor": 0.970873786408,
+    "levelFactor": 0.869565217391,
+    "totalSalary": null,
+    "syncedAt": "2025-07-30T01:05:10.822Z",
+    "createdAt": "2025-07-30T01:05:10.822Z",
+    "updatedAt": "2025-07-30T01:05:10.822Z"
+  },
+  {
+    "id": 874352,
+    "notionId": "239b3298-c3ce-81d7-aa08-fad354ac19f1",
+    "name": "Julien Kuntz",
+    "position": "Smart Contract Engineer",
+    "email": "jk@liquidlabs.inc",
+    "phone": null,
+    "level": null,
+    "step": null,
+    "team": [
+      "Smart Contracts"
+    ],
+    "skills": [],
+    "tags": [
+      "Router",
+      "Audits"
+    ],
+    "group": [
+      "Engineering"
+    ],
+    "baseSalary": null,
+    "billableRate": null,
+    "startDate": null,
+    "timezone": "CEST",
+    "reportsTo": [],
+    "manages": [],
+    "profile": [],
+    "notionAccount": [],
+    "tenure": null,
+    "locationFactor": "Error: Unknown Location",
+    "stepFactor": 0.970873786408,
+    "levelFactor": 0.869565217391,
+    "totalSalary": null,
+    "syncedAt": "2025-07-30T01:05:10.822Z",
+    "createdAt": "2025-07-30T01:05:10.822Z",
+    "updatedAt": "2025-07-30T01:05:10.822Z"
+  },
+  {
+    "id": 915429,
+    "notionId": "239b3298-c3ce-81ef-85fb-d9b32e3871b2",
+    "name": "Richard Jovanovic",
+    "position": "Founding Backend Engineer",
+    "email": "richard@liquidlabs.inc",
+    "phone": null,
+    "level": null,
+    "step": null,
+    "team": [
+      "Backend"
+    ],
+    "skills": [],
+    "tags": [
+      "Indexers",
+      "System Design",
+      "Optimizations",
+      "Databases"
+    ],
+    "group": [
+      "Engineering"
+    ],
+    "baseSalary": null,
+    "billableRate": null,
+    "startDate": null,
+    "timezone": "MST",
+    "reportsTo": [],
+    "manages": [],
+    "profile": [],
+    "notionAccount": [],
+    "tenure": null,
+    "locationFactor": "Error: Unknown Location",
+    "stepFactor": 0.970873786408,
+    "levelFactor": 0.869565217391,
+    "totalSalary": null,
+    "syncedAt": "2025-07-30T01:05:10.822Z",
+    "createdAt": "2025-07-30T01:05:10.822Z",
+    "updatedAt": "2025-07-30T01:05:10.822Z"
+  },
+  {
+    "id": 201334,
+    "notionId": "239b3298-c3ce-81f5-aa2d-e0ed1811aa9c",
+    "name": "Eduardo Kegler",
+    "position": "Founding Frontend Engineer",
+    "email": "eduardo@liquidlabs.inc",
+    "phone": null,
+    "level": null,
+    "step": null,
+    "team": [
+      "Frontend"
+    ],
+    "skills": [],
+    "tags": [
+      "UI/UX",
+      "Customer Support"
+    ],
+    "group": [
+      "Engineering"
+    ],
+    "baseSalary": null,
+    "billableRate": null,
+    "startDate": null,
+    "timezone": "EST",
+    "reportsTo": [],
+    "manages": [],
+    "profile": [],
+    "notionAccount": [],
+    "tenure": null,
+    "locationFactor": "Error: Unknown Location",
+    "stepFactor": 0.970873786408,
+    "levelFactor": 0.869565217391,
+    "totalSalary": null,
+    "syncedAt": "2025-07-30T01:05:10.822Z",
+    "createdAt": "2025-07-30T01:05:10.822Z",
+    "updatedAt": "2025-07-30T01:05:10.822Z"
+  },
+  {
+    "id": 215836,
+    "notionId": "239b3298-c3ce-8147-a024-e055b06f98e8",
+    "name": "Matt Paik (HDF)",
+    "position": "Head of Growth",
+    "email": "hdf@liquidlabs.inc",
+    "phone": null,
+    "level": null,
+    "step": null,
+    "team": [
+      "Growth"
+    ],
+    "skills": [],
+    "tags": [
+      "Business Development",
+      "Socials",
+      "DeFi",
+      "Mobile",
+      "Perps",
+      "Outreach",
+      "Brand"
+    ],
+    "group": [
+      "PSG"
+    ],
+    "baseSalary": null,
+    "billableRate": null,
+    "startDate": null,
+    "timezone": "PST",
+    "reportsTo": [],
+    "manages": [],
+    "profile": [],
+    "notionAccount": [],
+    "tenure": null,
+    "locationFactor": "Error: Unknown Location",
+    "stepFactor": 0.970873786408,
+    "levelFactor": 0.869565217391,
+    "totalSalary": null,
+    "syncedAt": "2025-07-30T01:05:10.822Z",
+    "createdAt": "2025-07-30T01:05:10.822Z",
+    "updatedAt": "2025-07-30T01:05:10.822Z"
+  }
+]

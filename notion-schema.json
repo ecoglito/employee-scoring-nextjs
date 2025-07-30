@@ -1,0 +1,1450 @@
+{
+  "object": "database",
+  "id": "239b3298-c3ce-80c2-a7ae-dfb19e757682",
+  "cover": null,
+  "icon": {
+    "type": "external",
+    "external": {
+      "url": "https://www.notion.so/icons/meeting_green.svg"
+    }
+  },
+  "created_time": "2025-07-23T21:13:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "168d872b-594c-813e-932f-0002e7414b55"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "12dd872b-594c-813a-bb7a-00029457de70"
+  },
+  "last_edited_time": "2025-07-29T21:30:00.000Z",
+  "title": [
+    {
+      "type": "text",
+      "text": {
+        "content": "Global Token Avengers",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "Global Token Avengers",
+      "href": null
+    }
+  ],
+  "description": [
+    {
+      "type": "text",
+      "text": {
+        "content": "People Database",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "People Database",
+      "href": null
+    }
+  ],
+  "is_inline": false,
+  "properties": {
+    "Level": {
+      "id": "%3B~%60B",
+      "name": "Level",
+      "description": "Based on 5 levels from Junior to Director as defined in the compensation framework",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Step": {
+      "id": "%3FHkL",
+      "name": "Step",
+      "description": "Based on 5 steps within each Level as defined in the compensation framework",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Tenure": {
+      "id": "Binx",
+      "name": "Tenure",
+      "type": "formula",
+      "formula": {
+        "expression": "(format(round((dateBetween(now(), {{notion:block_property:eOzJ:00000000-0000-0000-0000-000000000000:a530306f-69b8-4a7e-9383-a7399d20fcc7}}, \"days\") / (365 )) * 10) / 10) + \" years\")"
+      }
+    },
+    "Team": {
+      "id": "FbmX",
+      "name": "Team",
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "e17ea35b-54a1-403a-9987-f6ec6f72cef4",
+            "name": "Governance",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "ce34f14d-c258-4413-aa9d-31f4cbedf212",
+            "name": "Product",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "f6d3968f-d3f7-40a3-98e7-c80592b65a55",
+            "name": "Engineering",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "d9e06996-24a6-40f5-91e1-f31f79b957a3",
+            "name": "Sales",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "2c06fbce-2f7c-41c2-9b7b-26ad6dc11a37",
+            "name": "Science",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "ea03fb8b-a996-4914-8522-29d45b423ee8",
+            "name": "Legal",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "7ec0a709-9484-47e3-82c9-6680948115c7",
+            "name": "Operations",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "481cdbb5-3666-4620-906c-7b8c4b2694e0",
+            "name": "Frontend",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "4d91f193-d0fa-4a48-aa70-d15b63d961f8",
+            "name": "Backend",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "23784cd2-c1c5-46c4-bf59-b4002e5e9edb",
+            "name": "Smart Contract",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "782a4991-1cab-495d-837e-07eefd0b1285",
+            "name": "Growth",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "f9641bbe-6951-44fd-9dbe-4d21d82452f9",
+            "name": "Socials",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "49e0f192-6654-4562-86b0-51fbdb053380",
+            "name": "Business Development",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "6ccbd103-a7a5-437b-96da-e908f6954c0a",
+            "name": "Infrastructure & DevOps",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "3166307a-8e80-46c9-b9f4-8c38660fdc81",
+            "name": "Exec",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "244f93d7-ff2b-4910-bf70-561f2adb4e3a",
+            "name": "Full Stack",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "5a7188a4-476d-47d9-a109-31955c9e6d68",
+            "name": "Smart Contracts",
+            "color": "gray",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Manages": {
+      "id": "G%7B%5EG",
+      "name": "Manages",
+      "type": "relation",
+      "relation": {
+        "database_id": "239b3298-c3ce-80c2-a7ae-dfb19e757682",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Reports to",
+          "synced_property_id": "VWqO"
+        }
+      }
+    },
+    "Phone": {
+      "id": "Mj%24g",
+      "name": "Phone",
+      "type": "phone_number",
+      "phone_number": {}
+    },
+    "Location Factor": {
+      "id": "Q%5BvU",
+      "name": "Location Factor",
+      "type": "formula",
+      "formula": {
+        "expression": "if({{notion:block_property:khG%60:00000000-0000-0000-0000-000000000000:a530306f-69b8-4a7e-9383-a7399d20fcc7}} == \"New Zealand\", 1.0,\nif({{notion:block_property:khG%60:00000000-0000-0000-0000-000000000000:a530306f-69b8-4a7e-9383-a7399d20fcc7}} == \"Australia\", 1.05,\nif({{notion:block_property:khG%60:00000000-0000-0000-0000-000000000000:a530306f-69b8-4a7e-9383-a7399d20fcc7}} == \"Canada\", 1.05,\nif({{notion:block_property:khG%60:00000000-0000-0000-0000-000000000000:a530306f-69b8-4a7e-9383-a7399d20fcc7}} == \"San Francisco\", 1.1,\nif({{notion:block_property:khG%60:00000000-0000-0000-0000-000000000000:a530306f-69b8-4a7e-9383-a7399d20fcc7}} == \"New York\", 1.0,\n\"Error: Unknown Location\")))))"
+      }
+    },
+    "Notion Account": {
+      "id": "TZgX",
+      "name": "Notion Account",
+      "type": "people",
+      "people": {}
+    },
+    "Step Factor": {
+      "id": "T%5B%5Bj",
+      "name": "Step Factor",
+      "description": "3% step factor to the power of the step - 1 as step 1 is the base step",
+      "type": "formula",
+      "formula": {
+        "expression": "pow(1.03,{{notion:block_property:%3FHkL:00000000-0000-0000-0000-000000000000:a530306f-69b8-4a7e-9383-a7399d20fcc7}}-1)"
+      }
+    },
+    "Reports to": {
+      "id": "VWqO",
+      "name": "Reports to",
+      "type": "relation",
+      "relation": {
+        "database_id": "239b3298-c3ce-80c2-a7ae-dfb19e757682",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Manages",
+          "synced_property_id": "G%7B%5EG"
+        }
+      }
+    },
+    "Skills": {
+      "id": "%5ByAk",
+      "name": "Skills",
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "BlUY",
+            "name": "Coaching",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "bIyo",
+            "name": "Mentoring",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "Q~WK",
+            "name": "D3 charts",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "LycL",
+            "name": "CSS",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "HX\\z",
+            "name": "HTML",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "~kOI",
+            "name": "React",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "aoDV",
+            "name": "Typescript",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "N^r|",
+            "name": "Javascript",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "489b3d23-8d43-4322-9e8e-4c80270649a3",
+            "name": "Strategy",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "2f9aeba3-c7ae-48c3-ae81-fc8160a99def",
+            "name": "Vision",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "f3cd6443-a78d-430a-8d94-cefb2c36e809",
+            "name": "Solution architecture",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "8e52795d-2b11-43b1-9a58-ba0fbc7a55c1",
+            "name": "Enterprise Architecture",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "3263f487-912b-4f3a-be43-357f5bcdbd8a",
+            "name": "API's",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "a454aacd-3806-4a11-8694-0731e76c3efa",
+            "name": "Public speaking",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "15d5edbf-1071-47e2-a2fb-b552cb064ad7",
+            "name": "SQL",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "a591598c-67ae-4a73-a72c-00b113ed53c1",
+            "name": "Postgres",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "55acc1f3-d3f5-4c16-8faf-41644d6537ae",
+            "name": "Mongo DB",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "e8d232db-0c7b-4cd5-824e-1cfb28796f39",
+            "name": "Docker",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "73919f9d-4814-4759-8811-21f32b1582db",
+            "name": "S3",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "85f88b2d-dba1-4d4f-9e70-d21ceacdcc14",
+            "name": "Figma",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "bc7b9346-2561-4231-9a4f-e466638fea56",
+            "name": "Canva",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "c1214649-29e2-41fe-9bd7-df14c8c98f5f",
+            "name": "Webflow",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "1bbd0ba7-6bb4-4bfa-8073-ec8e25453fc0",
+            "name": "Objective-C",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "9d3bd527-237f-4317-8b5f-2fac6f859a9a",
+            "name": "Swift",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "b8516b7d-c8ab-4514-a955-332a3c20dcc2",
+            "name": "React native",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "dbf50f79-a174-47ba-b09c-854e63c9fed4",
+            "name": "Kotlin",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "5f43e219-bc2b-4b20-8fa7-d64984dccf75",
+            "name": "Selenium",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "d1be09ce-969d-4ad8-8914-96eacc7ba8c7",
+            "name": "Appium",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "65ebdcdc-8f6d-4629-8929-47b3c12089e0",
+            "name": "Espresso",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "6f9d8221-9dd1-4fd1-b886-719536264634",
+            "name": "Postman",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "c2fc7325-fdcd-477c-9611-1d97e1b68bc7",
+            "name": "Pen testing",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "074f7b4f-aced-49ab-af0c-cd78603e927f",
+            "name": "Toil",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "21bc3f2a-845a-4a6e-b4f1-574482b5a465",
+            "name": "Structured interviewing",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "b6b025cb-348d-4ef4-a208-dbb1925c1d30",
+            "name": "a/b testing",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "bff1d80b-2fac-4468-b0cd-168c2eb1d1c5",
+            "name": "Notion",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "b3f1d103-d5f5-40fa-8714-3f5f34534024",
+            "name": "Prototyping",
+            "color": "purple",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Tags": {
+      "id": "%5E%5Bz%3E",
+      "name": "Tags",
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "pOEf",
+            "name": "React charts",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "BIZu",
+            "name": "Managing style guide",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "JDGK",
+            "name": "Maintaining public site",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "4abd492f-b3bc-49ba-bc13-e4f409e49c51",
+            "name": "Technology strategy",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "66c56e42-872b-4191-b44b-f46baed0707a",
+            "name": "Enterprise architecture",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "53292b22-3da3-4024-a922-106f77a94485",
+            "name": "Solution architecture",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "01b5c572-2967-4025-a0f0-34f4323c650f",
+            "name": "Company vision",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "bfc5e7f4-007c-417b-9474-ae3d5d02b30a",
+            "name": "Company strategy",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "05cd38a9-92ae-49d2-aefd-a080aa357a8d",
+            "name": "Public Relations",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "4854b806-9e59-44cf-a64f-34bb52238e42",
+            "name": "Funding",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "7cce299a-e60b-4803-8b35-6f2d019819a7",
+            "name": "API development",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "22c76d60-30ab-4895-a9dc-aac8d03874f8",
+            "name": "Database optimization",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "28b2bc82-fb01-403d-83b1-3be7e3a8dd96",
+            "name": "Server management",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "85d034d2-0167-4a9e-9e19-352b2cc1e033",
+            "name": "Feature implementation",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "be81d69a-43e2-47a0-af01-15f7b8879ae0",
+            "name": "Code reviews",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "f16f753a-956f-463b-b424-9a1078471fab",
+            "name": "Technical documentation",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "cc053d61-259c-434e-95b5-e31af90e1728",
+            "name": "Prototyping",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "4ab76f33-0244-4060-a8fc-d6daf77d5cd6",
+            "name": "User testing",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "1ef691cd-efc2-414e-91df-6069519ac245",
+            "name": "Design system maintenance",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "59649a9d-c4d2-425a-a75a-bbd7b508bca3",
+            "name": "iOS app development",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "f6298a21-67e5-48a4-92ba-50be34a9e595",
+            "name": "App Store deployment",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "f56c4930-af1e-4d3e-a8ed-83a0e4de302d",
+            "name": "Swift optimization",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "1dd12be0-3b82-4d30-821e-1a882fd56b82",
+            "name": "Android app development",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "d2a31a89-629e-49e0-b1f7-9de7a9a8e5c5",
+            "name": "Kotlin optimization",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "08d7f6a9-8911-4da5-98dc-3ce87cf09272",
+            "name": "Play Store deployment",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "7c6759c8-159a-46f6-a3cc-6fa8591f7f8f",
+            "name": "Test case development",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "f97f417f-501a-4d18-ae0d-86bab4d95f6f",
+            "name": "Automated testing",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "490f4a68-3bce-4ff9-915c-1f5f1656cdd8",
+            "name": "Bug tracking",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "319c2338-e77d-4de2-b766-4fd57ac4db61",
+            "name": "React Native development",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "06d2afe7-9fa8-4933-88a9-a46a56b8f787",
+            "name": "Performance optimization",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "1c530cc1-0524-42f9-bddc-7414fe715826",
+            "name": "Cross-Platform Team integration",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "e1e349ce-f23e-4472-b9f8-c471317fc682",
+            "name": "System scalability",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "67cc04b5-15df-4660-8c59-04509b716259",
+            "name": "Incident response",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "24375ffc-3625-44ec-a662-1587f61d5285",
+            "name": "Performance tuning",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "d8636c79-3976-44b1-be8c-6bc24fadcd61",
+            "name": "CI/CD pipeline management",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "71ee744c-dd58-423b-8b2b-028b82d8c2f3",
+            "name": "Infrastructure as code",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "8385dc78-6ebb-4094-a107-674b8a97cd6d",
+            "name": "Monitoring and logging",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "05d19cb8-78b9-4e5b-82bc-ae8ee6fa24d6",
+            "name": "User interviews",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "ad6c6147-2639-4130-85cd-b6fb1cee3898",
+            "name": "Usability testing",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "3568e9ad-9a72-44e4-80c2-ba01235faf3d",
+            "name": "Research analysis",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "4b20ca80-5853-445e-b9e0-6000bd66058e",
+            "name": "Visual design",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "d2bd8a19-48ba-49bb-b771-472b744c66bc",
+            "name": "User flow design",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "600f700c-72aa-4ac9-b0b4-dff3203b9683",
+            "name": "Wireframing",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "7c31da5e-fcb2-410a-b4a5-79787e01982e",
+            "name": "Interaction prototypes",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "07cb05e1-db7c-47c5-b7e8-d9c98549129a",
+            "name": "Product roadmap",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "4f527270-e34c-43ae-a622-8b9951ba8d36",
+            "name": "Feature prioritization",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "ae20951e-f9c2-4f30-9702-87beb0b77c50",
+            "name": "Stakeholder management",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "629530c8-549c-4ed3-bda5-36027ff4843e",
+            "name": "Backlog management",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "785f5f3e-062b-4981-a907-65f8cfb6f349",
+            "name": "Sprint planning",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "ccca66ab-7dc4-4b8f-a612-17d502cb6a41",
+            "name": "Feature Documentation",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "ad9a09d8-20ab-4430-8293-7e2d22c0a972",
+            "name": "Client acquisition",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "50e90d25-5d13-470c-895f-935f525b5455",
+            "name": "Contract negotiation",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "e7c8e1ce-d931-463b-91f5-991271d495f8",
+            "name": "Relationship management",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "3f4b7864-bf58-41e4-aa45-d463dbc04c37",
+            "name": "Technical consulting",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "a6467369-e88f-4e6b-9129-5af70fc98b49",
+            "name": "Solution design",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "17122845-9705-4bc9-9f7f-b83e39f44f31",
+            "name": "Proof of concept development",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "da0a25ac-fa4d-46ea-98ca-ea1f327a3b13",
+            "name": "Technical demos",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "2f060b32-c3cc-4957-8189-6c2576988081",
+            "name": "RFP responses",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "2505a7c2-3232-48d7-8ee0-921af8d74e15",
+            "name": "Product customization",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "58a3df09-18c7-400b-9f2d-9539fde58840",
+            "name": "Lead generation",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "7bb0e739-1c3f-4c78-9934-70e3843f209c",
+            "name": "Sales pipeline management",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "6acf1084-b896-441a-a533-a09f03bf129a",
+            "name": "Product demos",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "ece1d389-3aad-4088-9afd-2db78bf12db1",
+            "name": "Inbound lead qualification",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "b6b56b5d-a39d-46f0-8629-340b61e047c1",
+            "name": "Outbound prospecting",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "c70271de-b18d-4dea-8310-8bd66ff1de58",
+            "name": "Sales process optimization",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "d275a7b5-2376-40bc-ac4b-a1966958a138",
+            "name": "Stuff and things all day",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "0d1d2ea6-a8e1-4a74-aeb4-a26247945b3f",
+            "name": "Mobile",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "f658b8a2-f8f3-43cd-9a2b-9a346caa0a51",
+            "name": "Business Development",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "ece3cef2-5dbc-4e89-9e46-7cb1118e6f5e",
+            "name": "Legal",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "f82737f6-86c8-4f25-bd82-ca8606ac126d",
+            "name": "Operations",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "1e65956f-8f8e-4294-8e3b-62d57a76d8c0",
+            "name": "Institutional",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "4fb8abde-af2d-4151-b6c8-6c41613719ae",
+            "name": "Foundation",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "11b2187f-568b-41ef-810f-79a82975529f",
+            "name": "Vault",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "eee2d484-6656-421b-a05f-f6a94465dece",
+            "name": "TVL",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "991fe368-5de4-4a51-873d-ff808666c713",
+            "name": "DevOps",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "694919e8-9748-4f3e-8867-e6116fa8125c",
+            "name": "Observability",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "e68b5388-559d-431a-a682-33a0bd4ffd32",
+            "name": "Testing",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "0ad9e446-a764-4775-aeb7-e1d709a1f422",
+            "name": "Load Testing",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "d8edf7fe-d7aa-42bf-8627-d7a09b081022",
+            "name": "Deployments",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "44d5bfbe-105d-4925-b0b5-df0c3857cee9",
+            "name": "CLOB",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "1b8e6b66-59f0-4aef-b3d0-a9550ac06e3d",
+            "name": "Perps",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "9878b208-ec1a-4df2-a33e-c5606c57de0f",
+            "name": "Audits",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "a92b2904-9bb9-49a4-b737-7dc0dfd42a89",
+            "name": "Launchpad",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "2017a5a7-0863-45f4-8070-7dd8e982e8ff",
+            "name": "Router",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "c3d366de-e09a-4ca7-807e-e562df735551",
+            "name": "R&D",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "4bd6259f-0e8f-43ad-bfea-0a67d85e25ed",
+            "name": "Risk",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "0ad50f85-1508-4b12-ab74-f3704fb43f2d",
+            "name": "Liquidity",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "463160df-883b-4098-a99a-a799351e3367",
+            "name": "Twitter",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "7386b41b-70b3-4213-8d90-4aad60730242",
+            "name": "Discord",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "11e941eb-3f15-488f-991e-488403d40cb1",
+            "name": "Announcements",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "4acbff11-626c-4398-a436-d2c120ec16a7",
+            "name": "Creative",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "a8018e70-502d-43f4-a50c-791d2721ccfd",
+            "name": "UI/UX",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "109ddfbd-27d2-460a-89c7-093855766a1b",
+            "name": "Brand",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "a17a51a7-d8c9-4aae-bdee-a7958e38f3ce",
+            "name": "API & SDK",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "a92100f5-4949-4347-b9b3-486a81f41cb3",
+            "name": "APIs & SDKs",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "2f3ca8b2-7edb-4bf9-9863-b01f0c326a8a",
+            "name": "Customer Support",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "0f034fee-9729-4356-9846-b6a47849b2d6",
+            "name": "Integrations",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "cb655c81-8c48-4061-87ef-a82757a3708f",
+            "name": "EIPs",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "20ef3be7-ace3-453e-8daa-5a34263914e0",
+            "name": "Indexer",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "6daae96a-fadb-496a-8942-63c1d38013dd",
+            "name": "Indexers",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "656e80da-af06-42ee-a7b9-07d424baabfe",
+            "name": "Aggregator",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "60eb2e24-f998-4beb-964a-83e53b7d525a",
+            "name": "Databases",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "e8009ada-d7b0-45c6-b5ac-aff2e6c296b6",
+            "name": "System Design",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "2baa00a3-9e82-4043-9161-d50c54e51c33",
+            "name": "Optimizations",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "c4318fad-a61f-4e1c-8fae-a4a7cb39a088",
+            "name": "Egress",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "9b3fa870-df91-438b-856c-6b40d764feb7",
+            "name": "Socials",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "a06465a4-778e-42da-ad1f-19fc0f3b1d04",
+            "name": "DeFi",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "78c5591a-1667-45dd-b52c-1c2f435bf916",
+            "name": "Outreach",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "214b35d7-e16e-4b54-af30-a94a9f80170e",
+            "name": "Hiring",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "197425be-5761-4b82-9da1-25a8b9456ad0",
+            "name": "smart contracts",
+            "color": "yellow",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Level Factor": {
+      "id": "bSJp",
+      "name": "Level Factor",
+      "description": "15% level factor to the power of the level - 1 (As level 1 is the base level)",
+      "type": "formula",
+      "formula": {
+        "expression": "pow(1.15,{{notion:block_property:%3B~%60B:00000000-0000-0000-0000-000000000000:a530306f-69b8-4a7e-9383-a7399d20fcc7}}-1)"
+      }
+    },
+    "Billable Rate": {
+      "id": "bcT%7D",
+      "name": "Billable Rate",
+      "type": "number",
+      "number": {
+        "format": "dollar"
+      }
+    },
+    "Start Date": {
+      "id": "eOzJ",
+      "name": "Start Date",
+      "type": "date",
+      "date": {}
+    },
+    "Timezone": {
+      "id": "khG%60",
+      "name": "Timezone",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "e17ea35b-54a1-403a-9987-f6ec6f72cef4",
+            "name": "San Francisco",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "ce34f14d-c258-4413-aa9d-31f4cbedf212",
+            "name": "New York",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "f6d3968f-d3f7-40a3-98e7-c80592b65a55",
+            "name": "Canada",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "d9e06996-24a6-40f5-91e1-f31f79b957a3",
+            "name": "Australia",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "ee5478a9-bfe9-4a84-a9b2-a5ab5e8bb0e8",
+            "name": "New Zealand",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "951c12c9-842c-44bf-822c-8101f634784f",
+            "name": "Copenhagen",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "d160712d-ad17-4bd3-9b6a-fff4b2f4a169",
+            "name": "Brazil",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "175273d8-3eb6-4ad0-b747-150cd1c49de3",
+            "name": "Arizona",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "0e2f2dce-278d-4ae8-aece-2b7e139f86b1",
+            "name": "Oakland",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "6636e6fc-9c93-4603-8321-9ce312d65d48",
+            "name": "Montreal",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "1d6b2283-b087-4a32-bc55-38955f989918",
+            "name": "CST",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "9307d294-6ba4-46db-ac2f-fdafe3b63bac",
+            "name": "CEST",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "cc1a8286-2742-4b57-b43e-3a52f521d146",
+            "name": "EST",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "39833313-56ab-4d75-90e4-6b009979bff0",
+            "name": "MST",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "c858f1aa-a577-4395-b7b6-d71b37bbce53",
+            "name": "PST",
+            "color": "purple",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Group": {
+      "id": "kjDI",
+      "name": "Group",
+      "description": "",
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "WU:Q",
+            "name": "Marketing",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "phh|",
+            "name": "Product Team",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "@U:`",
+            "name": "Human Resources",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "ljEC",
+            "name": "Engineering",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "l{Ud",
+            "name": "Support",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "?dy=",
+            "name": "Design",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "p>Pm",
+            "name": "Analytics",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "N;x{",
+            "name": "Finance",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "de3157cf-65a0-40d6-b868-73b554b1a5ff",
+            "name": "Executive Team",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "0220cd5f-91c9-401b-8b82-c99a293d5260",
+            "name": "Web Team",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "9c9aeccf-a81d-4460-a30b-80169d8b038f",
+            "name": "App Team",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "1062e895-3ada-44b6-a6fc-78f56e0a5244",
+            "name": "Platform Team",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "12427d6d-a118-4a4a-9dd1-7fc7860344a0",
+            "name": "UX Team",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "3c956633-9e39-4314-854e-3efa92f6612d",
+            "name": "Enterprise Sales Team",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "cfd76185-812a-4358-87ca-5cbcf40a81cf",
+            "name": "SMB Sales Team",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "63ea8e26-3a6a-45fd-b715-7047f9a8f6ea",
+            "name": "Growth",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "99bf1ab2-1540-4510-8565-24f7101165c6",
+            "name": "Product",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "cee4df83-3707-47cd-b5ed-1dc90d290506",
+            "name": "Platform",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "a5c04955-e5af-49ba-8bcc-2731666b60f9",
+            "name": "Science",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "02d674b5-8e51-46c6-8a0f-cc1b153ee4ef",
+            "name": "PSG",
+            "color": "brown",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Total Salary": {
+      "id": "m%60OU",
+      "name": "Total Salary",
+      "description": "Base salary * location factor * level factor * step factor",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:~eGd:00000000-0000-0000-0000-000000000000:a530306f-69b8-4a7e-9383-a7399d20fcc7}} * {{notion:block_property:bSJp:00000000-0000-0000-0000-000000000000:a530306f-69b8-4a7e-9383-a7399d20fcc7}}*{{notion:block_property:Q%5BvU:00000000-0000-0000-0000-000000000000:a530306f-69b8-4a7e-9383-a7399d20fcc7}}*{{notion:block_property:T%5B%5Bj:00000000-0000-0000-0000-000000000000:a530306f-69b8-4a7e-9383-a7399d20fcc7}}"
+      }
+    },
+    "Email": {
+      "id": "y%2FXJ",
+      "name": "Email",
+      "type": "email",
+      "email": {}
+    },
+    "Position": {
+      "id": "yHLH",
+      "name": "Position",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Profile": {
+      "id": "yXEe",
+      "name": "Profile",
+      "type": "files",
+      "files": {}
+    },
+    "Base Salary": {
+      "id": "~eGd",
+      "name": "Base Salary",
+      "type": "number",
+      "number": {
+        "format": "dollar"
+      }
+    },
+    "Name": {
+      "id": "title",
+      "name": "Name",
+      "type": "title",
+      "title": {}
+    }
+  },
+  "parent": {
+    "type": "page_id",
+    "page_id": "23bb3298-c3ce-80dc-9fe3-dad1805fa05e"
+  },
+  "url": "https://www.notion.so/239b3298c3ce80c2a7aedfb19e757682",
+  "public_url": null,
+  "archived": false,
+  "in_trash": false,
+  "request_id": "d493a010-d856-41da-bdd7-8584fd63840f"
+}

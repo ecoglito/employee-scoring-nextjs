@@ -1,0 +1,4405 @@
+{
+  "object": "list",
+  "results": [
+    {
+      "object": "page",
+      "id": "23bb3298-c3ce-807c-9901-d38fab5de04f",
+      "created_time": "2025-07-25T23:04:00.000Z",
+      "last_edited_time": "2025-07-29T21:18:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "12dd872b-594c-813a-bb7a-00029457de70"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "239b3298-c3ce-80c2-a7ae-dfb19e757682"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Level": {
+          "id": "%3B~%60B",
+          "type": "number",
+          "number": null
+        },
+        "Step": {
+          "id": "%3FHkL",
+          "type": "number",
+          "number": null
+        },
+        "Onboarding Doc": {
+          "id": "%40E%40P",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Tenure": {
+          "id": "Binx",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Team": {
+          "id": "FbmX",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "ce34f14d-c258-4413-aa9d-31f4cbedf212",
+              "name": "Product",
+              "color": "blue"
+            }
+          ]
+        },
+        "Manages": {
+          "id": "G%7B%5EG",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1) 1": {
+          "id": "KTpo",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Phone": {
+          "id": "Mj%24g",
+          "type": "phone_number",
+          "phone_number": null
+        },
+        "Location Factor": {
+          "id": "Q%5BvU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": "Error: Unknown Location"
+          }
+        },
+        "Notion Account": {
+          "id": "TZgX",
+          "type": "people",
+          "people": []
+        },
+        "Step Factor": {
+          "id": "T%5B%5Bj",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.970873786408
+          }
+        },
+        "Reports to": {
+          "id": "VWqO",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Skills": {
+          "id": "%5ByAk",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "Tags": {
+          "id": "%5E%5Bz%3E",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "a8018e70-502d-43f4-a50c-791d2721ccfd",
+              "name": "UI/UX",
+              "color": "yellow"
+            },
+            {
+              "id": "0d1d2ea6-a8e1-4a74-aeb4-a26247945b3f",
+              "name": "Mobile",
+              "color": "pink"
+            },
+            {
+              "id": "109ddfbd-27d2-460a-89c7-093855766a1b",
+              "name": "Brand",
+              "color": "orange"
+            },
+            {
+              "id": "4acbff11-626c-4398-a436-d2c120ec16a7",
+              "name": "Creative",
+              "color": "blue"
+            }
+          ]
+        },
+        "Related to Projects Database (Related to People Database (1) (Related to Projects Database (Billable Rates Relation)))": {
+          "id": "bN%60O",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Level Factor": {
+          "id": "bSJp",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.869565217391
+          }
+        },
+        "Billable Rate": {
+          "id": "bcT%7D",
+          "type": "number",
+          "number": null
+        },
+        "Start Date": {
+          "id": "eOzJ",
+          "type": "date",
+          "date": null
+        },
+        "Timezone": {
+          "id": "khG%60",
+          "type": "select",
+          "select": {
+            "id": "cc1a8286-2742-4b57-b43e-3a52f521d146",
+            "name": "EST",
+            "color": "gray"
+          }
+        },
+        "Group": {
+          "id": "kjDI",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "02d674b5-8e51-46c6-8a0f-cc1b153ee4ef",
+              "name": "PSG",
+              "color": "brown"
+            }
+          ]
+        },
+        "Total Salary": {
+          "id": "m%60OU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1)": {
+          "id": "vJBc",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Email": {
+          "id": "y%2FXJ",
+          "type": "email",
+          "email": "oliver@liquidlabs.inc"
+        },
+        "Position": {
+          "id": "yHLH",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Head of Design",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Head of Design",
+              "href": null
+            }
+          ]
+        },
+        "Profile": {
+          "id": "yXEe",
+          "type": "files",
+          "files": []
+        },
+        "Base Salary": {
+          "id": "~eGd",
+          "type": "number",
+          "number": null
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Arnie Goldberg",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Arnie Goldberg",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Arnie-Goldberg-23bb3298c3ce807c9901d38fab5de04f",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "23bb3298-c3ce-8001-ab45-d06c2ba09c20",
+      "created_time": "2025-07-25T21:18:00.000Z",
+      "last_edited_time": "2025-07-29T21:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "239b3298-c3ce-80c2-a7ae-dfb19e757682"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Level": {
+          "id": "%3B~%60B",
+          "type": "number",
+          "number": null
+        },
+        "Step": {
+          "id": "%3FHkL",
+          "type": "number",
+          "number": null
+        },
+        "Onboarding Doc": {
+          "id": "%40E%40P",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Tenure": {
+          "id": "Binx",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Team": {
+          "id": "FbmX",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "4d91f193-d0fa-4a48-aa70-d15b63d961f8",
+              "name": "Backend",
+              "color": "red"
+            }
+          ]
+        },
+        "Manages": {
+          "id": "G%7B%5EG",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1) 1": {
+          "id": "KTpo",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Phone": {
+          "id": "Mj%24g",
+          "type": "phone_number",
+          "phone_number": null
+        },
+        "Location Factor": {
+          "id": "Q%5BvU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": "Error: Unknown Location"
+          }
+        },
+        "Notion Account": {
+          "id": "TZgX",
+          "type": "people",
+          "people": []
+        },
+        "Step Factor": {
+          "id": "T%5B%5Bj",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.970873786408
+          }
+        },
+        "Reports to": {
+          "id": "VWqO",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "239b3298-c3ce-81cf-a972-f4573ea2e4e7"
+            }
+          ],
+          "has_more": false
+        },
+        "Skills": {
+          "id": "%5ByAk",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "Tags": {
+          "id": "%5E%5Bz%3E",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "a92100f5-4949-4347-b9b3-486a81f41cb3",
+              "name": "APIs & SDKs",
+              "color": "green"
+            }
+          ]
+        },
+        "Related to Projects Database (Related to People Database (1) (Related to Projects Database (Billable Rates Relation)))": {
+          "id": "bN%60O",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Level Factor": {
+          "id": "bSJp",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.869565217391
+          }
+        },
+        "Billable Rate": {
+          "id": "bcT%7D",
+          "type": "number",
+          "number": null
+        },
+        "Start Date": {
+          "id": "eOzJ",
+          "type": "date",
+          "date": null
+        },
+        "Timezone": {
+          "id": "khG%60",
+          "type": "select",
+          "select": {
+            "id": "cc1a8286-2742-4b57-b43e-3a52f521d146",
+            "name": "EST",
+            "color": "gray"
+          }
+        },
+        "Group": {
+          "id": "kjDI",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "ljEC",
+              "name": "Engineering",
+              "color": "blue"
+            }
+          ]
+        },
+        "Total Salary": {
+          "id": "m%60OU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1)": {
+          "id": "vJBc",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Email": {
+          "id": "y%2FXJ",
+          "type": "email",
+          "email": "oliver@liquidlabs.inc"
+        },
+        "Position": {
+          "id": "yHLH",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "SWE Intern",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "SWE Intern",
+              "href": null
+            }
+          ]
+        },
+        "Profile": {
+          "id": "yXEe",
+          "type": "files",
+          "files": []
+        },
+        "Base Salary": {
+          "id": "~eGd",
+          "type": "number",
+          "number": null
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Oliver Adams",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Oliver Adams",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Oliver-Adams-23bb3298c3ce8001ab45d06c2ba09c20",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "239b3298-c3ce-81bb-971f-e092bb0fda81",
+      "created_time": "2025-07-23T21:13:00.000Z",
+      "last_edited_time": "2025-07-29T21:49:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "12dd872b-594c-813a-bb7a-00029457de70"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "239b3298-c3ce-80c2-a7ae-dfb19e757682"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Level": {
+          "id": "%3B~%60B",
+          "type": "number",
+          "number": 4
+        },
+        "Step": {
+          "id": "%3FHkL",
+          "type": "number",
+          "number": 2
+        },
+        "Onboarding Doc": {
+          "id": "%40E%40P",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Tenure": {
+          "id": "Binx",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": "4.3 years"
+          }
+        },
+        "Team": {
+          "id": "FbmX",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3166307a-8e80-46c9-b9f4-8c38660fdc81",
+              "name": "Exec",
+              "color": "yellow"
+            }
+          ]
+        },
+        "Manages": {
+          "id": "G%7B%5EG",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1) 1": {
+          "id": "KTpo",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Phone": {
+          "id": "Mj%24g",
+          "type": "phone_number",
+          "phone_number": null
+        },
+        "Location Factor": {
+          "id": "Q%5BvU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": "Error: Unknown Location"
+          }
+        },
+        "Notion Account": {
+          "id": "TZgX",
+          "type": "people",
+          "people": []
+        },
+        "Step Factor": {
+          "id": "T%5B%5Bj",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 1.03
+          }
+        },
+        "Reports to": {
+          "id": "VWqO",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Skills": {
+          "id": "%5ByAk",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "BlUY",
+              "name": "Coaching",
+              "color": "pink"
+            },
+            {
+              "id": "bIyo",
+              "name": "Mentoring",
+              "color": "gray"
+            },
+            {
+              "id": "f3cd6443-a78d-430a-8d94-cefb2c36e809",
+              "name": "Solution architecture",
+              "color": "yellow"
+            },
+            {
+              "id": "489b3d23-8d43-4322-9e8e-4c80270649a3",
+              "name": "Strategy",
+              "color": "red"
+            },
+            {
+              "id": "2f9aeba3-c7ae-48c3-ae81-fc8160a99def",
+              "name": "Vision",
+              "color": "yellow"
+            }
+          ]
+        },
+        "Tags": {
+          "id": "%5E%5Bz%3E",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "Related to Projects Database (Related to People Database (1) (Related to Projects Database (Billable Rates Relation)))": {
+          "id": "bN%60O",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Level Factor": {
+          "id": "bSJp",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 1.520875
+          }
+        },
+        "Billable Rate": {
+          "id": "bcT%7D",
+          "type": "number",
+          "number": 250
+        },
+        "Start Date": {
+          "id": "eOzJ",
+          "type": "date",
+          "date": {
+            "start": "2021-04-12",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "Timezone": {
+          "id": "khG%60",
+          "type": "select",
+          "select": {
+            "id": "cc1a8286-2742-4b57-b43e-3a52f521d146",
+            "name": "EST",
+            "color": "gray"
+          }
+        },
+        "Group": {
+          "id": "kjDI",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "02d674b5-8e51-46c6-8a0f-cc1b153ee4ef",
+              "name": "PSG",
+              "color": "brown"
+            },
+            {
+              "id": "ljEC",
+              "name": "Engineering",
+              "color": "blue"
+            }
+          ]
+        },
+        "Total Salary": {
+          "id": "m%60OU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1)": {
+          "id": "vJBc",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Email": {
+          "id": "y%2FXJ",
+          "type": "email",
+          "email": "enzo@liquidlabs.inc"
+        },
+        "Position": {
+          "id": "yHLH",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "CEO & Co-Founder",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "CEO & Co-Founder",
+              "href": null
+            }
+          ]
+        },
+        "Profile": {
+          "id": "yXEe",
+          "type": "files",
+          "files": [
+            {
+              "name": "undraw_Male_avatar_g98d.png",
+              "type": "file",
+              "file": {
+                "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a530306f-69b8-4a7e-9383-a7399d20fcc7/4f8bf235-2627-45ac-8daa-b37543e9e99f/undraw_Male_avatar_g98d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46656C37XKO%2F20250730%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250730T010510Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBfxZwWD1x3wSTdgJI35lgZ8KpuFgVOp8ectko6T3CxPAiEAgAh%2Bo5fIGhOBXcd%2BTDi1UeTW9j3Zx6v%2BfExXt8d5ERUqiAQIsf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGb%2FWla5I7CB%2B0tinyrcA%2FYtJEz3Z%2Fo0CvgyXW3T9U%2Bz79sogeB8OKxgB4Sch3vsVy%2BYB7anz34zY6rGgUEvXxyPoqQaWRnSFnBASnL4FbFNF7hhobyplXte9KUKm9J156X1A755yTK7DveTZm9spJyW1XRaxdk2hB5JRX9eH6VM9V1dUyQXfUavZtljqmfQXyhbtqUrIrPCoaF0UTchE90HP8h8I0miDr6gdeuG3KQy0qWqi0Pt0%2FNkhbNs5vHDE5qWugfkIx8zD9of5z2%2FmrVu%2FARdO26GMLzpyc%2BgyvQ65lmuJ3JOq4DeSdifEdqxXOXoWTfN69sZRcJY2Ng6NBjBdJThZpC8gco80uH9uCnAs95XgPnyJFSfMVH%2FpUWfd8PX%2Bb2LCpCtcr1CYk8oX1042w0Pb%2BIpU4eT%2BcmK6RdeIpnIQi4EhhgxA7uuKiXFgOvmCb%2Bi3Pd5SyIG1i7LXx%2BwICqh8Iv1MV%2BUhbXi9CY%2Bhh902na2F2c4kp2l6ioN3Y623robXSXuKj8w8Gq9CQmhHDvKWOoI0Z937vbAgxJl0WGIMfST6IyT3sT3S%2BNdViutaq%2BPudSwiy7zy0%2BeFub1uG6gJE2YWIVvp4jhETbEhC%2BcW8sDccz8%2BGvvECUd1lQEq2r3jZ5zofMbMIq4pcQGOqUBZ9taYBvfeCwqxiw7WEpPw4vAB8vW45W8VxMl0oxSocFqDuS1eWhLfIZwwNL2X65EBuHF7gFBvZTt%2FFQqtG050hR6Kn6x7Q3UWr8R90%2FW4wXsvEWSoxNi5TSw6jkMxgRSysS8Jw0JY%2BdIUdxMhvjaoWi9Z5ybcj%2BWbwklIeZQ05NkywUdvja%2FXugPNaw6cl80Rr%2FzNECXhizwlA94gvKKHj73wsGp&X-Amz-Signature=7e26f0390167be46b0f41d92af85db9fb9efe572d9f1c8bbcb9a4a1623d9dbb0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                "expiry_time": "2025-07-30T02:05:10.783Z"
+              }
+            }
+          ]
+        },
+        "Base Salary": {
+          "id": "~eGd",
+          "type": "number",
+          "number": 110000
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Enzo Coglitore",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Enzo Coglitore",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Enzo-Coglitore-239b3298c3ce81bb971fe092bb0fda81",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "239b3298-c3ce-8108-9284-f3cb196856c7",
+      "created_time": "2025-07-23T21:13:00.000Z",
+      "last_edited_time": "2025-07-29T21:20:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "12dd872b-594c-813a-bb7a-00029457de70"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "239b3298-c3ce-80c2-a7ae-dfb19e757682"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Level": {
+          "id": "%3B~%60B",
+          "type": "number",
+          "number": null
+        },
+        "Step": {
+          "id": "%3FHkL",
+          "type": "number",
+          "number": null
+        },
+        "Onboarding Doc": {
+          "id": "%40E%40P",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Tenure": {
+          "id": "Binx",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Team": {
+          "id": "FbmX",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "6ccbd103-a7a5-437b-96da-e908f6954c0a",
+              "name": "Infrastructure & DevOps",
+              "color": "purple"
+            }
+          ]
+        },
+        "Manages": {
+          "id": "G%7B%5EG",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1) 1": {
+          "id": "KTpo",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Phone": {
+          "id": "Mj%24g",
+          "type": "phone_number",
+          "phone_number": null
+        },
+        "Location Factor": {
+          "id": "Q%5BvU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": "Error: Unknown Location"
+          }
+        },
+        "Notion Account": {
+          "id": "TZgX",
+          "type": "people",
+          "people": []
+        },
+        "Step Factor": {
+          "id": "T%5B%5Bj",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.970873786408
+          }
+        },
+        "Reports to": {
+          "id": "VWqO",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Skills": {
+          "id": "%5ByAk",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "Tags": {
+          "id": "%5E%5Bz%3E",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "991fe368-5de4-4a51-873d-ff808666c713",
+              "name": "DevOps",
+              "color": "purple"
+            },
+            {
+              "id": "694919e8-9748-4f3e-8867-e6116fa8125c",
+              "name": "Observability",
+              "color": "blue"
+            },
+            {
+              "id": "0ad9e446-a764-4775-aeb7-e1d709a1f422",
+              "name": "Load Testing",
+              "color": "default"
+            },
+            {
+              "id": "d8edf7fe-d7aa-42bf-8627-d7a09b081022",
+              "name": "Deployments",
+              "color": "brown"
+            },
+            {
+              "id": "60eb2e24-f998-4beb-964a-83e53b7d525a",
+              "name": "Databases",
+              "color": "green"
+            }
+          ]
+        },
+        "Related to Projects Database (Related to People Database (1) (Related to Projects Database (Billable Rates Relation)))": {
+          "id": "bN%60O",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Level Factor": {
+          "id": "bSJp",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.869565217391
+          }
+        },
+        "Billable Rate": {
+          "id": "bcT%7D",
+          "type": "number",
+          "number": null
+        },
+        "Start Date": {
+          "id": "eOzJ",
+          "type": "date",
+          "date": null
+        },
+        "Timezone": {
+          "id": "khG%60",
+          "type": "select",
+          "select": {
+            "id": "cc1a8286-2742-4b57-b43e-3a52f521d146",
+            "name": "EST",
+            "color": "gray"
+          }
+        },
+        "Group": {
+          "id": "kjDI",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "ljEC",
+              "name": "Engineering",
+              "color": "blue"
+            }
+          ]
+        },
+        "Total Salary": {
+          "id": "m%60OU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1)": {
+          "id": "vJBc",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Email": {
+          "id": "y%2FXJ",
+          "type": "email",
+          "email": "matt@liquidlabs.inc"
+        },
+        "Position": {
+          "id": "yHLH",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Founding Infrastructure Engineer",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Founding Infrastructure Engineer",
+              "href": null
+            }
+          ]
+        },
+        "Profile": {
+          "id": "yXEe",
+          "type": "files",
+          "files": []
+        },
+        "Base Salary": {
+          "id": "~eGd",
+          "type": "number",
+          "number": null
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Matt Adams",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Matt Adams",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Matt-Adams-239b3298c3ce81089284f3cb196856c7",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "239b3298-c3ce-810e-940b-fb46ff696011",
+      "created_time": "2025-07-23T21:13:00.000Z",
+      "last_edited_time": "2025-07-29T21:19:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "12dd872b-594c-813a-bb7a-00029457de70"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "239b3298-c3ce-80c2-a7ae-dfb19e757682"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Level": {
+          "id": "%3B~%60B",
+          "type": "number",
+          "number": null
+        },
+        "Step": {
+          "id": "%3FHkL",
+          "type": "number",
+          "number": null
+        },
+        "Onboarding Doc": {
+          "id": "%40E%40P",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Tenure": {
+          "id": "Binx",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Team": {
+          "id": "FbmX",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "ce34f14d-c258-4413-aa9d-31f4cbedf212",
+              "name": "Product",
+              "color": "blue"
+            }
+          ]
+        },
+        "Manages": {
+          "id": "G%7B%5EG",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1) 1": {
+          "id": "KTpo",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Phone": {
+          "id": "Mj%24g",
+          "type": "phone_number",
+          "phone_number": null
+        },
+        "Location Factor": {
+          "id": "Q%5BvU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": "Error: Unknown Location"
+          }
+        },
+        "Notion Account": {
+          "id": "TZgX",
+          "type": "people",
+          "people": []
+        },
+        "Step Factor": {
+          "id": "T%5B%5Bj",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.970873786408
+          }
+        },
+        "Reports to": {
+          "id": "VWqO",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Skills": {
+          "id": "%5ByAk",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "Tags": {
+          "id": "%5E%5Bz%3E",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "a8018e70-502d-43f4-a50c-791d2721ccfd",
+              "name": "UI/UX",
+              "color": "yellow"
+            },
+            {
+              "id": "07cb05e1-db7c-47c5-b7e8-d9c98549129a",
+              "name": "Product roadmap",
+              "color": "green"
+            },
+            {
+              "id": "0d1d2ea6-a8e1-4a74-aeb4-a26247945b3f",
+              "name": "Mobile",
+              "color": "pink"
+            },
+            {
+              "id": "2f3ca8b2-7edb-4bf9-9863-b01f0c326a8a",
+              "name": "Customer Support",
+              "color": "red"
+            },
+            {
+              "id": "109ddfbd-27d2-460a-89c7-093855766a1b",
+              "name": "Brand",
+              "color": "orange"
+            }
+          ]
+        },
+        "Related to Projects Database (Related to People Database (1) (Related to Projects Database (Billable Rates Relation)))": {
+          "id": "bN%60O",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Level Factor": {
+          "id": "bSJp",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.869565217391
+          }
+        },
+        "Billable Rate": {
+          "id": "bcT%7D",
+          "type": "number",
+          "number": null
+        },
+        "Start Date": {
+          "id": "eOzJ",
+          "type": "date",
+          "date": null
+        },
+        "Timezone": {
+          "id": "khG%60",
+          "type": "select",
+          "select": {
+            "id": "9307d294-6ba4-46db-ac2f-fdafe3b63bac",
+            "name": "CEST",
+            "color": "gray"
+          }
+        },
+        "Group": {
+          "id": "kjDI",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "02d674b5-8e51-46c6-8a0f-cc1b153ee4ef",
+              "name": "PSG",
+              "color": "brown"
+            }
+          ]
+        },
+        "Total Salary": {
+          "id": "m%60OU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1)": {
+          "id": "vJBc",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Email": {
+          "id": "y%2FXJ",
+          "type": "email",
+          "email": "rayan@liquidlabs.inc"
+        },
+        "Position": {
+          "id": "yHLH",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Head of Product",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Head of Product",
+              "href": null
+            }
+          ]
+        },
+        "Profile": {
+          "id": "yXEe",
+          "type": "files",
+          "files": []
+        },
+        "Base Salary": {
+          "id": "~eGd",
+          "type": "number",
+          "number": null
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Rayan B.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Rayan B.",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Rayan-B-239b3298c3ce810e940bfb46ff696011",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "239b3298-c3ce-811e-aae9-e4acb678b854",
+      "created_time": "2025-07-23T21:13:00.000Z",
+      "last_edited_time": "2025-07-29T21:21:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "12dd872b-594c-813a-bb7a-00029457de70"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "239b3298-c3ce-80c2-a7ae-dfb19e757682"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Level": {
+          "id": "%3B~%60B",
+          "type": "number",
+          "number": null
+        },
+        "Step": {
+          "id": "%3FHkL",
+          "type": "number",
+          "number": null
+        },
+        "Onboarding Doc": {
+          "id": "%40E%40P",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Tenure": {
+          "id": "Binx",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Team": {
+          "id": "FbmX",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "5a7188a4-476d-47d9-a109-31955c9e6d68",
+              "name": "Smart Contracts",
+              "color": "gray"
+            }
+          ]
+        },
+        "Manages": {
+          "id": "G%7B%5EG",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1) 1": {
+          "id": "KTpo",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Phone": {
+          "id": "Mj%24g",
+          "type": "phone_number",
+          "phone_number": null
+        },
+        "Location Factor": {
+          "id": "Q%5BvU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": "Error: Unknown Location"
+          }
+        },
+        "Notion Account": {
+          "id": "TZgX",
+          "type": "people",
+          "people": []
+        },
+        "Step Factor": {
+          "id": "T%5B%5Bj",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.970873786408
+          }
+        },
+        "Reports to": {
+          "id": "VWqO",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Skills": {
+          "id": "%5ByAk",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "Tags": {
+          "id": "%5E%5Bz%3E",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "a92b2904-9bb9-49a4-b737-7dc0dfd42a89",
+              "name": "Launchpad",
+              "color": "green"
+            },
+            {
+              "id": "2017a5a7-0863-45f4-8070-7dd8e982e8ff",
+              "name": "Router",
+              "color": "green"
+            },
+            {
+              "id": "44d5bfbe-105d-4925-b0b5-df0c3857cee9",
+              "name": "CLOB",
+              "color": "green"
+            },
+            {
+              "id": "9878b208-ec1a-4df2-a33e-c5606c57de0f",
+              "name": "Audits",
+              "color": "green"
+            },
+            {
+              "id": "2f3ca8b2-7edb-4bf9-9863-b01f0c326a8a",
+              "name": "Customer Support",
+              "color": "red"
+            }
+          ]
+        },
+        "Related to Projects Database (Related to People Database (1) (Related to Projects Database (Billable Rates Relation)))": {
+          "id": "bN%60O",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Level Factor": {
+          "id": "bSJp",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.869565217391
+          }
+        },
+        "Billable Rate": {
+          "id": "bcT%7D",
+          "type": "number",
+          "number": null
+        },
+        "Start Date": {
+          "id": "eOzJ",
+          "type": "date",
+          "date": null
+        },
+        "Timezone": {
+          "id": "khG%60",
+          "type": "select",
+          "select": {
+            "id": "cc1a8286-2742-4b57-b43e-3a52f521d146",
+            "name": "EST",
+            "color": "gray"
+          }
+        },
+        "Group": {
+          "id": "kjDI",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "ljEC",
+              "name": "Engineering",
+              "color": "blue"
+            }
+          ]
+        },
+        "Total Salary": {
+          "id": "m%60OU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1)": {
+          "id": "vJBc",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Email": {
+          "id": "y%2FXJ",
+          "type": "email",
+          "email": "ledger@liquidlabs.inc"
+        },
+        "Position": {
+          "id": "yHLH",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Founding Smart Contract Engineer",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Founding Smart Contract Engineer",
+              "href": null
+            }
+          ]
+        },
+        "Profile": {
+          "id": "yXEe",
+          "type": "files",
+          "files": []
+        },
+        "Base Salary": {
+          "id": "~eGd",
+          "type": "number",
+          "number": null
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Jb/Nd",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Jb/Nd",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Jb-Nd-239b3298c3ce811eaae9e4acb678b854",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "239b3298-c3ce-811e-b401-cdb3cd863ac7",
+      "created_time": "2025-07-23T21:13:00.000Z",
+      "last_edited_time": "2025-07-29T21:23:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "12dd872b-594c-813a-bb7a-00029457de70"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "239b3298-c3ce-80c2-a7ae-dfb19e757682"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Level": {
+          "id": "%3B~%60B",
+          "type": "number",
+          "number": null
+        },
+        "Step": {
+          "id": "%3FHkL",
+          "type": "number",
+          "number": null
+        },
+        "Onboarding Doc": {
+          "id": "%40E%40P",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Tenure": {
+          "id": "Binx",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Team": {
+          "id": "FbmX",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "782a4991-1cab-495d-837e-07eefd0b1285",
+              "name": "Growth",
+              "color": "green"
+            }
+          ]
+        },
+        "Manages": {
+          "id": "G%7B%5EG",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1) 1": {
+          "id": "KTpo",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Phone": {
+          "id": "Mj%24g",
+          "type": "phone_number",
+          "phone_number": null
+        },
+        "Location Factor": {
+          "id": "Q%5BvU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": "Error: Unknown Location"
+          }
+        },
+        "Notion Account": {
+          "id": "TZgX",
+          "type": "people",
+          "people": []
+        },
+        "Step Factor": {
+          "id": "T%5B%5Bj",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.970873786408
+          }
+        },
+        "Reports to": {
+          "id": "VWqO",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Skills": {
+          "id": "%5ByAk",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "Tags": {
+          "id": "%5E%5Bz%3E",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "463160df-883b-4098-a99a-a799351e3367",
+              "name": "Twitter",
+              "color": "blue"
+            },
+            {
+              "id": "7386b41b-70b3-4213-8d90-4aad60730242",
+              "name": "Discord",
+              "color": "green"
+            },
+            {
+              "id": "11e941eb-3f15-488f-991e-488403d40cb1",
+              "name": "Announcements",
+              "color": "orange"
+            },
+            {
+              "id": "4acbff11-626c-4398-a436-d2c120ec16a7",
+              "name": "Creative",
+              "color": "blue"
+            },
+            {
+              "id": "9b3fa870-df91-438b-856c-6b40d764feb7",
+              "name": "Socials",
+              "color": "purple"
+            }
+          ]
+        },
+        "Related to Projects Database (Related to People Database (1) (Related to Projects Database (Billable Rates Relation)))": {
+          "id": "bN%60O",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Level Factor": {
+          "id": "bSJp",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.869565217391
+          }
+        },
+        "Billable Rate": {
+          "id": "bcT%7D",
+          "type": "number",
+          "number": null
+        },
+        "Start Date": {
+          "id": "eOzJ",
+          "type": "date",
+          "date": null
+        },
+        "Timezone": {
+          "id": "khG%60",
+          "type": "select",
+          "select": {
+            "id": "c858f1aa-a577-4395-b7b6-d71b37bbce53",
+            "name": "PST",
+            "color": "purple"
+          }
+        },
+        "Group": {
+          "id": "kjDI",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "02d674b5-8e51-46c6-8a0f-cc1b153ee4ef",
+              "name": "PSG",
+              "color": "brown"
+            }
+          ]
+        },
+        "Total Salary": {
+          "id": "m%60OU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1)": {
+          "id": "vJBc",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Email": {
+          "id": "y%2FXJ",
+          "type": "email",
+          "email": "majin@liquidlabs.inc"
+        },
+        "Position": {
+          "id": "yHLH",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Community Manager",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Community Manager",
+              "href": null
+            }
+          ]
+        },
+        "Profile": {
+          "id": "yXEe",
+          "type": "files",
+          "files": []
+        },
+        "Base Salary": {
+          "id": "~eGd",
+          "type": "number",
+          "number": null
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Majin",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Majin",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Majin-239b3298c3ce811eb401cdb3cd863ac7",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "239b3298-c3ce-813f-89c3-d3fa4ce37b6a",
+      "created_time": "2025-07-23T21:13:00.000Z",
+      "last_edited_time": "2025-07-29T21:21:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "12dd872b-594c-813a-bb7a-00029457de70"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "239b3298-c3ce-80c2-a7ae-dfb19e757682"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Level": {
+          "id": "%3B~%60B",
+          "type": "number",
+          "number": null
+        },
+        "Step": {
+          "id": "%3FHkL",
+          "type": "number",
+          "number": null
+        },
+        "Onboarding Doc": {
+          "id": "%40E%40P",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Tenure": {
+          "id": "Binx",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Team": {
+          "id": "FbmX",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "5a7188a4-476d-47d9-a109-31955c9e6d68",
+              "name": "Smart Contracts",
+              "color": "gray"
+            }
+          ]
+        },
+        "Manages": {
+          "id": "G%7B%5EG",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1) 1": {
+          "id": "KTpo",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Phone": {
+          "id": "Mj%24g",
+          "type": "phone_number",
+          "phone_number": null
+        },
+        "Location Factor": {
+          "id": "Q%5BvU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": "Error: Unknown Location"
+          }
+        },
+        "Notion Account": {
+          "id": "TZgX",
+          "type": "people",
+          "people": []
+        },
+        "Step Factor": {
+          "id": "T%5B%5Bj",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.970873786408
+          }
+        },
+        "Reports to": {
+          "id": "VWqO",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Skills": {
+          "id": "%5ByAk",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "Tags": {
+          "id": "%5E%5Bz%3E",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "44d5bfbe-105d-4925-b0b5-df0c3857cee9",
+              "name": "CLOB",
+              "color": "green"
+            },
+            {
+              "id": "1b8e6b66-59f0-4aef-b3d0-a9550ac06e3d",
+              "name": "Perps",
+              "color": "pink"
+            },
+            {
+              "id": "11b2187f-568b-41ef-810f-79a82975529f",
+              "name": "Vault",
+              "color": "green"
+            },
+            {
+              "id": "9878b208-ec1a-4df2-a33e-c5606c57de0f",
+              "name": "Audits",
+              "color": "green"
+            },
+            {
+              "id": "2f3ca8b2-7edb-4bf9-9863-b01f0c326a8a",
+              "name": "Customer Support",
+              "color": "red"
+            }
+          ]
+        },
+        "Related to Projects Database (Related to People Database (1) (Related to Projects Database (Billable Rates Relation)))": {
+          "id": "bN%60O",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Level Factor": {
+          "id": "bSJp",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.869565217391
+          }
+        },
+        "Billable Rate": {
+          "id": "bcT%7D",
+          "type": "number",
+          "number": null
+        },
+        "Start Date": {
+          "id": "eOzJ",
+          "type": "date",
+          "date": null
+        },
+        "Timezone": {
+          "id": "khG%60",
+          "type": "select",
+          "select": {
+            "id": "c858f1aa-a577-4395-b7b6-d71b37bbce53",
+            "name": "PST",
+            "color": "purple"
+          }
+        },
+        "Group": {
+          "id": "kjDI",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "ljEC",
+              "name": "Engineering",
+              "color": "blue"
+            }
+          ]
+        },
+        "Total Salary": {
+          "id": "m%60OU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1)": {
+          "id": "vJBc",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Email": {
+          "id": "y%2FXJ",
+          "type": "email",
+          "email": "r@liquidlabs.inc"
+        },
+        "Position": {
+          "id": "yHLH",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Founding Smart Contract Engineer",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Founding Smart Contract Engineer",
+              "href": null
+            }
+          ]
+        },
+        "Profile": {
+          "id": "yXEe",
+          "type": "files",
+          "files": []
+        },
+        "Base Salary": {
+          "id": "~eGd",
+          "type": "number",
+          "number": null
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Ryan (Rite / 💀)",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Ryan (Rite / 💀)",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Ryan-Rite-239b3298c3ce813f89c3d3fa4ce37b6a",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "239b3298-c3ce-8166-afe4-df2d976af04d",
+      "created_time": "2025-07-23T21:13:00.000Z",
+      "last_edited_time": "2025-07-29T20:47:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "239b3298-c3ce-80c2-a7ae-dfb19e757682"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Level": {
+          "id": "%3B~%60B",
+          "type": "number",
+          "number": null
+        },
+        "Step": {
+          "id": "%3FHkL",
+          "type": "number",
+          "number": null
+        },
+        "Onboarding Doc": {
+          "id": "%40E%40P",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Tenure": {
+          "id": "Binx",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Team": {
+          "id": "FbmX",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3166307a-8e80-46c9-b9f4-8c38660fdc81",
+              "name": "Exec",
+              "color": "yellow"
+            }
+          ]
+        },
+        "Manages": {
+          "id": "G%7B%5EG",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1) 1": {
+          "id": "KTpo",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Phone": {
+          "id": "Mj%24g",
+          "type": "phone_number",
+          "phone_number": null
+        },
+        "Location Factor": {
+          "id": "Q%5BvU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": "Error: Unknown Location"
+          }
+        },
+        "Notion Account": {
+          "id": "TZgX",
+          "type": "people",
+          "people": []
+        },
+        "Step Factor": {
+          "id": "T%5B%5Bj",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.970873786408
+          }
+        },
+        "Reports to": {
+          "id": "VWqO",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Skills": {
+          "id": "%5ByAk",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "Tags": {
+          "id": "%5E%5Bz%3E",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "f658b8a2-f8f3-43cd-9a2b-9a346caa0a51",
+              "name": "Business Development",
+              "color": "purple"
+            },
+            {
+              "id": "ece3cef2-5dbc-4e89-9e46-7cb1118e6f5e",
+              "name": "Legal",
+              "color": "green"
+            },
+            {
+              "id": "f82737f6-86c8-4f25-bd82-ca8606ac126d",
+              "name": "Operations",
+              "color": "brown"
+            },
+            {
+              "id": "1e65956f-8f8e-4294-8e3b-62d57a76d8c0",
+              "name": "Institutional",
+              "color": "yellow"
+            },
+            {
+              "id": "4fb8abde-af2d-4151-b6c8-6c41613719ae",
+              "name": "Foundation",
+              "color": "brown"
+            },
+            {
+              "id": "11b2187f-568b-41ef-810f-79a82975529f",
+              "name": "Vault",
+              "color": "green"
+            },
+            {
+              "id": "4bd6259f-0e8f-43ad-bfea-0a67d85e25ed",
+              "name": "Risk",
+              "color": "gray"
+            },
+            {
+              "id": "0ad50f85-1508-4b12-ab74-f3704fb43f2d",
+              "name": "Liquidity",
+              "color": "gray"
+            }
+          ]
+        },
+        "Related to Projects Database (Related to People Database (1) (Related to Projects Database (Billable Rates Relation)))": {
+          "id": "bN%60O",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Level Factor": {
+          "id": "bSJp",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.869565217391
+          }
+        },
+        "Billable Rate": {
+          "id": "bcT%7D",
+          "type": "number",
+          "number": null
+        },
+        "Start Date": {
+          "id": "eOzJ",
+          "type": "date",
+          "date": null
+        },
+        "Timezone": {
+          "id": "khG%60",
+          "type": "select",
+          "select": {
+            "id": "cc1a8286-2742-4b57-b43e-3a52f521d146",
+            "name": "EST",
+            "color": "gray"
+          }
+        },
+        "Group": {
+          "id": "kjDI",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "02d674b5-8e51-46c6-8a0f-cc1b153ee4ef",
+              "name": "PSG",
+              "color": "brown"
+            }
+          ]
+        },
+        "Total Salary": {
+          "id": "m%60OU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1)": {
+          "id": "vJBc",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Email": {
+          "id": "y%2FXJ",
+          "type": "email",
+          "email": "justin@liquidlabs.inc"
+        },
+        "Position": {
+          "id": "yHLH",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "COO",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "COO",
+              "href": null
+            }
+          ]
+        },
+        "Profile": {
+          "id": "yXEe",
+          "type": "files",
+          "files": []
+        },
+        "Base Salary": {
+          "id": "~eGd",
+          "type": "number",
+          "number": null
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Justin Moon",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Justin Moon",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Justin-Moon-239b3298c3ce8166afe4df2d976af04d",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "239b3298-c3ce-816e-a29c-c584d2de48fe",
+      "created_time": "2025-07-23T21:13:00.000Z",
+      "last_edited_time": "2025-07-29T20:47:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "239b3298-c3ce-80c2-a7ae-dfb19e757682"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Level": {
+          "id": "%3B~%60B",
+          "type": "number",
+          "number": null
+        },
+        "Step": {
+          "id": "%3FHkL",
+          "type": "number",
+          "number": null
+        },
+        "Onboarding Doc": {
+          "id": "%40E%40P",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Tenure": {
+          "id": "Binx",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Team": {
+          "id": "FbmX",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "4d91f193-d0fa-4a48-aa70-d15b63d961f8",
+              "name": "Backend",
+              "color": "red"
+            }
+          ]
+        },
+        "Manages": {
+          "id": "G%7B%5EG",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1) 1": {
+          "id": "KTpo",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Phone": {
+          "id": "Mj%24g",
+          "type": "phone_number",
+          "phone_number": null
+        },
+        "Location Factor": {
+          "id": "Q%5BvU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": "Error: Unknown Location"
+          }
+        },
+        "Notion Account": {
+          "id": "TZgX",
+          "type": "people",
+          "people": []
+        },
+        "Step Factor": {
+          "id": "T%5B%5Bj",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.970873786408
+          }
+        },
+        "Reports to": {
+          "id": "VWqO",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Skills": {
+          "id": "%5ByAk",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "Tags": {
+          "id": "%5E%5Bz%3E",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "6daae96a-fadb-496a-8942-63c1d38013dd",
+              "name": "Indexers",
+              "color": "gray"
+            },
+            {
+              "id": "656e80da-af06-42ee-a7b9-07d424baabfe",
+              "name": "Aggregator",
+              "color": "green"
+            },
+            {
+              "id": "60eb2e24-f998-4beb-964a-83e53b7d525a",
+              "name": "Databases",
+              "color": "green"
+            },
+            {
+              "id": "e8009ada-d7b0-45c6-b5ac-aff2e6c296b6",
+              "name": "System Design",
+              "color": "purple"
+            },
+            {
+              "id": "991fe368-5de4-4a51-873d-ff808666c713",
+              "name": "DevOps",
+              "color": "purple"
+            },
+            {
+              "id": "d8edf7fe-d7aa-42bf-8627-d7a09b081022",
+              "name": "Deployments",
+              "color": "brown"
+            },
+            {
+              "id": "2baa00a3-9e82-4043-9161-d50c54e51c33",
+              "name": "Optimizations",
+              "color": "blue"
+            }
+          ]
+        },
+        "Related to Projects Database (Related to People Database (1) (Related to Projects Database (Billable Rates Relation)))": {
+          "id": "bN%60O",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Level Factor": {
+          "id": "bSJp",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.869565217391
+          }
+        },
+        "Billable Rate": {
+          "id": "bcT%7D",
+          "type": "number",
+          "number": null
+        },
+        "Start Date": {
+          "id": "eOzJ",
+          "type": "date",
+          "date": null
+        },
+        "Timezone": {
+          "id": "khG%60",
+          "type": "select",
+          "select": {
+            "id": "cc1a8286-2742-4b57-b43e-3a52f521d146",
+            "name": "EST",
+            "color": "gray"
+          }
+        },
+        "Group": {
+          "id": "kjDI",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "ljEC",
+              "name": "Engineering",
+              "color": "blue"
+            }
+          ]
+        },
+        "Total Salary": {
+          "id": "m%60OU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1)": {
+          "id": "vJBc",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Email": {
+          "id": "y%2FXJ",
+          "type": "email",
+          "email": "nate@liquidlabs.inc"
+        },
+        "Position": {
+          "id": "yHLH",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Backend Lead & Co-Founder ",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Backend Lead & Co-Founder ",
+              "href": null
+            }
+          ]
+        },
+        "Profile": {
+          "id": "yXEe",
+          "type": "files",
+          "files": []
+        },
+        "Base Salary": {
+          "id": "~eGd",
+          "type": "number",
+          "number": null
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Nate Burbage",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Nate Burbage",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Nate-Burbage-239b3298c3ce816ea29cc584d2de48fe",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "239b3298-c3ce-8177-be4e-f9feb02005e6",
+      "created_time": "2025-07-23T21:13:00.000Z",
+      "last_edited_time": "2025-07-29T20:49:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "239b3298-c3ce-80c2-a7ae-dfb19e757682"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Level": {
+          "id": "%3B~%60B",
+          "type": "number",
+          "number": null
+        },
+        "Step": {
+          "id": "%3FHkL",
+          "type": "number",
+          "number": null
+        },
+        "Onboarding Doc": {
+          "id": "%40E%40P",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Tenure": {
+          "id": "Binx",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Team": {
+          "id": "FbmX",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "2c06fbce-2f7c-41c2-9b7b-26ad6dc11a37",
+              "name": "Science",
+              "color": "orange"
+            }
+          ]
+        },
+        "Manages": {
+          "id": "G%7B%5EG",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1) 1": {
+          "id": "KTpo",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Phone": {
+          "id": "Mj%24g",
+          "type": "phone_number",
+          "phone_number": null
+        },
+        "Location Factor": {
+          "id": "Q%5BvU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": "Error: Unknown Location"
+          }
+        },
+        "Notion Account": {
+          "id": "TZgX",
+          "type": "people",
+          "people": []
+        },
+        "Step Factor": {
+          "id": "T%5B%5Bj",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.970873786408
+          }
+        },
+        "Reports to": {
+          "id": "VWqO",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Skills": {
+          "id": "%5ByAk",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "Tags": {
+          "id": "%5E%5Bz%3E",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11b2187f-568b-41ef-810f-79a82975529f",
+              "name": "Vault",
+              "color": "green"
+            },
+            {
+              "id": "c3d366de-e09a-4ca7-807e-e562df735551",
+              "name": "R&D",
+              "color": "brown"
+            },
+            {
+              "id": "4bd6259f-0e8f-43ad-bfea-0a67d85e25ed",
+              "name": "Risk",
+              "color": "gray"
+            },
+            {
+              "id": "0ad50f85-1508-4b12-ab74-f3704fb43f2d",
+              "name": "Liquidity",
+              "color": "gray"
+            }
+          ]
+        },
+        "Related to Projects Database (Related to People Database (1) (Related to Projects Database (Billable Rates Relation)))": {
+          "id": "bN%60O",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Level Factor": {
+          "id": "bSJp",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.869565217391
+          }
+        },
+        "Billable Rate": {
+          "id": "bcT%7D",
+          "type": "number",
+          "number": null
+        },
+        "Start Date": {
+          "id": "eOzJ",
+          "type": "date",
+          "date": null
+        },
+        "Timezone": {
+          "id": "khG%60",
+          "type": "select",
+          "select": {
+            "id": "cc1a8286-2742-4b57-b43e-3a52f521d146",
+            "name": "EST",
+            "color": "gray"
+          }
+        },
+        "Group": {
+          "id": "kjDI",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "02d674b5-8e51-46c6-8a0f-cc1b153ee4ef",
+              "name": "PSG",
+              "color": "brown"
+            }
+          ]
+        },
+        "Total Salary": {
+          "id": "m%60OU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1)": {
+          "id": "vJBc",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Email": {
+          "id": "y%2FXJ",
+          "type": "email",
+          "email": "stephan@liquidlabs.inc"
+        },
+        "Position": {
+          "id": "yHLH",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Quantitative Data Scientist",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Quantitative Data Scientist",
+              "href": null
+            }
+          ]
+        },
+        "Profile": {
+          "id": "yXEe",
+          "type": "files",
+          "files": []
+        },
+        "Base Salary": {
+          "id": "~eGd",
+          "type": "number",
+          "number": null
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Stephán Thomas",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Stephán Thomas",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Steph-n-Thomas-239b3298c3ce8177be4ef9feb02005e6",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "239b3298-c3ce-818b-8894-f4196b71e7f4",
+      "created_time": "2025-07-23T21:13:00.000Z",
+      "last_edited_time": "2025-07-29T21:49:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "12dd872b-594c-813a-bb7a-00029457de70"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "239b3298-c3ce-80c2-a7ae-dfb19e757682"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Level": {
+          "id": "%3B~%60B",
+          "type": "number",
+          "number": null
+        },
+        "Step": {
+          "id": "%3FHkL",
+          "type": "number",
+          "number": null
+        },
+        "Onboarding Doc": {
+          "id": "%40E%40P",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Tenure": {
+          "id": "Binx",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Team": {
+          "id": "FbmX",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3166307a-8e80-46c9-b9f4-8c38660fdc81",
+              "name": "Exec",
+              "color": "yellow"
+            }
+          ]
+        },
+        "Manages": {
+          "id": "G%7B%5EG",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1) 1": {
+          "id": "KTpo",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Phone": {
+          "id": "Mj%24g",
+          "type": "phone_number",
+          "phone_number": null
+        },
+        "Location Factor": {
+          "id": "Q%5BvU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": "Error: Unknown Location"
+          }
+        },
+        "Notion Account": {
+          "id": "TZgX",
+          "type": "people",
+          "people": []
+        },
+        "Step Factor": {
+          "id": "T%5B%5Bj",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.970873786408
+          }
+        },
+        "Reports to": {
+          "id": "VWqO",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Skills": {
+          "id": "%5ByAk",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "Tags": {
+          "id": "%5E%5Bz%3E",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "Related to Projects Database (Related to People Database (1) (Related to Projects Database (Billable Rates Relation)))": {
+          "id": "bN%60O",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Level Factor": {
+          "id": "bSJp",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.869565217391
+          }
+        },
+        "Billable Rate": {
+          "id": "bcT%7D",
+          "type": "number",
+          "number": null
+        },
+        "Start Date": {
+          "id": "eOzJ",
+          "type": "date",
+          "date": null
+        },
+        "Timezone": {
+          "id": "khG%60",
+          "type": "select",
+          "select": {
+            "id": "cc1a8286-2742-4b57-b43e-3a52f521d146",
+            "name": "EST",
+            "color": "gray"
+          }
+        },
+        "Group": {
+          "id": "kjDI",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "ljEC",
+              "name": "Engineering",
+              "color": "blue"
+            },
+            {
+              "id": "02d674b5-8e51-46c6-8a0f-cc1b153ee4ef",
+              "name": "PSG",
+              "color": "brown"
+            }
+          ]
+        },
+        "Total Salary": {
+          "id": "m%60OU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1)": {
+          "id": "vJBc",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Email": {
+          "id": "y%2FXJ",
+          "type": "email",
+          "email": "m@liquidlabs.inc"
+        },
+        "Position": {
+          "id": "yHLH",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "CTO & Co-Founder",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "CTO & Co-Founder",
+              "href": null
+            }
+          ]
+        },
+        "Profile": {
+          "id": "yXEe",
+          "type": "files",
+          "files": []
+        },
+        "Base Salary": {
+          "id": "~eGd",
+          "type": "number",
+          "number": null
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Matteo Lunghi",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Matteo Lunghi",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Matteo-Lunghi-239b3298c3ce818b8894f4196b71e7f4",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "239b3298-c3ce-81cf-a972-f4573ea2e4e7",
+      "created_time": "2025-07-23T21:13:00.000Z",
+      "last_edited_time": "2025-07-29T21:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "239b3298-c3ce-80c2-a7ae-dfb19e757682"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Level": {
+          "id": "%3B~%60B",
+          "type": "number",
+          "number": null
+        },
+        "Step": {
+          "id": "%3FHkL",
+          "type": "number",
+          "number": null
+        },
+        "Onboarding Doc": {
+          "id": "%40E%40P",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Tenure": {
+          "id": "Binx",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Team": {
+          "id": "FbmX",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "244f93d7-ff2b-4910-bf70-561f2adb4e3a",
+              "name": "Full Stack",
+              "color": "pink"
+            }
+          ]
+        },
+        "Manages": {
+          "id": "G%7B%5EG",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "23bb3298-c3ce-8001-ab45-d06c2ba09c20"
+            }
+          ],
+          "has_more": false
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1) 1": {
+          "id": "KTpo",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Phone": {
+          "id": "Mj%24g",
+          "type": "phone_number",
+          "phone_number": null
+        },
+        "Location Factor": {
+          "id": "Q%5BvU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": "Error: Unknown Location"
+          }
+        },
+        "Notion Account": {
+          "id": "TZgX",
+          "type": "people",
+          "people": []
+        },
+        "Step Factor": {
+          "id": "T%5B%5Bj",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.970873786408
+          }
+        },
+        "Reports to": {
+          "id": "VWqO",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Skills": {
+          "id": "%5ByAk",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "Tags": {
+          "id": "%5E%5Bz%3E",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "a8018e70-502d-43f4-a50c-791d2721ccfd",
+              "name": "UI/UX",
+              "color": "yellow"
+            },
+            {
+              "id": "a92100f5-4949-4347-b9b3-486a81f41cb3",
+              "name": "APIs & SDKs",
+              "color": "green"
+            },
+            {
+              "id": "2f3ca8b2-7edb-4bf9-9863-b01f0c326a8a",
+              "name": "Customer Support",
+              "color": "red"
+            },
+            {
+              "id": "0f034fee-9729-4356-9846-b6a47849b2d6",
+              "name": "Integrations",
+              "color": "brown"
+            },
+            {
+              "id": "cb655c81-8c48-4061-87ef-a82757a3708f",
+              "name": "EIPs",
+              "color": "purple"
+            }
+          ]
+        },
+        "Related to Projects Database (Related to People Database (1) (Related to Projects Database (Billable Rates Relation)))": {
+          "id": "bN%60O",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Level Factor": {
+          "id": "bSJp",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.869565217391
+          }
+        },
+        "Billable Rate": {
+          "id": "bcT%7D",
+          "type": "number",
+          "number": null
+        },
+        "Start Date": {
+          "id": "eOzJ",
+          "type": "date",
+          "date": null
+        },
+        "Timezone": {
+          "id": "khG%60",
+          "type": "select",
+          "select": {
+            "id": "cc1a8286-2742-4b57-b43e-3a52f521d146",
+            "name": "EST",
+            "color": "gray"
+          }
+        },
+        "Group": {
+          "id": "kjDI",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "ljEC",
+              "name": "Engineering",
+              "color": "blue"
+            }
+          ]
+        },
+        "Total Salary": {
+          "id": "m%60OU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1)": {
+          "id": "vJBc",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Email": {
+          "id": "y%2FXJ",
+          "type": "email",
+          "email": "moses@liquidlabs.inc"
+        },
+        "Position": {
+          "id": "yHLH",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Frontend Lead & Co-Founder",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Frontend Lead & Co-Founder",
+              "href": null
+            }
+          ]
+        },
+        "Profile": {
+          "id": "yXEe",
+          "type": "files",
+          "files": []
+        },
+        "Base Salary": {
+          "id": "~eGd",
+          "type": "number",
+          "number": null
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Moses Lee",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Moses Lee",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Moses-Lee-239b3298c3ce81cfa972f4573ea2e4e7",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "239b3298-c3ce-81d7-aa08-fad354ac19f1",
+      "created_time": "2025-07-23T21:13:00.000Z",
+      "last_edited_time": "2025-07-29T21:45:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "239b3298-c3ce-80c2-a7ae-dfb19e757682"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Level": {
+          "id": "%3B~%60B",
+          "type": "number",
+          "number": null
+        },
+        "Step": {
+          "id": "%3FHkL",
+          "type": "number",
+          "number": null
+        },
+        "Onboarding Doc": {
+          "id": "%40E%40P",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Tenure": {
+          "id": "Binx",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Team": {
+          "id": "FbmX",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "5a7188a4-476d-47d9-a109-31955c9e6d68",
+              "name": "Smart Contracts",
+              "color": "gray"
+            }
+          ]
+        },
+        "Manages": {
+          "id": "G%7B%5EG",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1) 1": {
+          "id": "KTpo",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Phone": {
+          "id": "Mj%24g",
+          "type": "phone_number",
+          "phone_number": null
+        },
+        "Location Factor": {
+          "id": "Q%5BvU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": "Error: Unknown Location"
+          }
+        },
+        "Notion Account": {
+          "id": "TZgX",
+          "type": "people",
+          "people": []
+        },
+        "Step Factor": {
+          "id": "T%5B%5Bj",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.970873786408
+          }
+        },
+        "Reports to": {
+          "id": "VWqO",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Skills": {
+          "id": "%5ByAk",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "Tags": {
+          "id": "%5E%5Bz%3E",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "2017a5a7-0863-45f4-8070-7dd8e982e8ff",
+              "name": "Router",
+              "color": "green"
+            },
+            {
+              "id": "9878b208-ec1a-4df2-a33e-c5606c57de0f",
+              "name": "Audits",
+              "color": "green"
+            }
+          ]
+        },
+        "Related to Projects Database (Related to People Database (1) (Related to Projects Database (Billable Rates Relation)))": {
+          "id": "bN%60O",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Level Factor": {
+          "id": "bSJp",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.869565217391
+          }
+        },
+        "Billable Rate": {
+          "id": "bcT%7D",
+          "type": "number",
+          "number": null
+        },
+        "Start Date": {
+          "id": "eOzJ",
+          "type": "date",
+          "date": null
+        },
+        "Timezone": {
+          "id": "khG%60",
+          "type": "select",
+          "select": {
+            "id": "9307d294-6ba4-46db-ac2f-fdafe3b63bac",
+            "name": "CEST",
+            "color": "gray"
+          }
+        },
+        "Group": {
+          "id": "kjDI",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "ljEC",
+              "name": "Engineering",
+              "color": "blue"
+            }
+          ]
+        },
+        "Total Salary": {
+          "id": "m%60OU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1)": {
+          "id": "vJBc",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Email": {
+          "id": "y%2FXJ",
+          "type": "email",
+          "email": "jk@liquidlabs.inc"
+        },
+        "Position": {
+          "id": "yHLH",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Smart Contract Engineer",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Smart Contract Engineer",
+              "href": null
+            }
+          ]
+        },
+        "Profile": {
+          "id": "yXEe",
+          "type": "files",
+          "files": []
+        },
+        "Base Salary": {
+          "id": "~eGd",
+          "type": "number",
+          "number": null
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Julien Kuntz",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Julien Kuntz",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Julien-Kuntz-239b3298c3ce81d7aa08fad354ac19f1",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "239b3298-c3ce-81ef-85fb-d9b32e3871b2",
+      "created_time": "2025-07-23T21:13:00.000Z",
+      "last_edited_time": "2025-07-29T21:18:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "12dd872b-594c-813a-bb7a-00029457de70"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "239b3298-c3ce-80c2-a7ae-dfb19e757682"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Level": {
+          "id": "%3B~%60B",
+          "type": "number",
+          "number": null
+        },
+        "Step": {
+          "id": "%3FHkL",
+          "type": "number",
+          "number": null
+        },
+        "Onboarding Doc": {
+          "id": "%40E%40P",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Tenure": {
+          "id": "Binx",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Team": {
+          "id": "FbmX",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "4d91f193-d0fa-4a48-aa70-d15b63d961f8",
+              "name": "Backend",
+              "color": "red"
+            }
+          ]
+        },
+        "Manages": {
+          "id": "G%7B%5EG",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1) 1": {
+          "id": "KTpo",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Phone": {
+          "id": "Mj%24g",
+          "type": "phone_number",
+          "phone_number": null
+        },
+        "Location Factor": {
+          "id": "Q%5BvU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": "Error: Unknown Location"
+          }
+        },
+        "Notion Account": {
+          "id": "TZgX",
+          "type": "people",
+          "people": []
+        },
+        "Step Factor": {
+          "id": "T%5B%5Bj",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.970873786408
+          }
+        },
+        "Reports to": {
+          "id": "VWqO",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Skills": {
+          "id": "%5ByAk",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "Tags": {
+          "id": "%5E%5Bz%3E",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "6daae96a-fadb-496a-8942-63c1d38013dd",
+              "name": "Indexers",
+              "color": "gray"
+            },
+            {
+              "id": "e8009ada-d7b0-45c6-b5ac-aff2e6c296b6",
+              "name": "System Design",
+              "color": "purple"
+            },
+            {
+              "id": "2baa00a3-9e82-4043-9161-d50c54e51c33",
+              "name": "Optimizations",
+              "color": "blue"
+            },
+            {
+              "id": "60eb2e24-f998-4beb-964a-83e53b7d525a",
+              "name": "Databases",
+              "color": "green"
+            }
+          ]
+        },
+        "Related to Projects Database (Related to People Database (1) (Related to Projects Database (Billable Rates Relation)))": {
+          "id": "bN%60O",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Level Factor": {
+          "id": "bSJp",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.869565217391
+          }
+        },
+        "Billable Rate": {
+          "id": "bcT%7D",
+          "type": "number",
+          "number": null
+        },
+        "Start Date": {
+          "id": "eOzJ",
+          "type": "date",
+          "date": null
+        },
+        "Timezone": {
+          "id": "khG%60",
+          "type": "select",
+          "select": {
+            "id": "39833313-56ab-4d75-90e4-6b009979bff0",
+            "name": "MST",
+            "color": "gray"
+          }
+        },
+        "Group": {
+          "id": "kjDI",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "ljEC",
+              "name": "Engineering",
+              "color": "blue"
+            }
+          ]
+        },
+        "Total Salary": {
+          "id": "m%60OU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1)": {
+          "id": "vJBc",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Email": {
+          "id": "y%2FXJ",
+          "type": "email",
+          "email": "richard@liquidlabs.inc"
+        },
+        "Position": {
+          "id": "yHLH",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Founding Backend Engineer",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Founding Backend Engineer",
+              "href": null
+            }
+          ]
+        },
+        "Profile": {
+          "id": "yXEe",
+          "type": "files",
+          "files": []
+        },
+        "Base Salary": {
+          "id": "~eGd",
+          "type": "number",
+          "number": null
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Richard Jovanovic",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Richard Jovanovic",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Richard-Jovanovic-239b3298c3ce81ef85fbd9b32e3871b2",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "239b3298-c3ce-81f5-aa2d-e0ed1811aa9c",
+      "created_time": "2025-07-23T21:13:00.000Z",
+      "last_edited_time": "2025-07-29T21:22:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "12dd872b-594c-813a-bb7a-00029457de70"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "239b3298-c3ce-80c2-a7ae-dfb19e757682"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Level": {
+          "id": "%3B~%60B",
+          "type": "number",
+          "number": null
+        },
+        "Step": {
+          "id": "%3FHkL",
+          "type": "number",
+          "number": null
+        },
+        "Onboarding Doc": {
+          "id": "%40E%40P",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Tenure": {
+          "id": "Binx",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Team": {
+          "id": "FbmX",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "481cdbb5-3666-4620-906c-7b8c4b2694e0",
+              "name": "Frontend",
+              "color": "pink"
+            }
+          ]
+        },
+        "Manages": {
+          "id": "G%7B%5EG",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1) 1": {
+          "id": "KTpo",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Phone": {
+          "id": "Mj%24g",
+          "type": "phone_number",
+          "phone_number": null
+        },
+        "Location Factor": {
+          "id": "Q%5BvU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": "Error: Unknown Location"
+          }
+        },
+        "Notion Account": {
+          "id": "TZgX",
+          "type": "people",
+          "people": []
+        },
+        "Step Factor": {
+          "id": "T%5B%5Bj",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.970873786408
+          }
+        },
+        "Reports to": {
+          "id": "VWqO",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Skills": {
+          "id": "%5ByAk",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "Tags": {
+          "id": "%5E%5Bz%3E",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "a8018e70-502d-43f4-a50c-791d2721ccfd",
+              "name": "UI/UX",
+              "color": "yellow"
+            },
+            {
+              "id": "2f3ca8b2-7edb-4bf9-9863-b01f0c326a8a",
+              "name": "Customer Support",
+              "color": "red"
+            }
+          ]
+        },
+        "Related to Projects Database (Related to People Database (1) (Related to Projects Database (Billable Rates Relation)))": {
+          "id": "bN%60O",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Level Factor": {
+          "id": "bSJp",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.869565217391
+          }
+        },
+        "Billable Rate": {
+          "id": "bcT%7D",
+          "type": "number",
+          "number": null
+        },
+        "Start Date": {
+          "id": "eOzJ",
+          "type": "date",
+          "date": null
+        },
+        "Timezone": {
+          "id": "khG%60",
+          "type": "select",
+          "select": {
+            "id": "cc1a8286-2742-4b57-b43e-3a52f521d146",
+            "name": "EST",
+            "color": "gray"
+          }
+        },
+        "Group": {
+          "id": "kjDI",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "ljEC",
+              "name": "Engineering",
+              "color": "blue"
+            }
+          ]
+        },
+        "Total Salary": {
+          "id": "m%60OU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1)": {
+          "id": "vJBc",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Email": {
+          "id": "y%2FXJ",
+          "type": "email",
+          "email": "eduardo@liquidlabs.inc"
+        },
+        "Position": {
+          "id": "yHLH",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Founding Frontend Engineer",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Founding Frontend Engineer",
+              "href": null
+            }
+          ]
+        },
+        "Profile": {
+          "id": "yXEe",
+          "type": "files",
+          "files": []
+        },
+        "Base Salary": {
+          "id": "~eGd",
+          "type": "number",
+          "number": null
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Eduardo Kegler",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Eduardo Kegler",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Eduardo-Kegler-239b3298c3ce81f5aa2de0ed1811aa9c",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "239b3298-c3ce-8147-a024-e055b06f98e8",
+      "created_time": "2025-07-23T21:13:00.000Z",
+      "last_edited_time": "2025-07-29T21:19:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "168d872b-594c-813e-932f-0002e7414b55"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "12dd872b-594c-813a-bb7a-00029457de70"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "239b3298-c3ce-80c2-a7ae-dfb19e757682"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Level": {
+          "id": "%3B~%60B",
+          "type": "number",
+          "number": null
+        },
+        "Step": {
+          "id": "%3FHkL",
+          "type": "number",
+          "number": null
+        },
+        "Onboarding Doc": {
+          "id": "%40E%40P",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Tenure": {
+          "id": "Binx",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Team": {
+          "id": "FbmX",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "782a4991-1cab-495d-837e-07eefd0b1285",
+              "name": "Growth",
+              "color": "green"
+            }
+          ]
+        },
+        "Manages": {
+          "id": "G%7B%5EG",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1) 1": {
+          "id": "KTpo",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Phone": {
+          "id": "Mj%24g",
+          "type": "phone_number",
+          "phone_number": null
+        },
+        "Location Factor": {
+          "id": "Q%5BvU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": "Error: Unknown Location"
+          }
+        },
+        "Notion Account": {
+          "id": "TZgX",
+          "type": "people",
+          "people": []
+        },
+        "Step Factor": {
+          "id": "T%5B%5Bj",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.970873786408
+          }
+        },
+        "Reports to": {
+          "id": "VWqO",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Skills": {
+          "id": "%5ByAk",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "Tags": {
+          "id": "%5E%5Bz%3E",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "f658b8a2-f8f3-43cd-9a2b-9a346caa0a51",
+              "name": "Business Development",
+              "color": "purple"
+            },
+            {
+              "id": "9b3fa870-df91-438b-856c-6b40d764feb7",
+              "name": "Socials",
+              "color": "purple"
+            },
+            {
+              "id": "a06465a4-778e-42da-ad1f-19fc0f3b1d04",
+              "name": "DeFi",
+              "color": "orange"
+            },
+            {
+              "id": "0d1d2ea6-a8e1-4a74-aeb4-a26247945b3f",
+              "name": "Mobile",
+              "color": "pink"
+            },
+            {
+              "id": "1b8e6b66-59f0-4aef-b3d0-a9550ac06e3d",
+              "name": "Perps",
+              "color": "pink"
+            },
+            {
+              "id": "78c5591a-1667-45dd-b52c-1c2f435bf916",
+              "name": "Outreach",
+              "color": "gray"
+            },
+            {
+              "id": "109ddfbd-27d2-460a-89c7-093855766a1b",
+              "name": "Brand",
+              "color": "orange"
+            }
+          ]
+        },
+        "Related to Projects Database (Related to People Database (1) (Related to Projects Database (Billable Rates Relation)))": {
+          "id": "bN%60O",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Level Factor": {
+          "id": "bSJp",
+          "type": "formula",
+          "formula": {
+            "type": "number",
+            "number": 0.869565217391
+          }
+        },
+        "Billable Rate": {
+          "id": "bcT%7D",
+          "type": "number",
+          "number": null
+        },
+        "Start Date": {
+          "id": "eOzJ",
+          "type": "date",
+          "date": null
+        },
+        "Timezone": {
+          "id": "khG%60",
+          "type": "select",
+          "select": {
+            "id": "c858f1aa-a577-4395-b7b6-d71b37bbce53",
+            "name": "PST",
+            "color": "purple"
+          }
+        },
+        "Group": {
+          "id": "kjDI",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "02d674b5-8e51-46c6-8a0f-cc1b153ee4ef",
+              "name": "PSG",
+              "color": "brown"
+            }
+          ]
+        },
+        "Total Salary": {
+          "id": "m%60OU",
+          "type": "formula",
+          "formula": {
+            "type": "string",
+            "string": null
+          }
+        },
+        "Related to New Hire Onboarding (Related to People Database (Onboarding Doc) 1)": {
+          "id": "vJBc",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Email": {
+          "id": "y%2FXJ",
+          "type": "email",
+          "email": "hdf@liquidlabs.inc"
+        },
+        "Position": {
+          "id": "yHLH",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Head of Growth",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Head of Growth",
+              "href": null
+            }
+          ]
+        },
+        "Profile": {
+          "id": "yXEe",
+          "type": "files",
+          "files": []
+        },
+        "Base Salary": {
+          "id": "~eGd",
+          "type": "number",
+          "number": null
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Matt Paik (HDF)",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Matt Paik (HDF)",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Matt-Paik-HDF-239b3298c3ce8147a024e055b06f98e8",
+      "public_url": null
+    }
+  ],
+  "next_cursor": null,
+  "has_more": false,
+  "type": "page_or_database",
+  "page_or_database": {},
+  "request_id": "9f9f17ea-a7f5-48c1-b89b-f094cd5479ce"
+}

@@ -1,0 +1,40 @@
+{
+  "total_employees": 17,
+  "employees_with_email": 17,
+  "employees_with_salary": 1,
+  "teams": [
+    "Product",
+    "Backend",
+    "Exec",
+    "Infrastructure & DevOps",
+    "Smart Contracts",
+    "Growth",
+    "Science",
+    "Full Stack",
+    "Frontend"
+  ],
+  "timezones": [
+    "EST",
+    "CEST",
+    "PST",
+    "MST"
+  ],
+  "positions": [
+    "Head of Design",
+    "SWE Intern",
+    "CEO & Co-Founder",
+    "Founding Infrastructure Engineer",
+    "Head of Product",
+    "Founding Smart Contract Engineer",
+    "Community Manager",
+    "COO",
+    "Backend Lead & Co-Founder ",
+    "Quantitative Data Scientist",
+    "CTO & Co-Founder",
+    "Frontend Lead & Co-Founder",
+    "Smart Contract Engineer",
+    "Founding Backend Engineer",
+    "Founding Frontend Engineer",
+    "Head of Growth"
+  ]
+}

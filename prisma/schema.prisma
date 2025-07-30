@@ -1,0 +1,252 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Employee {
+  id              String   @id @default(cuid())
+  name            String
+  role            String
+  responsibility  String   @default("")
+  responsibilities String[]
+  managerId       String?
+  department      String?
+  archived        Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  manager         Employee? @relation("ManagerEmployee", fields: [managerId], references: [id])
+  directReports   Employee[] @relation("ManagerEmployee")
+  kpis            KPI[]
+  scores          Score[]
+
+  @@map("employees")
+}
+
+model KPI {
+  id          String       @id @default(cuid())
+  name        String
+  description String
+  type        KPIType
+  target      Float?
+  frequency   KPIFrequency
+  employeeId  String
+  createdAt   DateTime     @default(now())
+
+  // Relations
+  employee    Employee     @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  kpiScores   KpiScore[]
+
+  @@map("kpis")
+}
+
+model Score {
+  id         String     @id @default(cuid())
+  date       DateTime
+  overall    Float
+  notes      String?
+  employeeId String
+  createdAt  DateTime   @default(now())
+
+  // Relations
+  employee   Employee   @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  kpiScores  KpiScore[]
+
+  @@map("scores")
+}
+
+model KpiScore {
+  id      String  @id @default(cuid())
+  kpiId   String
+  scoreId String
+  value   Float?
+  booleanValue Boolean?
+
+  // Relations
+  kpi     KPI     @relation(fields: [kpiId], references: [id], onDelete: Cascade)
+  score   Score   @relation(fields: [scoreId], references: [id], onDelete: Cascade)
+
+  @@unique([kpiId, scoreId])
+  @@map("kpi_scores")
+}
+
+enum KPIType {
+  numeric
+  percentage
+  boolean
+  scale
+}
+
+enum KPIFrequency {
+  weekly
+  monthly
+  quarterly
+}
+
+// NextAuth.js authentication models
+model Account {
+  id                String  @id @default(cuid())
+  userId            String  @map("user_id")
+  type              String
+  provider          String
+  providerAccountId String  @map("provider_account_id")
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id")
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime? @map("email_verified")
+  image         String?
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+  accounts      Account[]
+  sessions      Session[]
+
+  @@map("users")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verificationtokens")
+}
+
+model NotionEmployee {
+  id            Int      @id @default(autoincrement())
+  notionId      String   @unique @map("notion_id")
+  level         Float?
+  step          Float?
+  tenure        String?
+  team          Json?
+  manages       Json?
+  phone         String?
+  locationFactor String?  @map("location_factor")
+  notionAccount Json?    @map("notion_account")
+  stepFactor    String?  @map("step_factor")
+  reportsTo     Json?    @map("reports_to")
+  skills        Json?
+  tags          Json?
+  levelFactor   String?  @map("level_factor")
+  billableRate  Float?   @map("billable_rate")
+  startDate     DateTime? @map("start_date")
+  timezone      String?
+  group         Json?
+  totalSalary   String?  @map("total_salary")
+  email         String?
+  position      String?
+  profile       Json?
+  baseSalary    Float?   @map("base_salary")
+  name          String?
+  syncedAt      DateTime @default(now()) @map("synced_at")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+
+  @@map("notion_employees")
+}
+
+// Manager assignments
+model ManagerAssignment {
+  id          String   @id @default(cuid())
+  managerId   String   // Notion ID of the manager
+  employeeId  String   // Notion ID of the employee
+  assignedBy  String   // Email of who made the assignment
+  assignedAt  DateTime @default(now())
+  
+  @@unique([managerId, employeeId])
+  @@map("manager_assignments")
+}
+
+// User permissions
+model UserPermission {
+  id                String   @id @default(cuid())
+  email             String   @unique
+  name              String
+  role              String   // 'exec', 'manager', 'employee'
+  canViewAll        Boolean  @default(false)
+  canManageAll      Boolean  @default(false)
+  canAssignManagers Boolean  @default(false)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  @@map("user_permissions")
+}
+
+// Employee Scorecard
+model EmployeeScorecard {
+  id                String   @id @default(cuid())
+  employeeNotionId  String   @unique @map("employee_notion_id")
+  role              String
+  mission           String?  @db.Text
+  createdBy         String   @map("created_by")
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+  
+  outcomes          ScorecardOutcome[]
+  competencies      ScorecardCompetency[]
+  
+  @@map("employee_scorecards")
+}
+
+model ScorecardOutcome {
+  id          String   @id @default(cuid())
+  scorecardId String   @map("scorecard_id")
+  orderIndex  Int      @map("order_index")
+  description String   @db.Text
+  details     String[]
+  rating      String?  // A, B, C, etc.
+  comments    String?  @db.Text
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+  
+  scorecard   EmployeeScorecard @relation(fields: [scorecardId], references: [id], onDelete: Cascade)
+  
+  @@index([scorecardId])
+  @@map("scorecard_outcomes")
+}
+
+model ScorecardCompetency {
+  id          String   @id @default(cuid())
+  scorecardId String   @map("scorecard_id")
+  competency  String
+  rating      String?  // A, B, C, etc.
+  comments    String?  @db.Text
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+  
+  scorecard   EmployeeScorecard @relation(fields: [scorecardId], references: [id], onDelete: Cascade)
+  
+  @@index([scorecardId])
+  @@map("scorecard_competencies")
+}
