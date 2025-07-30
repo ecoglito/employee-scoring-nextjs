@@ -14,6 +14,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { useEffectivePermissions } from '@/contexts/ViewModeContext';
+import { usePermissions } from '@/hooks/usePermissions';
 import { useSession } from 'next-auth/react';
 import NotionEmployeeService from '@/lib/notionEmployeeService';
 import EmployeeScorecard from './EmployeeScorecard';
@@ -37,32 +38,33 @@ const teamColors: Record<string, string> = {
 
 export default function NotionEmployeeDetail({ employee, open, onOpenChange }: NotionEmployeeDetailProps) {
   const { permissions: effectivePermissions, isExec: effectiveIsExec, isManager: effectiveIsManager } = useEffectivePermissions();
+  const { permissions: actualPermissions, isExec: actualIsExec, isManager: actualIsManager } = usePermissions();
   const { data: session } = useSession();
   const [allEmployees, setAllEmployees] = useState<NotionEmployee[]>([]);
   const [managerInfo, setManagerInfo] = useState<NotionEmployee | null>(null);
   const [canEditScorecard, setCanEditScorecard] = useState(false);
   
   useEffect(() => {
-    // Check if user can edit this employee's scorecard
-    if (!effectivePermissions?.email) {
+    // Check if user can edit this employee's scorecard based on ACTUAL permissions
+    if (!actualPermissions?.email) {
       setCanEditScorecard(false);
       return;
     }
     
     // Executives can edit all scorecards
-    if (effectiveIsExec) {
+    if (actualIsExec) {
       setCanEditScorecard(true);
       return;
     }
     
     // Managers can edit scorecards of their managed employees
-    if (effectiveIsManager && effectivePermissions.managedEmployeeIds.includes(employee.notionId)) {
+    if (actualIsManager && actualPermissions.managedEmployeeIds.includes(employee.notionId)) {
       setCanEditScorecard(true);
       return;
     }
     
     setCanEditScorecard(false);
-  }, [effectivePermissions, effectiveIsExec, effectiveIsManager, employee]);
+  }, [actualPermissions, actualIsExec, actualIsManager, employee]);
 
   // Load all employees and find manager info
   useEffect(() => {

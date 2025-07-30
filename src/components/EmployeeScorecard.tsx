@@ -32,6 +32,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { NotionEmployee } from '@/lib/notionEmployeeService';
 import { useSession } from 'next-auth/react';
 import { useEffectivePermissions } from '@/contexts/ViewModeContext';
+import { usePermissions } from '@/hooks/usePermissions';
 
 interface ScorecardOutcome {
   id?: string;
@@ -69,7 +70,8 @@ const DEFAULT_COMPETENCIES = [
 
 export default function EmployeeScorecard({ employee, canEdit = false }: EmployeeScorecardProps) {
   const { data: session } = useSession();
-  const { isExec, isManager } = useEffectivePermissions();
+  const { permissions: effectivePermissions, isExec: effectiveIsExec, isManager: effectiveIsManager } = useEffectivePermissions();
+  const { isExec: actualIsExec, isManager: actualIsManager } = usePermissions();
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
@@ -221,7 +223,8 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
     );
   }
 
-  const allowEdit = canEdit && (isExec || isManager);
+  // Use actual permissions for editing, not simulated ones
+  const allowEdit = canEdit && (actualIsExec || actualIsManager);
 
   return (
     <div className="space-y-6">
