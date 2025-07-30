@@ -43,6 +43,7 @@ export default function NotionEmployeeDetail({ employee, open, onOpenChange }: N
   const [allEmployees, setAllEmployees] = useState<NotionEmployee[]>([]);
   const [managerInfo, setManagerInfo] = useState<NotionEmployee | null>(null);
   const [canEditScorecard, setCanEditScorecard] = useState(false);
+  const [canViewSensitiveInfo, setCanViewSensitiveInfo] = useState(false);
   
   useEffect(() => {
     // Check if user can edit this employee's scorecard based on ACTUAL permissions
@@ -65,6 +66,35 @@ export default function NotionEmployeeDetail({ employee, open, onOpenChange }: N
     
     setCanEditScorecard(false);
   }, [actualPermissions, actualIsExec, actualIsManager, employee]);
+
+  useEffect(() => {
+    // Check who can view sensitive info (salary, KPIs, etc.)
+    // When in "view as" mode, use effective permissions to determine what the simulated user can see
+    if (!effectivePermissions?.email) {
+      setCanViewSensitiveInfo(false);
+      return;
+    }
+    
+    // The person viewing their own info can see it
+    if (effectivePermissions.email === employee.email) {
+      setCanViewSensitiveInfo(true);
+      return;
+    }
+    
+    // Executives can see all info
+    if (effectiveIsExec) {
+      setCanViewSensitiveInfo(true);
+      return;
+    }
+    
+    // Managers can see info of their managed employees
+    if (effectiveIsManager && effectivePermissions.managedEmployeeIds.includes(employee.notionId)) {
+      setCanViewSensitiveInfo(true);
+      return;
+    }
+    
+    setCanViewSensitiveInfo(false);
+  }, [effectivePermissions, effectiveIsExec, effectiveIsManager, employee]);
 
   // Load all employees and find manager info
   useEffect(() => {
@@ -183,15 +213,15 @@ export default function NotionEmployeeDetail({ employee, open, onOpenChange }: N
                       <p className="font-medium">{new Date(employee.startDate).toLocaleDateString()}</p>
                     </div>
                   )}
-                  {employee.baseSalary && (effectiveIsExec || effectiveIsManager) && (
+                  {employee.baseSalary && canViewSensitiveInfo && (
                     <div>
                       <label className="text-sm font-medium text-muted-foreground">Base Salary</label>
                       <p className="font-medium">${employee.baseSalary.toLocaleString()}</p>
                     </div>
                   )}
                   
-                  {/* Manager Info - Only show to executives and managers */}
-                  {(effectiveIsExec || effectiveIsManager) && managerInfo && (
+                  {/* Manager Info - Only show to those who can view sensitive info */}
+                  {canViewSensitiveInfo && managerInfo && (
                     <div>
                       <label className="text-sm font-medium text-muted-foreground">Reports To</label>
                       <div className="flex items-center gap-2 mt-1">
@@ -208,8 +238,8 @@ export default function NotionEmployeeDetail({ employee, open, onOpenChange }: N
                     </div>
                   )}
                   
-                  {/* No Manager Info - Only show to executives and managers */}
-                  {(effectiveIsExec || effectiveIsManager) && employee.reportsTo && employee.reportsTo.length > 0 && !managerInfo && (
+                  {/* No Manager Info - Only show to those who can view sensitive info */}
+                  {canViewSensitiveInfo && employee.reportsTo && employee.reportsTo.length > 0 && !managerInfo && (
                     <div>
                       <label className="text-sm font-medium text-muted-foreground">Reports To</label>
                       <p className="font-medium text-sm text-muted-foreground">Manager not found in system</p>
@@ -256,11 +286,13 @@ export default function NotionEmployeeDetail({ employee, open, onOpenChange }: N
               </CardContent>
             </Card>
 
-            {/* Scorecard Section */}
-            <EmployeeScorecard 
-              employee={employee} 
-              canEdit={canEditScorecard}
-            />
+            {/* Scorecard Section - Only show to those who can view sensitive info */}
+            {canViewSensitiveInfo && (
+              <EmployeeScorecard 
+                employee={employee} 
+                canEdit={canEditScorecard}
+              />
+            )}
           </div>
         </div>
       </DialogContent>

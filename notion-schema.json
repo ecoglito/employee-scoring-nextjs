@@ -15,9 +15,9 @@
   },
   "last_edited_by": {
     "object": "user",
-    "id": "12dd872b-594c-813a-bb7a-00029457de70"
+    "id": "d619304e-5b28-40b1-9752-08bca924f377"
   },
-  "last_edited_time": "2025-07-29T21:30:00.000Z",
+  "last_edited_time": "2025-07-30T21:19:00.000Z",
   "title": [
     {
       "type": "text",
@@ -1140,6 +1140,12 @@
             "name": "smart contracts",
             "color": "yellow",
             "description": null
+          },
+          {
+            "id": "942b5aed-3bb5-475e-b7f4-21fc6eebd281",
+            "name": "Manager",
+            "color": "red",
+            "description": null
           }
         ]
       }
@@ -1446,5 +1452,5 @@
   "public_url": null,
   "archived": false,
   "in_trash": false,
-  "request_id": "d493a010-d856-41da-bdd7-8584fd63840f"
+  "request_id": "c9f4e28d-792e-48cc-aace-ad945b8d804a"
 }
