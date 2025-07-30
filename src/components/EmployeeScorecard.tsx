@@ -445,7 +445,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                       )}
                       
                       {/* Details */}
-                      {(outcome.details.length > 0 || isEditing) && (
+                      {(outcome.details.length > 0 || editingSection === 'outcomes') && (
                         <div className="ml-0 sm:ml-4 space-y-2">
                           {outcome.details.map((detail, detailIndex) => (
                             <div key={detailIndex} className="flex items-start gap-2">

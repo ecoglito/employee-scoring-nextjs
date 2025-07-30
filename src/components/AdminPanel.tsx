@@ -26,6 +26,7 @@ import { NotionEmployee } from '@/lib/notionEmployeeService';
 import PermissionService from '@/lib/permissionService';
 import { useSession } from 'next-auth/react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { SkeletonAdminPanel } from '@/components/skeletons/SkeletonAdmin';
 
 interface AdminPanelProps {
   allEmployees: NotionEmployee[];
@@ -38,6 +39,7 @@ export default function AdminPanel({ allEmployees, onUpdate }: AdminPanelProps) 
   const [selectedEmployee, setSelectedEmployee] = useState<string>('');
   const [managerHierarchy, setManagerHierarchy] = useState<any[]>([]);
   const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
+  const [loadingHierarchy, setLoadingHierarchy] = useState(true);
 
   // Get potential managers (those with manager tag or role)
   const potentialManagers = allEmployees.filter(emp => {
@@ -73,6 +75,7 @@ export default function AdminPanel({ allEmployees, onUpdate }: AdminPanelProps) 
 
   const loadManagerHierarchy = async () => {
     try {
+      setLoadingHierarchy(true);
       const response = await fetch('/api/manager-assignments');
       if (response.ok) {
         const assignments = await response.json();
@@ -104,6 +107,8 @@ export default function AdminPanel({ allEmployees, onUpdate }: AdminPanelProps) 
       }
     } catch (error) {
       console.error('Failed to load manager hierarchy:', error);
+    } finally {
+      setLoadingHierarchy(false);
     }
   };
 
@@ -280,7 +285,30 @@ export default function AdminPanel({ allEmployees, onUpdate }: AdminPanelProps) 
         {/* Current Manager Hierarchy */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">Current Manager Assignments</h3>
-          {managerHierarchy.length === 0 ? (
+          {loadingHierarchy ? (
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {[1, 2, 3].map((i) => (
+                <Card key={i}>
+                  <CardHeader>
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-full bg-muted animate-pulse" />
+                      <div className="flex-1">
+                        <div className="h-5 w-32 rounded bg-muted animate-pulse" />
+                        <div className="h-4 w-24 rounded bg-muted animate-pulse mt-1" />
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      {[1, 2].map((j) => (
+                        <div key={j} className="p-2 bg-muted rounded animate-pulse h-16" />
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ) : managerHierarchy.length === 0 ? (
             <div className="text-center py-8 text-muted-foreground">
               <Users className="h-12 w-12 mx-auto mb-2 opacity-50" />
               <p>No manager assignments yet</p>

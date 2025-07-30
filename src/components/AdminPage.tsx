@@ -8,6 +8,7 @@ import AdminPanel from './AdminPanel';
 import NotionEmployeeService, { NotionEmployee } from '@/lib/notionEmployeeService';
 import { usePermissions } from '@/hooks/usePermissions';
 import { useSession } from 'next-auth/react';
+import { SkeletonAdminPage } from '@/components/skeletons/SkeletonAdmin';
 
 export default function AdminPage() {
   const { permissions, isExec, loading: permissionsLoading, refreshPermissions } = usePermissions();
@@ -59,14 +60,7 @@ export default function AdminPage() {
 
   // Check permissions
   if (permissionsLoading || loading) {
-    return (
-      <div className="flex items-center justify-center h-64">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading...</p>
-        </div>
-      </div>
-    );
+    return <SkeletonAdminPage />;
   }
 
   if (!isExec) {

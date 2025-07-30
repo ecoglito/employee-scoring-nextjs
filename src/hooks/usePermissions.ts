@@ -104,7 +104,7 @@ export function usePermissions() {
           // Find manager by their Notion ID
           const manager = allEmployees.find(emp => emp.notionId === assignment.managerId);
           if (manager) {
-            PermissionService.assignEmployeeToManagerByEmail(
+            PermissionService.assignEmployeeToManager(
               manager.email,
               assignment.employeeId,
               assignment.assignedBy
