@@ -74,7 +74,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
   const { isExec: actualIsExec, isManager: actualIsManager } = usePermissions();
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
-  const [isEditing, setIsEditing] = useState(false);
+  const [editingSection, setEditingSection] = useState<'info' | 'outcomes' | 'competencies' | null>(null);
   const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
   const [expandedOutcomes, setExpandedOutcomes] = useState<Set<number>>(new Set());
   
@@ -133,7 +133,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
       
       if (response.ok) {
         setMessage({ type: 'success', text: 'Scorecard saved successfully' });
-        setIsEditing(false);
+        setEditingSection(null);
         loadScorecard(); // Reload to get latest data
       } else {
         setMessage({ type: 'error', text: data.error || 'Failed to save scorecard' });
@@ -250,7 +250,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                     <Briefcase className="h-4 w-4" />
                     Role
                   </Label>
-                  {isEditing ? (
+                  {editingSection === 'info' ? (
                     <Input
                       value={role}
                       onChange={(e) => setRole(e.target.value)}
@@ -267,7 +267,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                     <Flag className="h-4 w-4" />
                     Mission
                   </Label>
-                  {isEditing ? (
+                  {editingSection === 'info' ? (
                     <Textarea
                       value={mission}
                       onChange={(e) => setMission(e.target.value)}
@@ -285,13 +285,13 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
             
             {allowEdit && (
               <div className="flex gap-2">
-                {isEditing ? (
+                {editingSection === 'info' ? (
                   <>
                     <Button
                       variant="ghost"
                       size="sm"
                       onClick={() => {
-                        setIsEditing(false);
+                        setEditingSection(null);
                         loadScorecard(); // Reset changes
                       }}
                       disabled={saving}
@@ -321,7 +321,8 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => setIsEditing(true)}
+                    onClick={() => setEditingSection('info')}
+                    disabled={editingSection !== null}
                   >
                     <Edit2 className="h-4 w-4 mr-2" />
                     Edit
@@ -347,15 +348,60 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
               <Target className="h-5 w-5 text-primary" />
               <CardTitle>Outcomes</CardTitle>
             </div>
-            {isEditing && (
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={addOutcome}
-              >
-                <Plus className="h-4 w-4 mr-2" />
-                Add Outcome
-              </Button>
+            {allowEdit && (
+              <div className="flex gap-2">
+                {editingSection === 'outcomes' ? (
+                  <>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={addOutcome}
+                    >
+                      <Plus className="h-4 w-4 mr-2" />
+                      Add Outcome
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => {
+                        setEditingSection(null);
+                        loadScorecard(); // Reset changes
+                      }}
+                      disabled={saving}
+                    >
+                      <X className="h-4 w-4" />
+                      Cancel
+                    </Button>
+                    <Button
+                      size="sm"
+                      onClick={saveScorecard}
+                      disabled={saving}
+                    >
+                      {saving ? (
+                        <>
+                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
+                          Saving...
+                        </>
+                      ) : (
+                        <>
+                          <Save className="h-4 w-4 mr-2" />
+                          Save
+                        </>
+                      )}
+                    </Button>
+                  </>
+                ) : (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setEditingSection('outcomes')}
+                    disabled={editingSection !== null}
+                  >
+                    <Edit2 className="h-4 w-4 mr-2" />
+                    Edit
+                  </Button>
+                )}
+              </div>
             )}
           </div>
         </CardHeader>
@@ -378,7 +424,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                     </div>
                     
                     <div className="flex-1 space-y-3">
-                      {isEditing ? (
+                      {editingSection === 'outcomes' ? (
                         <div className="flex gap-2">
                           <Textarea
                             value={outcome.description}
@@ -404,7 +450,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                           {outcome.details.map((detail, detailIndex) => (
                             <div key={detailIndex} className="flex items-start gap-2">
                               <span className="text-muted-foreground">•</span>
-                              {isEditing ? (
+                              {editingSection === 'outcomes' ? (
                                 <div className="flex gap-2 flex-1">
                                   <Input
                                     value={detail}
@@ -424,7 +470,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                               )}
                             </div>
                           ))}
-                          {isEditing && (
+                          {editingSection === 'outcomes' && (
                             <Button
                               variant="ghost"
                               size="sm"
@@ -441,7 +487,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                     
                     {/* Rating */}
                     <div className="flex-shrink-0">
-                      {isEditing ? (
+                      {editingSection === 'outcomes' ? (
                         <Select
                           value={outcome.rating || ''}
                           onValueChange={(value) => updateOutcome(index, 'rating', value)}
@@ -467,9 +513,9 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                   </div>
                   
                   {/* Comments */}
-                  {(isEditing || outcome.comments) && (
+                  {(editingSection === 'outcomes' || outcome.comments) && (
                     <div className="ml-14">
-                      {isEditing ? (
+                      {editingSection === 'outcomes' ? (
                         <Textarea
                           value={outcome.comments || ''}
                           onChange={(e) => updateOutcome(index, 'comments', e.target.value)}
@@ -498,15 +544,60 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
               <Shield className="h-5 w-5 text-primary" />
               <CardTitle>Competencies</CardTitle>
             </div>
-            {isEditing && (
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={addCompetency}
-              >
-                <Plus className="h-4 w-4 mr-2" />
-                Add Competency
-              </Button>
+            {allowEdit && (
+              <div className="flex gap-2">
+                {editingSection === 'competencies' ? (
+                  <>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={addCompetency}
+                    >
+                      <Plus className="h-4 w-4 mr-2" />
+                      Add Competency
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => {
+                        setEditingSection(null);
+                        loadScorecard(); // Reset changes
+                      }}
+                      disabled={saving}
+                    >
+                      <X className="h-4 w-4" />
+                      Cancel
+                    </Button>
+                    <Button
+                      size="sm"
+                      onClick={saveScorecard}
+                      disabled={saving}
+                    >
+                      {saving ? (
+                        <>
+                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
+                          Saving...
+                        </>
+                      ) : (
+                        <>
+                          <Save className="h-4 w-4 mr-2" />
+                          Save
+                        </>
+                      )}
+                    </Button>
+                  </>
+                ) : (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setEditingSection('competencies')}
+                    disabled={editingSection !== null}
+                  >
+                    <Edit2 className="h-4 w-4 mr-2" />
+                    Edit
+                  </Button>
+                )}
+              </div>
             )}
           </div>
         </CardHeader>
@@ -532,7 +623,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                     className="grid grid-cols-12 gap-4 px-4 py-3 border rounded-lg items-center"
                   >
                     <div className="col-span-4">
-                      {isEditing ? (
+                      {editingSection === 'competencies' ? (
                         <div className="flex gap-2 items-center">
                           <Input
                             value={comp.competency}
@@ -553,7 +644,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                     </div>
                     
                     <div className="col-span-1 text-center">
-                      {isEditing ? (
+                      {editingSection === 'competencies' ? (
                         <Select
                           value={comp.rating || ''}
                           onValueChange={(value) => updateCompetency(index, 'rating', value)}
@@ -580,7 +671,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                     </div>
                     
                     <div className="col-span-7">
-                      {isEditing ? (
+                      {editingSection === 'competencies' ? (
                         <Input
                           value={comp.comments || ''}
                           onChange={(e) => updateCompetency(index, 'comments', e.target.value)}

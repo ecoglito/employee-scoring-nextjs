@@ -38,11 +38,14 @@ class PermissionService {
 
   private loadFromStorage() {
     try {
-      const stored = localStorage.getItem('user-permissions');
-      if (stored) {
-        const data = JSON.parse(stored);
-        this.permissions = new Map(data.permissions || []);
-        this.managerAssignments = data.managerAssignments || [];
+      // Check if we're in a browser environment
+      if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+        const stored = localStorage.getItem('user-permissions');
+        if (stored) {
+          const data = JSON.parse(stored);
+          this.permissions = new Map(data.permissions || []);
+          this.managerAssignments = data.managerAssignments || [];
+        }
       }
     } catch (error) {
       console.error('Failed to load permissions from storage:', error);
@@ -51,11 +54,14 @@ class PermissionService {
 
   private saveToStorage() {
     try {
-      const data = {
-        permissions: Array.from(this.permissions.entries()),
-        managerAssignments: this.managerAssignments
-      };
-      localStorage.setItem('user-permissions', JSON.stringify(data));
+      // Check if we're in a browser environment
+      if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+        const data = {
+          permissions: Array.from(this.permissions.entries()),
+          managerAssignments: this.managerAssignments
+        };
+        localStorage.setItem('user-permissions', JSON.stringify(data));
+      }
     } catch (error) {
       console.error('Failed to save permissions to storage:', error);
     }
