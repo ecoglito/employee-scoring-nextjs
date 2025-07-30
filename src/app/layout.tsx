@@ -17,6 +17,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "GTE Internal Management Tool",
   description: "Team management and employee performance tracking system",
+  icons: {
+    icon: '/gte-logo.svg',
+    shortcut: '/gte-logo.svg',
+    apple: '/gte-logo.svg',
+  },
 };
 
 export default function RootLayout({

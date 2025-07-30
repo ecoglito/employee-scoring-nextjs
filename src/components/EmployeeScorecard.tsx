@@ -231,8 +231,8 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
       {/* Header */}
       <Card>
         <CardHeader>
-          <div className="flex items-start justify-between">
-            <div className="space-y-4 flex-1">
+          <div className="flex flex-col sm:flex-row items-start gap-4">
+            <div className="space-y-4 flex-1 w-full">
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-primary/10">
                   <Shield className="h-6 w-6 text-primary" />
@@ -255,7 +255,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                       value={role}
                       onChange={(e) => setRole(e.target.value)}
                       placeholder="e.g., General Manager"
-                      className="max-w-md"
+                      className="w-full sm:max-w-md"
                     />
                   ) : (
                     <p className="text-lg">{role || 'No role defined'}</p>
@@ -284,7 +284,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
             </div>
             
             {allowEdit && (
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2 w-full sm:w-auto justify-end">
                 {editingSection === 'info' ? (
                   <>
                     <Button
@@ -297,7 +297,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                       disabled={saving}
                     >
                       <X className="h-4 w-4" />
-                      Cancel
+                      <span className="hidden sm:inline ml-1">Cancel</span>
                     </Button>
                     <Button
                       size="sm"
@@ -311,8 +311,8 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                         </>
                       ) : (
                         <>
-                          <Save className="h-4 w-4 mr-2" />
-                          Save
+                          <Save className="h-4 w-4" />
+                          <span className="hidden sm:inline ml-2">Save</span>
                         </>
                       )}
                     </Button>
@@ -324,8 +324,8 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                     onClick={() => setEditingSection('info')}
                     disabled={editingSection !== null}
                   >
-                    <Edit2 className="h-4 w-4 mr-2" />
-                    Edit
+                    <Edit2 className="h-4 w-4" />
+                    <span className="hidden sm:inline ml-2">Edit</span>
                   </Button>
                 )}
               </div>
@@ -343,13 +343,13 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
       {/* Outcomes Section */}
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               <Target className="h-5 w-5 text-primary" />
               <CardTitle>Outcomes</CardTitle>
             </div>
             {allowEdit && (
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2 w-full sm:w-auto justify-end">
                 {editingSection === 'outcomes' ? (
                   <>
                     <Button
@@ -357,8 +357,8 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                       size="sm"
                       onClick={addOutcome}
                     >
-                      <Plus className="h-4 w-4 mr-2" />
-                      Add Outcome
+                      <Plus className="h-4 w-4" />
+                      <span className="hidden sm:inline ml-2">Add Outcome</span>
                     </Button>
                     <Button
                       variant="ghost"
@@ -370,7 +370,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                       disabled={saving}
                     >
                       <X className="h-4 w-4" />
-                      Cancel
+                      <span className="hidden sm:inline ml-1">Cancel</span>
                     </Button>
                     <Button
                       size="sm"
@@ -384,8 +384,8 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                         </>
                       ) : (
                         <>
-                          <Save className="h-4 w-4 mr-2" />
-                          Save
+                          <Save className="h-4 w-4" />
+                          <span className="hidden sm:inline ml-2">Save</span>
                         </>
                       )}
                     </Button>
@@ -397,8 +397,8 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                     onClick={() => setEditingSection('outcomes')}
                     disabled={editingSection !== null}
                   >
-                    <Edit2 className="h-4 w-4 mr-2" />
-                    Edit
+                    <Edit2 className="h-4 w-4" />
+                    <span className="hidden sm:inline ml-2">Edit</span>
                   </Button>
                 )}
               </div>
@@ -418,7 +418,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                   className="border rounded-lg p-4 space-y-3"
                 >
                   {/* Outcome Header */}
-                  <div className="flex items-start gap-3">
+                  <div className="flex flex-col sm:flex-row items-start gap-3">
                     <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-semibold text-primary">
                       {index + 1}
                     </div>
@@ -446,7 +446,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                       
                       {/* Details */}
                       {(outcome.details.length > 0 || isEditing) && (
-                        <div className="ml-4 space-y-2">
+                        <div className="ml-0 sm:ml-4 space-y-2">
                           {outcome.details.map((detail, detailIndex) => (
                             <div key={detailIndex} className="flex items-start gap-2">
                               <span className="text-muted-foreground">•</span>
@@ -475,7 +475,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                               variant="ghost"
                               size="sm"
                               onClick={() => addOutcomeDetail(index)}
-                              className="ml-6"
+                              className="ml-0 sm:ml-6"
                             >
                               <Plus className="h-3 w-3 mr-1" />
                               Add detail
@@ -486,13 +486,13 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                     </div>
                     
                     {/* Rating */}
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 w-full sm:w-auto flex justify-end sm:block">
                       {editingSection === 'outcomes' ? (
                         <Select
                           value={outcome.rating || ''}
                           onValueChange={(value) => updateOutcome(index, 'rating', value)}
                         >
-                          <SelectTrigger className="w-20">
+                          <SelectTrigger className="w-full sm:w-20">
                             <SelectValue placeholder="Rate" />
                           </SelectTrigger>
                           <SelectContent>
@@ -514,7 +514,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                   
                   {/* Comments */}
                   {(editingSection === 'outcomes' || outcome.comments) && (
-                    <div className="ml-14">
+                    <div className="mt-3 sm:mt-0 sm:ml-14">
                       {editingSection === 'outcomes' ? (
                         <Textarea
                           value={outcome.comments || ''}
@@ -539,13 +539,13 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
       {/* Competencies Section */}
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               <Shield className="h-5 w-5 text-primary" />
               <CardTitle>Competencies</CardTitle>
             </div>
             {allowEdit && (
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2 w-full sm:w-auto justify-end">
                 {editingSection === 'competencies' ? (
                   <>
                     <Button
@@ -553,8 +553,8 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                       size="sm"
                       onClick={addCompetency}
                     >
-                      <Plus className="h-4 w-4 mr-2" />
-                      Add Competency
+                      <Plus className="h-4 w-4" />
+                      <span className="hidden sm:inline ml-2">Add Competency</span>
                     </Button>
                     <Button
                       variant="ghost"
@@ -566,7 +566,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                       disabled={saving}
                     >
                       <X className="h-4 w-4" />
-                      Cancel
+                      <span className="hidden sm:inline ml-1">Cancel</span>
                     </Button>
                     <Button
                       size="sm"
@@ -580,8 +580,8 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                         </>
                       ) : (
                         <>
-                          <Save className="h-4 w-4 mr-2" />
-                          Save
+                          <Save className="h-4 w-4" />
+                          <span className="hidden sm:inline ml-2">Save</span>
                         </>
                       )}
                     </Button>
@@ -593,8 +593,8 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                     onClick={() => setEditingSection('competencies')}
                     disabled={editingSection !== null}
                   >
-                    <Edit2 className="h-4 w-4 mr-2" />
-                    Edit
+                    <Edit2 className="h-4 w-4" />
+                    <span className="hidden sm:inline ml-2">Edit</span>
                   </Button>
                 )}
               </div>
@@ -610,7 +610,7 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
             ) : (
               <div className="grid gap-2">
                 {/* Header Row */}
-                <div className="grid grid-cols-12 gap-4 px-4 py-2 bg-muted rounded-lg font-medium text-sm">
+                <div className="hidden sm:grid grid-cols-12 gap-4 px-4 py-2 bg-muted rounded-lg font-medium text-sm">
                   <div className="col-span-4">Competency</div>
                   <div className="col-span-1 text-center">Rating</div>
                   <div className="col-span-7">Comments</div>
@@ -620,9 +620,9 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                 {competencies.map((comp, index) => (
                   <div
                     key={index}
-                    className="grid grid-cols-12 gap-4 px-4 py-3 border rounded-lg items-center"
+                    className="flex flex-col sm:grid sm:grid-cols-12 gap-3 sm:gap-4 px-4 py-3 border rounded-lg"
                   >
-                    <div className="col-span-4">
+                    <div className="w-full sm:col-span-4">
                       {editingSection === 'competencies' ? (
                         <div className="flex gap-2 items-center">
                           <Input
@@ -643,7 +643,8 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                       )}
                     </div>
                     
-                    <div className="col-span-1 text-center">
+                    <div className="w-full sm:col-span-1 sm:text-center flex items-center gap-2 sm:block">
+                      <span className="sm:hidden text-sm font-medium text-muted-foreground">Rating:</span>
                       {editingSection === 'competencies' ? (
                         <Select
                           value={comp.rating || ''}
@@ -670,7 +671,8 @@ export default function EmployeeScorecard({ employee, canEdit = false }: Employe
                       )}
                     </div>
                     
-                    <div className="col-span-7">
+                    <div className="w-full sm:col-span-7">
+                      <span className="sm:hidden text-sm font-medium text-muted-foreground block mb-1">Comments:</span>
                       {editingSection === 'competencies' ? (
                         <Input
                           value={comp.comments || ''}
