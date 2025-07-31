@@ -158,12 +158,12 @@ export default function TeamDashboard() {
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-medium flex items-center gap-2">
                 <Tag className="h-4 w-4" />
-                Skills
+                Tags
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{stats.tags.length}</div>
-              <p className="text-xs text-muted-foreground">Unique skills</p>
+              <p className="text-xs text-muted-foreground">Unique tags</p>
             </CardContent>
           </Card>
 
@@ -232,7 +232,7 @@ export default function TeamDashboard() {
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-sm font-medium">Skill:</span>
+            <span className="text-sm font-medium">Tag:</span>
             <Select value={selectedTag} onValueChange={setSelectedTag}>
               <SelectTrigger className="w-[180px]">
                 <SelectValue />
@@ -242,7 +242,7 @@ export default function TeamDashboard() {
                   value="all"
                   className="focus:bg-muted focus:text-foreground hover:bg-muted hover:text-foreground"
                 >
-                  All Skills
+                  All Tags
                 </SelectItem>  
                 {stats?.tags.slice(0, 15).map((tag: any) => (
                   <SelectItem 
@@ -353,7 +353,7 @@ export default function TeamDashboard() {
               </div>
 
               <div>
-                <h4 className="font-medium mb-3">Top Skills</h4>
+                <h4 className="font-medium mb-3">Top Tags</h4>
                 <div className="space-y-2">
                   {stats.tags.slice(0, 10).map((tag: any) => (
                     <div key={tag.name} className="flex items-center justify-between">

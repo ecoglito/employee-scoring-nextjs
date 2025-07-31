@@ -19,6 +19,7 @@ import { useEffectivePermissions, useViewMode } from '@/contexts/ViewModeContext
 import { usePermissions } from '@/hooks/usePermissions';
 import ViewModeBanner from '@/components/ViewModeBanner';
 import NotionEmployeeService, { NotionEmployee } from '@/lib/notionEmployeeService';
+import SyncFooter from '@/components/SyncFooter';
 
 interface AppLayoutProps {
   children: React.ReactNode;
@@ -63,7 +64,7 @@ export default function AppLayout({
           const data = await NotionEmployeeService.getAllEmployees();
           setEmployees(data);
         } catch (error) {
-          console.error('Failed to load employees:', error);
+          // Failed to load employees
         } finally {
           setLoadingEmployees(false);
         }
@@ -462,9 +463,12 @@ export default function AppLayout({
       </header>
 
       {/* Content Area */}
-      <main className="container mx-auto px-4 py-6">
+      <main className="container mx-auto px-4 py-6 pb-16">
         {children}
       </main>
+
+      {/* Sync Footer - Only for executives */}
+      <SyncFooter />
     </div>
   );
 }

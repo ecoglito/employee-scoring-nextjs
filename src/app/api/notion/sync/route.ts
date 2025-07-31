@@ -118,10 +118,23 @@ async function fetchNotionDatabase() {
 
 export async function POST() {
   try {
-    // Starting Notion database sync
+    console.log('🚀 Starting Notion database sync...');
+    console.log('Database URL exists:', !!process.env.DATABASE_URL);
+    console.log('Environment:', process.env.NODE_ENV);
+    
+    // Test database connection
+    try {
+      await prisma.$queryRaw`SELECT 1`;
+      console.log('✅ Database connection successful');
+    } catch (dbError) {
+      console.error('❌ Database connection failed:', dbError);
+      throw new Error('Database connection failed');
+    }
     
     // Fetch data from Notion
+    console.log('🔍 Fetching data from Notion...');
     const notionData = await fetchNotionDatabase();
+    console.log(`📊 Fetched ${notionData.results.length} employees from Notion`);
     
     let synced = 0;
     let errors: string[] = [];
@@ -169,12 +182,14 @@ export async function POST() {
           
           if (existingEmployee) {
             // For existing employees, preserve baseSalary
+            console.log(`Updating employee: ${baseData.name}`);
             await tx.notionEmployee.update({
               where: { notionId: employee.id },
               data: baseData,
             });
           } else {
             // For new employees, set baseSalary to null (will be set manually by super admin)
+            console.log(`Creating new employee: ${baseData.name}`);
             await tx.notionEmployee.create({
               data: {
                 ...baseData,
@@ -184,6 +199,7 @@ export async function POST() {
           }
           
           synced++;
+          console.log(`✅ Synced ${synced}/${notionData.results.length}: ${baseData.name}`);
         } catch (error) {
           // Failed to sync employee
           errors.push(`Employee ${employee.id}: ${error instanceof Error ? error.message : String(error)}`);
@@ -191,13 +207,18 @@ export async function POST() {
       }
     });
     
-    // Notion sync completed
+    console.log(`✅ Transaction completed. Synced ${synced} employees.`);
+    
+    // Verify the sync by counting records
+    const dbCount = await prisma.notionEmployee.count();
+    console.log(`📊 Database now contains ${dbCount} employees`);
     
     return NextResponse.json({
       success: true,
       message: `Successfully synced ${synced} employees from Notion`,
       synced,
       total: notionData.results.length,
+      dbEmployeeCount: dbCount,
       errors: errors.length > 0 ? errors : undefined,
     });
     

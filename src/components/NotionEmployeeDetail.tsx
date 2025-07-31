@@ -289,10 +289,9 @@ export default function NotionEmployeeDetail({ employee, open, onOpenChange }: N
                   </div>
                 )}
 
-                {/* Skills/Tags */}
+                {/* Tags */}
                 {employee.tags && employee.tags.length > 0 && (
                   <div>
-                    <label className="text-sm font-medium text-muted-foreground">Skills</label>
                     <div className="flex flex-wrap gap-1 mt-1">
                       {employee.tags.map((tag) => (
                         <Badge 

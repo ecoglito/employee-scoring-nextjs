@@ -112,6 +112,7 @@ export class NotionEmployeeService {
     success: boolean;
     message: string;
     synced?: number;
+    dbEmployeeCount?: number;
     errors?: string[];
   }> {
     try {
@@ -135,6 +136,7 @@ export class NotionEmployeeService {
         success: result.success,
         message: result.message,
         synced: result.synced,
+        dbEmployeeCount: result.dbEmployeeCount,
       };
     } catch (error: any) {
       return {

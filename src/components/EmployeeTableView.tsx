@@ -113,7 +113,7 @@ export default function EmployeeTableView({ employees, showSalary = false }: Emp
                   <TableHead>Email</TableHead>
                   <TableHead>Start Date</TableHead>
                   {showSalary && <TableHead>Salary</TableHead>}
-                  <TableHead>Skills</TableHead>
+                  <TableHead>Tags</TableHead>
                   <TableHead className="w-[120px]">Last Synced</TableHead>
                 </TableRow>
               </TableHeader>

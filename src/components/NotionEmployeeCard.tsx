@@ -124,8 +124,8 @@ export default function NotionEmployeeCard({ employee, showSalary = false }: Not
         {/* Contact Info */}
         {employee.email && (
           <div className="flex items-center gap-2 text-sm">
-            <div className="flex items-center justify-center w-6 h-6 bg-muted/50 rounded-md">
-              <Mail className="h-3 w-3 text-muted-foreground" />
+            <div className="flex items-center justify-center w-6 h-6 bg-white/10 rounded-md">
+              <Mail className="h-3 w-3 text-white" />
             </div>
             <a 
               href={`mailto:${employee.email}`}
@@ -139,8 +139,8 @@ export default function NotionEmployeeCard({ employee, showSalary = false }: Not
         {/* Start Date */}
         {employee.startDate && (
           <div className="flex items-center gap-2 text-sm">
-            <div className="flex items-center justify-center w-6 h-6 bg-muted/50 rounded-md">
-              <Calendar className="h-3 w-3 text-muted-foreground" />
+            <div className="flex items-center justify-center w-6 h-6 bg-white/10 rounded-md">
+              <Calendar className="h-3 w-3 text-white" />
             </div>
             <span className="text-muted-foreground font-medium">
               Started {new Date(employee.startDate).toLocaleDateString()}
@@ -151,8 +151,8 @@ export default function NotionEmployeeCard({ employee, showSalary = false }: Not
         {/* Salary (only if showSalary is true) */}
         {showSalary && employee.baseSalary && (
           <div className="flex items-center gap-2 text-sm">
-            <div className="flex items-center justify-center w-6 h-6 bg-muted/50 rounded-md">
-              <DollarSign className="h-3 w-3 text-muted-foreground" />
+            <div className="flex items-center justify-center w-6 h-6 bg-white/10 rounded-md">
+              <DollarSign className="h-3 w-3 text-white" />
             </div>
             <span className="text-muted-foreground font-medium">
               ${employee.baseSalary.toLocaleString()}
@@ -160,12 +160,9 @@ export default function NotionEmployeeCard({ employee, showSalary = false }: Not
           </div>
         )}
 
-        {/* Tags/Skills */}
+        {/* Tags */}
         {employee.tags && employee.tags.length > 0 && (
           <div className="space-y-2">
-            <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
-              Skills
-            </div>
             <div className="flex flex-wrap gap-1">
               {employee.tags.slice(0, 6).map((tag) => (
                 <Badge 
@@ -188,15 +185,6 @@ export default function NotionEmployeeCard({ employee, showSalary = false }: Not
           </div>
         )}
 
-        {/* Last Synced */}
-        <div className="pt-2 border-t border-border/50">
-          <div className="flex items-center gap-2">
-            <Clock className="h-3 w-3 text-muted-foreground/60" />
-            <p className="text-xs text-muted-foreground/80 font-medium">
-              Synced {new Date(employee.syncedAt).toLocaleDateString()} at {new Date(employee.syncedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-            </p>
-          </div>
-        </div>
       </CardContent>
       </Card>
 

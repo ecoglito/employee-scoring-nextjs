@@ -29,7 +29,8 @@ export default function AdminPage() {
     try {
       const result = await NotionEmployeeService.refreshFromNotion();
       if (result.success) {
-        alert(`✅ Sync successful! Updated ${result.synced || 0} employees from Notion.`);
+        const dbInfo = result.dbEmployeeCount ? ` (DB total: ${result.dbEmployeeCount})` : '';
+        alert(`✅ Sync successful! Updated ${result.synced || 0} employees from Notion${dbInfo}.`);
         await mutate();
         await refreshPermissions();
       } else {
