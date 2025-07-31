@@ -55,10 +55,10 @@ export default function AppLayout({
     }
   }, [mobileMenuOpen]);
 
-  // Load employees for view-as dropdown (only for actual executives)
+  // Load employees for view-as dropdown (only for super admin)
   useEffect(() => {
     const loadEmployees = async () => {
-      if (actualIsExec) {
+      if (actualIsExec && session?.user?.email === 'enzo@liquidlabs.inc') {
         setLoadingEmployees(true);
         try {
           const data = await NotionEmployeeService.getAllEmployees();
@@ -71,7 +71,7 @@ export default function AppLayout({
       }
     };
     loadEmployees();
-  }, [actualIsExec]);
+  }, [actualIsExec, session?.user?.email]);
 
   const handleEmployeeSelect = (employeeId: string) => {
     const employee = employees.find(emp => emp.notionId === employeeId);
@@ -212,8 +212,8 @@ export default function AppLayout({
                 </p>
               </div>
               
-              {/* View As Employee Selector - Only for actual executives */}
-              {actualIsExec && !viewingAsEmployee && (
+              {/* View As Employee Selector - Only for super admin */}
+              {actualIsExec && session?.user?.email === 'enzo@liquidlabs.inc' && !viewingAsEmployee && (
                 <Select onValueChange={handleEmployeeSelect}>
                   <SelectTrigger className="w-[200px]">
                     <Eye className="h-4 w-4 mr-2" />
@@ -369,8 +369,8 @@ export default function AppLayout({
                   </p>
                 </div>
 
-                {/* Mobile View As Employee Selector */}
-                {actualIsExec && !viewingAsEmployee && (
+                {/* Mobile View As Employee Selector - Only for super admin */}
+                {actualIsExec && session?.user?.email === 'enzo@liquidlabs.inc' && !viewingAsEmployee && (
                   <div className="px-4 py-2">
                     <Select onValueChange={handleEmployeeSelect}>
                       <SelectTrigger className="w-full">
