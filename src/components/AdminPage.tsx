@@ -10,6 +10,7 @@ import { usePermissions } from '@/hooks/usePermissions';
 import { useEmployees } from '@/hooks/useEmployees';
 import { useSession } from 'next-auth/react';
 import { SkeletonAdminPage } from '@/components/skeletons/SkeletonAdmin';
+import NotionSyncDebug from './NotionSyncDebug';
 
 export default function AdminPage() {
   const { permissions, isExec, loading: permissionsLoading, refreshPermissions } = usePermissions();
@@ -90,6 +91,13 @@ export default function AdminPage() {
 
       {/* Admin Panel */}
       <AdminPanel allEmployees={employees} onUpdate={handleUpdate} />
+
+      {/* Notion Sync Debug - Only show in development or for super admin */}
+      {(process.env.NODE_ENV === 'development' || session?.user?.email === 'enzo@liquidlabs.inc') && (
+        <div className="mt-6">
+          <NotionSyncDebug />
+        </div>
+      )}
     </div>
   );
 }

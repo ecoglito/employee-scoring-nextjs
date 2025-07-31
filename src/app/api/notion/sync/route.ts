@@ -118,13 +118,10 @@ async function fetchNotionDatabase() {
 
 export async function POST() {
   try {
-    console.log('🚀 Starting Notion database sync...');
+    // Starting Notion database sync
     
     // Fetch data from Notion
-    console.log('🔍 Fetching fresh data from Notion...');
     const notionData = await fetchNotionDatabase();
-    
-    console.log(`📊 Processing ${notionData.results.length} employees...`);
     
     let synced = 0;
     let errors: string[] = [];
@@ -135,7 +132,13 @@ export async function POST() {
         try {
           const properties = employee.properties;
           
-          const data = {
+          // Check if employee already exists to preserve salary data
+          const existingEmployee = await tx.notionEmployee.findUnique({
+            where: { notionId: employee.id },
+            select: { baseSalary: true }
+          });
+          
+          const baseData = {
             notionId: employee.id,
             name: extractPropertyValue(properties['Name'], 'title'),
             position: extractPropertyValue(properties['Position'], 'rich_text'),
@@ -147,7 +150,8 @@ export async function POST() {
             skills: extractPropertyValue(properties['Skills'], 'multi_select'),
             tags: extractPropertyValue(properties['Tags'], 'multi_select'),
             group: extractPropertyValue(properties['Group'], 'multi_select'),
-            baseSalary: extractPropertyValue(properties['Base Salary'], 'number'),
+            // Preserve existing salary, don't overwrite from Notion
+            // baseSalary: extractPropertyValue(properties['Base Salary'], 'number'), // REMOVED
             billableRate: extractPropertyValue(properties['Billable Rate'], 'number'),
             startDate: extractPropertyValue(properties['Start Date'], 'date') ? new Date(extractPropertyValue(properties['Start Date'], 'date')) : null,
             timezone: extractPropertyValue(properties['Timezone'], 'select'),
@@ -163,21 +167,31 @@ export async function POST() {
             syncedAt: new Date(),
           };
           
-          await tx.notionEmployee.upsert({
-            where: { notionId: employee.id },
-            update: data,
-            create: data,
-          });
+          if (existingEmployee) {
+            // For existing employees, preserve baseSalary
+            await tx.notionEmployee.update({
+              where: { notionId: employee.id },
+              data: baseData,
+            });
+          } else {
+            // For new employees, set baseSalary to null (will be set manually by super admin)
+            await tx.notionEmployee.create({
+              data: {
+                ...baseData,
+                baseSalary: null,
+              },
+            });
+          }
           
           synced++;
         } catch (error) {
-          console.error(`Failed to sync employee ${employee.id}:`, error);
+          // Failed to sync employee
           errors.push(`Employee ${employee.id}: ${error instanceof Error ? error.message : String(error)}`);
         }
       }
     });
     
-    console.log(`✅ Notion sync completed! Synced ${synced} employees.`);
+    // Notion sync completed
     
     return NextResponse.json({
       success: true,
@@ -188,7 +202,6 @@ export async function POST() {
     });
     
   } catch (error) {
-    console.error('Sync failed:', error);
     return NextResponse.json(
       {
         success: false,
