@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
 import { 
   Users, 
   Shield, 
@@ -13,7 +14,8 @@ import {
   Crown,
   AlertCircle,
   Check,
-  X
+  X,
+  DollarSign
 } from 'lucide-react';
 import {
   Select,
@@ -27,6 +29,7 @@ import PermissionService from '@/lib/permissionService';
 import { useSession } from 'next-auth/react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { SkeletonAdminPanel } from '@/components/skeletons/SkeletonAdmin';
+import { useManagerAssignments } from '@/hooks/useManagerAssignments';
 
 interface AdminPanelProps {
   allEmployees: NotionEmployee[];
@@ -35,11 +38,14 @@ interface AdminPanelProps {
 
 export default function AdminPanel({ allEmployees, onUpdate }: AdminPanelProps) {
   const { data: session } = useSession();
+  const { assignments, isLoading: loadingAssignments, mutate: mutateAssignments } = useManagerAssignments();
   const [selectedManager, setSelectedManager] = useState<string>('');
   const [selectedEmployee, setSelectedEmployee] = useState<string>('');
   const [managerHierarchy, setManagerHierarchy] = useState<any[]>([]);
   const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
-  const [loadingHierarchy, setLoadingHierarchy] = useState(true);
+  const [selectedSalaryEmployee, setSelectedSalaryEmployee] = useState<string>('');
+  const [salaryInput, setSalaryInput] = useState<string>('');
+  const [updatingSalary, setUpdatingSalary] = useState(false);
 
   // Get potential managers (those with manager tag or role)
   const potentialManagers = allEmployees.filter(emp => {
@@ -70,47 +76,33 @@ export default function AdminPanel({ allEmployees, onUpdate }: AdminPanelProps) 
   });
 
   useEffect(() => {
-    loadManagerHierarchy();
-  }, [allEmployees]);
-
-  const loadManagerHierarchy = async () => {
-    try {
-      setLoadingHierarchy(true);
-      const response = await fetch('/api/manager-assignments');
-      if (response.ok) {
-        const assignments = await response.json();
-        
-        // Group assignments by manager
-        const managerMap = new Map<string, any[]>();
-        
-        assignments.forEach((assignment: any) => {
-          if (!managerMap.has(assignment.managerId)) {
-            managerMap.set(assignment.managerId, []);
-          }
-          managerMap.get(assignment.managerId)?.push(assignment);
-        });
-        
-        // Build hierarchy
-        const hierarchy: any[] = [];
-        managerMap.forEach((assignments, managerId) => {
-          const manager = allEmployees.find(emp => emp.notionId === managerId);
-          if (manager) {
-            const managedEmployeeIds = assignments.map(a => a.employeeId);
-            const managedEmployees = allEmployees.filter(emp => 
-              managedEmployeeIds.includes(emp.notionId)
-            );
-            hierarchy.push({ manager, managedEmployees });
-          }
-        });
-        
-        setManagerHierarchy(hierarchy);
-      }
-    } catch (error) {
-      console.error('Failed to load manager hierarchy:', error);
-    } finally {
-      setLoadingHierarchy(false);
+    if (!loadingAssignments && assignments.length >= 0 && allEmployees.length > 0) {
+      // Group assignments by manager
+      const managerMap = new Map<string, any[]>();
+      
+      assignments.forEach((assignment: any) => {
+        if (!managerMap.has(assignment.managerId)) {
+          managerMap.set(assignment.managerId, []);
+        }
+        managerMap.get(assignment.managerId)?.push(assignment);
+      });
+      
+      // Build hierarchy
+      const hierarchy: any[] = [];
+      managerMap.forEach((assignments, managerId) => {
+        const manager = allEmployees.find(emp => emp.notionId === managerId);
+        if (manager) {
+          const managedEmployeeIds = assignments.map(a => a.employeeId);
+          const managedEmployees = allEmployees.filter(emp => 
+            managedEmployeeIds.includes(emp.notionId)
+          );
+          hierarchy.push({ manager, managedEmployees });
+        }
+      });
+      
+      setManagerHierarchy(hierarchy);
     }
-  };
+  }, [assignments, loadingAssignments, allEmployees]);
 
   const handleAssignEmployee = async () => {
     if (!selectedManager || !selectedEmployee || !session?.user?.email) return;
@@ -146,15 +138,13 @@ export default function AdminPanel({ allEmployees, onUpdate }: AdminPanelProps) 
 
         setMessage({ type: 'success', text: 'Employee assigned successfully' });
         setSelectedEmployee('');
-        loadManagerHierarchy();
+        mutateAssignments();
         onUpdate();
       } else {
-        console.error('Assignment failed:', result);
         const errorDetails = result.details ? ` (${result.details})` : '';
         setMessage({ type: 'error', text: (result.error || 'Failed to assign employee') + errorDetails });
       }
     } catch (error) {
-      console.error('Assignment error:', error);
       setMessage({ type: 'error', text: 'Network error: Could not connect to the server.' });
     }
   };
@@ -173,13 +163,12 @@ export default function AdminPanel({ allEmployees, onUpdate }: AdminPanelProps) 
         }
 
         setMessage({ type: 'success', text: 'Employee removed successfully' });
-        loadManagerHierarchy();
+        mutateAssignments();
         onUpdate();
       } else {
         setMessage({ type: 'error', text: 'Failed to remove employee' });
       }
     } catch (error) {
-      console.error('Failed to remove employee:', error);
       setMessage({ type: 'error', text: 'An error occurred while removing the employee' });
     }
   };
@@ -201,6 +190,50 @@ export default function AdminPanel({ allEmployees, onUpdate }: AdminPanelProps) 
       onUpdate();
     }
   };
+
+  const handleUpdateSalary = async () => {
+    if (!selectedSalaryEmployee || !salaryInput) return;
+    
+    setUpdatingSalary(true);
+    try {
+      const response = await fetch('/api/employees/salary', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          employeeNotionId: selectedSalaryEmployee,
+          baseSalary: parseFloat(salaryInput)
+        })
+      });
+      
+      const result = await response.json();
+      
+      if (response.ok) {
+        setMessage({ type: 'success', text: `Salary updated for ${result.employee.name}` });
+        setSelectedSalaryEmployee('');
+        setSalaryInput('');
+        onUpdate(); // Refresh the employee data
+      } else {
+        setMessage({ type: 'error', text: result.error || 'Failed to update salary' });
+      }
+    } catch (error) {
+      console.error('Failed to update salary:', error);
+      setMessage({ type: 'error', text: 'Failed to update salary' });
+    } finally {
+      setUpdatingSalary(false);
+    }
+  };
+
+  // When employee is selected, load their current salary
+  useEffect(() => {
+    if (selectedSalaryEmployee) {
+      const employee = allEmployees.find(emp => emp.notionId === selectedSalaryEmployee);
+      if (employee && employee.baseSalary) {
+        setSalaryInput(employee.baseSalary.toString());
+      } else {
+        setSalaryInput('');
+      }
+    }
+  }, [selectedSalaryEmployee, allEmployees]);
 
   return (
     <Card>
@@ -281,6 +314,76 @@ export default function AdminPanel({ allEmployees, onUpdate }: AdminPanelProps) 
             </div>
           </div>
         </div>
+
+        {/* Salary Management Section - Super Admin Only */}
+        {session?.user?.email === 'enzo@liquidlabs.inc' && (
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold flex items-center gap-2">
+            <DollarSign className="h-5 w-5" />
+            Salary Management (Super Admin)
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="space-y-2">
+              <Label>Select Employee</Label>
+              <Select value={selectedSalaryEmployee} onValueChange={setSelectedSalaryEmployee}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Choose an employee" />
+                </SelectTrigger>
+                <SelectContent className="max-h-[300px] overflow-y-auto">
+                  {allEmployees
+                    .sort((a, b) => (a.name || '').localeCompare(b.name || ''))
+                    .map((employee) => (
+                      <SelectItem key={employee.notionId} value={employee.notionId}>
+                        <div className="flex items-center justify-between gap-4 w-full">
+                          <span className="truncate">{employee.name}</span>
+                          <span className="text-xs text-muted-foreground shrink-0">
+                            {employee.baseSalary ? `$${employee.baseSalary.toLocaleString()}` : 'Not set'}
+                          </span>
+                        </div>
+                      </SelectItem>
+                    ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="space-y-2">
+              <Label>Annual Salary</Label>
+              <div className="relative">
+                <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input
+                  type="number"
+                  value={salaryInput}
+                  onChange={(e) => setSalaryInput(e.target.value)}
+                  placeholder="150000"
+                  className="pl-10"
+                  min="0"
+                  step="1000"
+                />
+              </div>
+            </div>
+
+            <div className="flex items-end">
+              <Button 
+                onClick={handleUpdateSalary}
+                disabled={!selectedSalaryEmployee || !salaryInput || updatingSalary}
+                className="w-full"
+              >
+                {updatingSalary ? (
+                  <>
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
+                    Updating...
+                  </>
+                ) : (
+                  <>
+                    <DollarSign className="h-4 w-4 mr-2" />
+                    Update Salary
+                  </>
+                )}
+              </Button>
+            </div>
+          </div>
+        </div>
+        )}
 
         {/* Current Manager Hierarchy */}
         <div className="space-y-4">

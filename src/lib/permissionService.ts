@@ -48,7 +48,7 @@ class PermissionService {
         }
       }
     } catch (error) {
-      console.error('Failed to load permissions from storage:', error);
+      // Failed to load permissions from storage
     }
   }
 
@@ -63,7 +63,7 @@ class PermissionService {
         localStorage.setItem('user-permissions', JSON.stringify(data));
       }
     } catch (error) {
-      console.error('Failed to save permissions to storage:', error);
+      // Failed to save permissions to storage
     }
   }
 
@@ -167,13 +167,7 @@ class PermissionService {
       });
     }
 
-    console.log('Assigned employee to manager:', {
-      managerEmail,
-      managerId: managerPermissions.userId,
-      employeeNotionId,
-      currentManagedIds: managerPermissions.managedEmployeeIds,
-      totalAssignments: this.managerAssignments.length
-    });
+    // Employee assigned to manager
 
     this.saveToStorage();
     return true;

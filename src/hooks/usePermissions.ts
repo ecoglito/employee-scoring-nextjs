@@ -62,12 +62,12 @@ export function usePermissions() {
             userPermissions = PermissionService.getUserPermissions(session.user.email);
           }
         } catch (error) {
-          console.error('Failed to load manager assignments:', error);
+          // Failed to load manager assignments
         }
         
         setPermissions(userPermissions);
       } catch (error) {
-        console.error('Failed to initialize permissions:', error);
+        // Failed to initialize permissions
       } finally {
         setLoading(false);
       }
@@ -113,7 +113,7 @@ export function usePermissions() {
         });
       }
     } catch (error) {
-      console.error('Failed to refresh manager assignments:', error);
+      // Failed to refresh manager assignments
     }
     
     const userPermissions = PermissionService.getUserPermissions(session.user.email);

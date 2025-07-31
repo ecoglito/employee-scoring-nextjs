@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Users, Tag, Clock, Grid, Table } from 'lucide-react';
+import { Users, Tag, Clock, Grid, Table, DollarSign } from 'lucide-react';
 import NotionEmployeeCard from '@/components/NotionEmployeeCard';
 import EmployeeTableView from '@/components/EmployeeTableView';
 import DetailedTeamWorldMap from '@/components/DetailedTeamWorldMap';
@@ -13,10 +13,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import NotionEmployeeService, { NotionEmployee } from '@/lib/notionEmployeeService';
+import { NotionEmployee } from '@/lib/notionEmployeeService';
 import PermissionService from '@/lib/permissionService';
 import { useEffectivePermissions } from '@/contexts/ViewModeContext';
+import { usePermissions } from '@/hooks/usePermissions';
 import { useSession } from 'next-auth/react';
+import { useEmployees, useEmployeeStats } from '@/hooks/useEmployees';
 import { SkeletonStats, SkeletonFilters, SkeletonEmployeeGrid, SkeletonMap, SkeletonTeamBreakdown } from '@/components/skeletons/SkeletonStats';
 
 const teamColors: Record<string, string> = {
@@ -34,42 +36,23 @@ const teamColors: Record<string, string> = {
 export default function TeamDashboard() {
   const { data: session } = useSession();
   const { permissions, isExec, viewingAs } = useEffectivePermissions();
-  const [allEmployees, setAllEmployees] = useState<NotionEmployee[]>([]);
+  const { permissions: actualPermissions } = usePermissions();
+  const { employees: allEmployees, isLoading: loadingEmployees } = useEmployees();
+  const { stats, isLoading: loadingStats } = useEmployeeStats();
   const [viewableEmployees, setViewableEmployees] = useState<NotionEmployee[]>([]);
-  const [stats, setStats] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
   const [selectedTeam, setSelectedTeam] = useState<string>('all');
   const [selectedTag, setSelectedTag] = useState<string>('all');
   const [viewMode, setViewMode] = useState<'cards' | 'table'>('cards');
+  const [totalSalary, setTotalSalary] = useState<number>(0);
 
-  const loadData = async () => {
-    try {
-      setLoading(true);
-      const [employeesData, statsData] = await Promise.all([
-        NotionEmployeeService.getAllEmployees(),
-        NotionEmployeeService.getTeamStats()
-      ]);
-      setAllEmployees(employeesData);
-      setStats(statsData);
-      
-      // Initial filtering based on session (will be updated by the effect when permissions change)
-      if (session?.user?.email) {
-        const filtered = PermissionService.getViewableEmployees(session.user.email, employeesData);
-        setViewableEmployees(filtered);
-      } else {
-        setViewableEmployees([]);
-      }
-    } catch (error) {
-      console.error('Failed to load team data:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-
+  const loading = loadingEmployees || loadingStats;
+  // Effect for initial filtering based on session
   useEffect(() => {
-    loadData();
-  }, []); // Only load on mount
+    if (allEmployees.length > 0 && session?.user?.email) {
+      const filtered = PermissionService.getViewableEmployees(session.user.email, allEmployees);
+      setViewableEmployees(filtered);
+    }
+  }, [allEmployees, session?.user?.email]);
   
   // Separate effect for permission changes
   useEffect(() => {
@@ -78,6 +61,22 @@ export default function TeamDashboard() {
       setViewableEmployees(filtered);
     }
   }, [permissions, allEmployees, viewingAs]); // Update viewable employees when permissions change
+
+  // Separate effect for salary calculation - only for actual user, not view-as mode
+  useEffect(() => {
+    // Only show salary if NOT in view-as mode AND user is the super admin
+    const isActualSuperAdmin = !viewingAs && actualPermissions?.email === 'enzo@liquidlabs.inc';
+    
+    if (isActualSuperAdmin && allEmployees.length > 0) {
+      const total = allEmployees.reduce((sum, emp) => {
+        return sum + (emp.baseSalary || 0);
+      }, 0);
+      // Total salary calculated for super admin
+      setTotalSalary(total);
+    } else {
+      setTotalSalary(0);
+    }
+  }, [viewingAs, actualPermissions?.email, allEmployees]);
 
   const filteredEmployees = viewableEmployees.filter(emp => {
     const teamMatch = selectedTeam === 'all' || emp.team?.includes(selectedTeam);
@@ -168,18 +167,33 @@ export default function TeamDashboard() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium flex items-center gap-2">
-                <Clock className="h-4 w-4" />
-                Timezones
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{stats.timezones.length}</div>
-              <p className="text-xs text-muted-foreground">Global presence</p>
-            </CardContent>
-          </Card>
+          {!viewingAs && actualPermissions?.email === 'enzo@liquidlabs.inc' ? (
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-medium flex items-center gap-2">
+                  <DollarSign className="h-4 w-4" />
+                  Total Salary
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">${totalSalary.toLocaleString()}</div>
+                <p className="text-xs text-muted-foreground">Annual payroll</p>
+              </CardContent>
+            </Card>
+          ) : (
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-medium flex items-center gap-2">
+                  <Clock className="h-4 w-4" />
+                  Timezones
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">{stats.timezones.length}</div>
+                <p className="text-xs text-muted-foreground">Global presence</p>
+              </CardContent>
+            </Card>
+          )}
         </div>
       )}
 
@@ -296,7 +310,7 @@ export default function TeamDashboard() {
               <NotionEmployeeCard 
                 key={employee.notionId} 
                 employee={employee}
-                showSalary={false} // Keep KPIs/salary private as requested
+                showSalary={!viewingAs && actualPermissions?.email === 'enzo@liquidlabs.inc'}
               />
             ))}
           </div>
@@ -310,7 +324,7 @@ export default function TeamDashboard() {
       ) : (
         <EmployeeTableView 
           employees={filteredEmployees} 
-          showSalary={false} // Keep KPIs/salary private as requested
+          showSalary={!viewingAs && actualPermissions?.email === 'enzo@liquidlabs.inc'}
         />
       )}
 

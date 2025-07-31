@@ -37,7 +37,7 @@ const teamColors: Record<string, string> = {
 };
 
 export default function NotionEmployeeDetail({ employee, open, onOpenChange }: NotionEmployeeDetailProps) {
-  const { permissions: effectivePermissions, isExec: effectiveIsExec, isManager: effectiveIsManager } = useEffectivePermissions();
+  const { permissions: effectivePermissions, isExec: effectiveIsExec, isManager: effectiveIsManager, viewingAs } = useEffectivePermissions();
   const { permissions: actualPermissions, isExec: actualIsExec, isManager: actualIsManager } = usePermissions();
   const { data: session } = useSession();
   const [allEmployees, setAllEmployees] = useState<NotionEmployee[]>([]);
@@ -96,24 +96,49 @@ export default function NotionEmployeeDetail({ employee, open, onOpenChange }: N
     setCanViewSensitiveInfo(false);
   }, [effectivePermissions, effectiveIsExec, effectiveIsManager, employee]);
 
-  // Load all employees and find manager info
+  // Load all employees and find manager info - do this for ALL employees
   useEffect(() => {
     const loadManagerInfo = async () => {
-      if (employee.reportsTo && employee.reportsTo.length > 0) {
-        try {
-          const employees = await NotionEmployeeService.getAllEmployees();
-          setAllEmployees(employees);
-          
-          // Find manager by matching notion ID
-          const manager = employees.find(emp => 
-            employee.reportsTo?.includes(emp.notionId) || 
-            employee.reportsTo?.includes(emp.name || '')
-          );
-          
-          setManagerInfo(manager || null);
-        } catch (error) {
-          console.error('Failed to load manager info:', error);
+      try {
+        const employees = await NotionEmployeeService.getAllEmployees();
+        setAllEmployees(employees);
+        
+        // Try to find manager - check multiple possible data sources
+        let manager = null;
+        let managerSearchData = null;
+
+        // Check if reportsTo data exists (array format)
+        if (employee.reportsTo && employee.reportsTo.length > 0) {
+          managerSearchData = employee.reportsTo;
         }
+        // Check if there's a managerId field (from the console logs we can see this exists)
+        else if (employee.managerId) {
+          managerSearchData = [employee.managerId];
+        }
+
+        if (managerSearchData && managerSearchData.length > 0) {
+          manager = employees.find(emp => {
+            // Try matching by notion ID first (most reliable)
+            if (managerSearchData.includes(emp.notionId)) {
+              return true;
+            }
+            // Try matching by name (case insensitive)
+            if (emp.name && managerSearchData.some((managerId: string) => 
+              managerId.toLowerCase() === emp.name?.toLowerCase()
+            )) {
+              return true;
+            }
+            // Try matching by email
+            if (emp.email && managerSearchData.includes(emp.email)) {
+              return true;
+            }
+            return false;
+          });
+        }
+          
+        setManagerInfo(manager || null);
+      } catch (error) {
+        // Failed to load manager info
       }
     };
 
@@ -213,36 +238,34 @@ export default function NotionEmployeeDetail({ employee, open, onOpenChange }: N
                       <p className="font-medium">{new Date(employee.startDate).toLocaleDateString()}</p>
                     </div>
                   )}
-                  {employee.baseSalary && canViewSensitiveInfo && (
+                  {employee.baseSalary && canViewSensitiveInfo && !viewingAs && actualPermissions?.email === 'enzo@liquidlabs.inc' && (
                     <div>
                       <label className="text-sm font-medium text-muted-foreground">Base Salary</label>
                       <p className="font-medium">${employee.baseSalary.toLocaleString()}</p>
                     </div>
                   )}
                   
-                  {/* Manager Info - Only show to those who can view sensitive info */}
-                  {canViewSensitiveInfo && managerInfo && (
+                  {/* Manager Info - Always show to managers and executives */}
+                  {canViewSensitiveInfo && (
                     <div>
                       <label className="text-sm font-medium text-muted-foreground">Reports To</label>
-                      <div className="flex items-center gap-2 mt-1">
-                        <Avatar className="h-6 w-6">
-                          <AvatarFallback className={`${getAvatarGradient(managerInfo)} text-white text-xs font-semibold`}>
-                            {getInitials(managerInfo.name)}
-                          </AvatarFallback>
-                        </Avatar>
-                        <div>
-                          <p className="font-medium text-sm">{managerInfo.name}</p>
-                          <p className="text-xs text-muted-foreground">{managerInfo.position}</p>
+                      {managerInfo ? (
+                        <div className="flex items-center gap-2 mt-1">
+                          <Avatar className="h-6 w-6">
+                            <AvatarFallback className={`${getAvatarGradient(managerInfo)} text-white text-xs font-semibold`}>
+                              {getInitials(managerInfo.name)}
+                            </AvatarFallback>
+                          </Avatar>
+                          <div>
+                            <p className="font-medium text-sm">{managerInfo.name}</p>
+                            <p className="text-xs text-muted-foreground">{managerInfo.position}</p>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                  )}
-                  
-                  {/* No Manager Info - Only show to those who can view sensitive info */}
-                  {canViewSensitiveInfo && employee.reportsTo && employee.reportsTo.length > 0 && !managerInfo && (
-                    <div>
-                      <label className="text-sm font-medium text-muted-foreground">Reports To</label>
-                      <p className="font-medium text-sm text-muted-foreground">Manager not found in system</p>
+                      ) : employee.reportsTo && employee.reportsTo.length > 0 ? (
+                        <p className="font-medium text-sm text-muted-foreground mt-1">Manager not found in system</p>
+                      ) : (
+                        <p className="font-medium text-sm text-muted-foreground mt-1">No manager assigned</p>
+                      )}
                     </div>
                   )}
                 </div>

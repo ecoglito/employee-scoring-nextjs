@@ -1,23 +1,34 @@
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/lib/prisma';
 import { Employee, KPI, Score, KPIType, KPIFrequency } from '@/types';
 
-const prisma = new PrismaClient();
-
 export class DatabaseService {
-  static async getEmployees(): Promise<Employee[]> {
+  static async getEmployees(options?: { 
+    includeKPIs?: boolean; 
+    includeScores?: boolean;
+    limit?: number;
+    offset?: number;
+  }): Promise<Employee[]> {
     try {
+      const { includeKPIs = false, includeScores = false, limit, offset } = options || {};
+      
       const employees = await prisma.employee.findMany({
         include: {
-          kpis: true,
-          scores: {
+          kpis: includeKPIs,
+          scores: includeScores ? {
             include: {
               kpiScores: true,
             },
-          },
+            orderBy: {
+              date: 'desc'
+            },
+            take: 5 // Only get last 5 scores when included
+          } : false,
         },
         orderBy: {
           name: 'asc',
         },
+        take: limit,
+        skip: offset,
       });
 
       return employees.map((emp: any) => this.mapPrismaEmployeeToEmployee(emp));

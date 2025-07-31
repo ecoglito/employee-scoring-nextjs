@@ -3,7 +3,14 @@ import { prisma } from '@/lib/prisma';
 
 export async function GET() {
   try {
-    const employees = await prisma.notionEmployee.findMany();
+    const employees = await prisma.notionEmployee.findMany({
+      select: {
+        name: true,
+        team: true,
+        tags: true,
+        timezone: true
+      }
+    });
 
     // Team stats
     const teamMap = new Map<string, string[]>();
@@ -47,7 +54,11 @@ export async function GET() {
       totalEmployees: employees.length
     };
 
-    return NextResponse.json(stats);
+    return NextResponse.json(stats, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
+      },
+    });
   } catch (error) {
     console.error('Failed to get team stats:', error);
     return NextResponse.json(

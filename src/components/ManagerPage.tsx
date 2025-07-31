@@ -3,34 +3,20 @@
 import React, { useState, useEffect } from 'react';
 import { Users, AlertCircle } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import NotionEmployeeService, { NotionEmployee } from '@/lib/notionEmployeeService';
+import { NotionEmployee } from '@/lib/notionEmployeeService';
 import { useEffectivePermissions } from '@/contexts/ViewModeContext';
 import { useSession } from 'next-auth/react';
+import { useEmployees } from '@/hooks/useEmployees';
 import NotionEmployeeCard from './NotionEmployeeCard';
 import { SkeletonManagerPage } from '@/components/skeletons/SkeletonManager';
 
 export default function ManagerPage() {
   const { permissions, isExec, isManager, loading: permissionsLoading, viewingAs } = useEffectivePermissions();
   const { data: session } = useSession();
-  const [employees, setEmployees] = useState<NotionEmployee[]>([]);
+  const { employees, isLoading: loadingEmployees } = useEmployees();
   const [managedEmployees, setManagedEmployees] = useState<NotionEmployee[]>([]);
-  const [loading, setLoading] = useState(true);
 
-  const loadEmployees = async () => {
-    try {
-      setLoading(true);
-      const data = await NotionEmployeeService.getAllEmployees();
-      setEmployees(data);
-    } catch (error) {
-      console.error('Failed to load employees:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    loadEmployees();
-  }, []);
+  const loading = permissionsLoading || loadingEmployees;
 
   useEffect(() => {
     if (!permissions || employees.length === 0) return;
@@ -41,13 +27,7 @@ export default function ManagerPage() {
       permissions.managedEmployeeIds.includes(emp.notionId)
     );
     
-    console.log('ManagerPage - Debug:', {
-      permissionsEmail: permissions.email,
-      managedEmployeeIds: permissions.managedEmployeeIds,
-      totalEmployees: employees.length,
-      managedCount: managed.length,
-      managedNames: managed.map(e => e.name)
-    });
+    // Manager dashboard loaded with team members
     
     setManagedEmployees(managed);
   }, [employees, permissions]);
@@ -105,7 +85,7 @@ export default function ManagerPage() {
               <NotionEmployeeCard 
                 key={employee.notionId} 
                 employee={employee}
-                showSalary={false}
+                showSalary={false} // Managers cannot see salaries - only super admin
               />
             ))
           )}

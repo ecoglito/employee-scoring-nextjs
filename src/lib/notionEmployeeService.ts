@@ -17,6 +17,7 @@ export interface NotionEmployee {
   timezone: string | null;
   reportsTo: string[] | null;
   manages: string[] | null;
+  managerId?: string | null;
   profile: any[] | null;
   notionAccount: any[] | null;
   tenure: string | null;
@@ -30,15 +31,30 @@ export interface NotionEmployee {
 }
 
 export class NotionEmployeeService {
+  private static cache = new Map<string, { data: any; timestamp: number }>();
+  private static CACHE_TTL = 60 * 1000; // 1 minute
+
   static async getAllEmployees(): Promise<NotionEmployee[]> {
+    const cacheKey = 'all-employees';
+    const cached = this.cache.get(cacheKey);
+    
+    if (cached && Date.now() - cached.timestamp < this.CACHE_TTL) {
+      return cached.data;
+    }
+    
     try {
       const response = await fetch('/api/employees');
       if (!response.ok) {
         throw new Error('Failed to fetch employees');
       }
-      return await response.json();
+      const data = await response.json();
+      
+      // Cache the result
+      this.cache.set(cacheKey, { data, timestamp: Date.now() });
+      
+      return data;
     } catch (error) {
-      console.error('Failed to fetch Notion employees:', error);
+      // Failed to fetch Notion employees
       throw new Error('Failed to fetch employees');
     }
   }
@@ -48,7 +64,7 @@ export class NotionEmployeeService {
       const allEmployees = await this.getAllEmployees();
       return allEmployees.filter(emp => emp.team?.includes(teamName));
     } catch (error) {
-      console.error('Failed to fetch team employees:', error);
+      // Failed to fetch team employees
       throw new Error('Failed to fetch team employees');
     }
   }
@@ -58,7 +74,7 @@ export class NotionEmployeeService {
       const allEmployees = await this.getAllEmployees();
       return allEmployees.filter(emp => emp.tags?.includes(tag));
     } catch (error) {
-      console.error('Failed to fetch tagged employees:', error);
+      // Failed to fetch tagged employees
       throw new Error('Failed to fetch tagged employees');
     }
   }
@@ -69,14 +85,25 @@ export class NotionEmployeeService {
     timezones: Array<{ name: string; count: number }>;
     totalEmployees: number;
   }> {
+    const cacheKey = 'team-stats';
+    const cached = this.cache.get(cacheKey);
+    
+    if (cached && Date.now() - cached.timestamp < this.CACHE_TTL * 5) { // 5 minutes for stats
+      return cached.data;
+    }
+    
     try {
       const response = await fetch('/api/employees/stats');
       if (!response.ok) {
         throw new Error('Failed to fetch team stats');
       }
-      return await response.json();
+      const data = await response.json();
+      
+      // Cache the result
+      this.cache.set(cacheKey, { data, timestamp: Date.now() });
+      
+      return data;
     } catch (error) {
-      console.error('Failed to get team stats:', error);
       throw new Error('Failed to get team stats');
     }
   }
@@ -101,13 +128,15 @@ export class NotionEmployeeService {
         throw new Error(result.error || 'Sync failed');
       }
 
+      // Clear cache after sync
+      this.cache.clear();
+      
       return {
         success: result.success,
         message: result.message,
         synced: result.synced,
       };
     } catch (error: any) {
-      console.error('Failed to sync from Notion:', error);
       return {
         success: false,
         message: 'Failed to sync from Notion',

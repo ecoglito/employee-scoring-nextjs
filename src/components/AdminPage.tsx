@@ -5,36 +5,22 @@ import { Shield, AlertCircle, RefreshCw } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import AdminPanel from './AdminPanel';
-import NotionEmployeeService, { NotionEmployee } from '@/lib/notionEmployeeService';
+import NotionEmployeeService from '@/lib/notionEmployeeService';
 import { usePermissions } from '@/hooks/usePermissions';
+import { useEmployees } from '@/hooks/useEmployees';
 import { useSession } from 'next-auth/react';
 import { SkeletonAdminPage } from '@/components/skeletons/SkeletonAdmin';
 
 export default function AdminPage() {
   const { permissions, isExec, loading: permissionsLoading, refreshPermissions } = usePermissions();
   const { data: session } = useSession();
-  const [employees, setEmployees] = useState<NotionEmployee[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { employees, isLoading: loadingEmployees, mutate } = useEmployees();
   const [syncing, setSyncing] = useState(false);
 
-  const loadEmployees = async () => {
-    try {
-      setLoading(true);
-      const data = await NotionEmployeeService.getAllEmployees();
-      setEmployees(data);
-    } catch (error) {
-      console.error('Failed to load employees:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    loadEmployees();
-  }, []);
+  const loading = permissionsLoading || loadingEmployees;
 
   const handleUpdate = () => {
-    loadEmployees();
+    mutate();
   };
 
   const handleSync = async () => {
@@ -43,14 +29,12 @@ export default function AdminPage() {
       const result = await NotionEmployeeService.refreshFromNotion();
       if (result.success) {
         alert(`✅ Sync successful! Updated ${result.synced || 0} employees from Notion.`);
-        await loadEmployees();
+        await mutate();
         await refreshPermissions();
       } else {
         alert(`❌ Sync failed: ${result.message}`);
-        console.error('Sync failed:', result.errors);
       }
     } catch (error) {
-      console.error('Sync failed:', error);
       alert('❌ Sync failed: Network or server error');
     } finally {
       setSyncing(false);
