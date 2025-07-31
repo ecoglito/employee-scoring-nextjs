@@ -15,7 +15,11 @@ export async function GET(request: NextRequest) {
       orderBy: { assignedAt: 'desc' }
     });
 
-    return NextResponse.json(assignments);
+    return NextResponse.json(assignments, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300',
+      },
+    });
   } catch (error) {
     console.error('Failed to get assignments:', error);
     return NextResponse.json({ error: 'Failed to get assignments' }, { status: 500 });

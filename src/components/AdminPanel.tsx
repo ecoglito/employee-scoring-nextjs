@@ -177,7 +177,7 @@ export default function AdminPanel({ allEmployees, onUpdate }: AdminPanelProps) 
     const success = PermissionService.promoteToManager(email);
     if (success) {
       setMessage({ type: 'success', text: 'User promoted to manager' });
-      loadManagerHierarchy();
+      mutateAssignments();
       onUpdate();
     }
   };
@@ -186,7 +186,7 @@ export default function AdminPanel({ allEmployees, onUpdate }: AdminPanelProps) 
     const success = PermissionService.demoteToEmployee(email);
     if (success) {
       setMessage({ type: 'success', text: 'Manager demoted to employee' });
-      loadManagerHierarchy();
+      mutateAssignments();
       onUpdate();
     }
   };
@@ -388,7 +388,7 @@ export default function AdminPanel({ allEmployees, onUpdate }: AdminPanelProps) 
         {/* Current Manager Hierarchy */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">Current Manager Assignments</h3>
-          {loadingHierarchy ? (
+          {loadingAssignments ? (
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {[1, 2, 3].map((i) => (
                 <Card key={i}>
