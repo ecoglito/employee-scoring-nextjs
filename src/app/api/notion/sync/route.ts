@@ -137,10 +137,34 @@ export async function POST() {
     console.log(`📊 Fetched ${notionData.results.length} employees from Notion`);
     
     let synced = 0;
+    let deleted = 0;
     let errors: string[] = [];
+    
+    // Get all current Notion IDs from the fetched data
+    const currentNotionIds = new Set(notionData.results.map((emp: any) => emp.id));
     
     // Process each employee in a transaction
     await prisma.$transaction(async (tx) => {
+      // First, find and delete employees that are no longer in Notion
+      const existingEmployees = await tx.notionEmployee.findMany({
+        select: { notionId: true, name: true }
+      });
+      
+      for (const existingEmployee of existingEmployees) {
+        if (!currentNotionIds.has(existingEmployee.notionId)) {
+          try {
+            await tx.notionEmployee.delete({
+              where: { notionId: existingEmployee.notionId }
+            });
+            deleted++;
+            console.log(`🗑️  Deleted: ${existingEmployee.name || existingEmployee.notionId} (no longer in Notion)`);
+          } catch (deleteError) {
+            const errorMsg = `Failed to delete employee ${existingEmployee.notionId}: ${deleteError}`;
+            errors.push(errorMsg);
+            console.error(`❌ ${errorMsg}`);
+          }
+        }
+      }
       for (const employee of notionData.results) {
         try {
           const properties = employee.properties;
@@ -207,7 +231,7 @@ export async function POST() {
       }
     });
     
-    console.log(`✅ Transaction completed. Synced ${synced} employees.`);
+    console.log(`✅ Transaction completed. Synced ${synced} employees, deleted ${deleted} employees.`);
     
     // Verify the sync by counting records
     const dbCount = await prisma.notionEmployee.count();
@@ -215,8 +239,9 @@ export async function POST() {
     
     return NextResponse.json({
       success: true,
-      message: `Successfully synced ${synced} employees from Notion`,
+      message: `Successfully synced ${synced} employees and deleted ${deleted} employees from Notion`,
       synced,
+      deleted,
       total: notionData.results.length,
       dbEmployeeCount: dbCount,
       errors: errors.length > 0 ? errors : undefined,

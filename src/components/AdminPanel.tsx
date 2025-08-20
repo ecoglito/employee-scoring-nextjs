@@ -155,6 +155,8 @@ export default function AdminPanel({ allEmployees, onUpdate }: AdminPanelProps) 
         method: 'DELETE'
       });
 
+      const result = await response.json();
+
       if (response.ok) {
         // Also update local permissions
         const manager = allEmployees.find(emp => emp.notionId === managerId);
@@ -165,8 +167,12 @@ export default function AdminPanel({ allEmployees, onUpdate }: AdminPanelProps) 
         setMessage({ type: 'success', text: 'Employee removed successfully' });
         mutateAssignments();
         onUpdate();
+      } else if (response.status === 404) {
+        setMessage({ type: 'error', text: 'Assignment not found - it may have already been removed' });
+        // Still refresh the data to ensure UI is in sync
+        mutateAssignments();
       } else {
-        setMessage({ type: 'error', text: 'Failed to remove employee' });
+        setMessage({ type: 'error', text: result.error || 'Failed to remove employee' });
       }
     } catch (error) {
       setMessage({ type: 'error', text: 'An error occurred while removing the employee' });

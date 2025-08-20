@@ -69,10 +69,12 @@ export class NotionSyncService {
   static async syncFromNotionData(): Promise<{
     success: boolean;
     synced: number;
+    deleted: number;
     errors: string[];
   }> {
     const errors: string[] = [];
     let synced = 0;
+    let deleted = 0;
 
     try {
       // Read the notion data file
@@ -88,6 +90,30 @@ export class NotionSyncService {
 
       const employees = notionData.results as NotionEmployeeData[];
       const properties = notionSchema.properties;
+
+      // Get all current Notion IDs from the fetched data
+      const currentNotionIds = new Set(employees.map(emp => emp.id));
+
+      // Find employees in the database that are no longer in Notion
+      const existingEmployees = await prisma.notionEmployee.findMany({
+        select: { notionId: true, name: true }
+      });
+
+      for (const existingEmployee of existingEmployees) {
+        if (!currentNotionIds.has(existingEmployee.notionId)) {
+          try {
+            await prisma.notionEmployee.delete({
+              where: { notionId: existingEmployee.notionId }
+            });
+            deleted++;
+            console.log(`🗑️  Deleted: ${existingEmployee.name || existingEmployee.notionId} (no longer in Notion)`);
+          } catch (deleteError) {
+            const errorMsg = `Failed to delete employee ${existingEmployee.notionId}: ${deleteError}`;
+            errors.push(errorMsg);
+            console.error(`❌ ${errorMsg}`);
+          }
+        }
+      }
 
       for (const employee of employees) {
         try {
@@ -201,6 +227,7 @@ export class NotionSyncService {
       return {
         success: errors.length === 0,
         synced,
+        deleted,
         errors,
       };
 
@@ -208,6 +235,7 @@ export class NotionSyncService {
       return {
         success: false,
         synced,
+        deleted,
         errors: [`Sync failed: ${error}`],
       };
     }

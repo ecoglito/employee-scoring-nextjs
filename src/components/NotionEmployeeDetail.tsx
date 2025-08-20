@@ -1,11 +1,12 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { User, Users, Mail, Clock, DollarSign } from 'lucide-react';
+import { User, Users, Mail, Clock, DollarSign, Trash2 } from 'lucide-react';
 import { NotionEmployee } from '@/lib/notionEmployeeService';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -13,11 +14,22 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from '@/components/ui/alert-dialog';
 import { useEffectivePermissions } from '@/contexts/ViewModeContext';
 import { usePermissions } from '@/hooks/usePermissions';
 import { useSession } from 'next-auth/react';
 import NotionEmployeeService from '@/lib/notionEmployeeService';
 import EmployeeScorecard from './EmployeeScorecard';
+import { useRouter } from 'next/navigation';
 
 interface NotionEmployeeDetailProps {
   employee: NotionEmployee;
@@ -40,10 +52,13 @@ export default function NotionEmployeeDetail({ employee, open, onOpenChange }: N
   const { permissions: effectivePermissions, isExec: effectiveIsExec, isManager: effectiveIsManager, viewingAs } = useEffectivePermissions();
   const { permissions: actualPermissions, isExec: actualIsExec, isManager: actualIsManager } = usePermissions();
   const { data: session } = useSession();
+  const router = useRouter();
   const [allEmployees, setAllEmployees] = useState<NotionEmployee[]>([]);
   const [managerInfo, setManagerInfo] = useState<NotionEmployee | null>(null);
   const [canEditScorecard, setCanEditScorecard] = useState(false);
   const [canViewSensitiveInfo, setCanViewSensitiveInfo] = useState(false);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
   
   useEffect(() => {
     // Check if user can edit this employee's scorecard based on ACTUAL permissions
@@ -185,24 +200,66 @@ export default function NotionEmployeeDetail({ employee, open, onOpenChange }: N
     return teamColors[team] || 'bg-gray-900/20 text-gray-400 border-gray-800';
   };
 
+  const handleDeleteEmployee = async () => {
+    setIsDeleting(true);
+    try {
+      const response = await fetch(`/api/employees/${employee.notionId}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        setShowDeleteDialog(false);
+        onOpenChange(false);
+        // Refresh the page to update the employee list
+        router.refresh();
+        window.location.reload();
+      } else {
+        const data = await response.json();
+        alert(`Failed to delete employee: ${data.error}`);
+      }
+    } catch (error) {
+      console.error('Failed to delete employee:', error);
+      alert('Failed to delete employee. Please try again.');
+    } finally {
+      setIsDeleting(false);
+    }
+  };
+
+  // Check if current user is super admin
+  const isSuperAdmin = !viewingAs && actualPermissions?.email === 'enzo@liquidlabs.inc';
+
   return (
+    <>
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[1000px] max-h-[90vh] overflow-hidden flex flex-col">
         <DialogHeader className="shrink-0">
-          <div className="flex items-center gap-3">
-            <Avatar className="h-12 w-12">
-              <AvatarFallback className={`${getAvatarGradient(employee)} text-white font-semibold`}>
-                {getInitials(employee.name)}
-              </AvatarFallback>
-            </Avatar>
-            <div>
-              <DialogTitle className="flex items-center gap-2">
-                {employee.name || 'Unknown Employee'}
-              </DialogTitle>
-              <DialogDescription>
-                {employee.position || 'No position set'} • {employee.team?.join(', ') || 'No team'}
-              </DialogDescription>
+          <div className="flex items-center justify-between w-full">
+            <div className="flex items-center gap-3">
+              <Avatar className="h-12 w-12">
+                <AvatarFallback className={`${getAvatarGradient(employee)} text-white font-semibold`}>
+                  {getInitials(employee.name)}
+                </AvatarFallback>
+              </Avatar>
+              <div>
+                <DialogTitle className="flex items-center gap-2">
+                  {employee.name || 'Unknown Employee'}
+                </DialogTitle>
+                <DialogDescription>
+                  {employee.position || 'No position set'} • {employee.team?.join(', ') || 'No team'}
+                </DialogDescription>
+              </div>
             </div>
+            {isSuperAdmin && (
+              <Button
+                variant="destructive"
+                size="sm"
+                onClick={() => setShowDeleteDialog(true)}
+                className="flex items-center gap-2"
+              >
+                <Trash2 className="h-4 w-4" />
+                Delete Employee
+              </Button>
+            )}
           </div>
         </DialogHeader>
 
@@ -319,5 +376,32 @@ export default function NotionEmployeeDetail({ employee, open, onOpenChange }: N
         </div>
       </DialogContent>
     </Dialog>
+
+    {/* Delete Confirmation Dialog */}
+    <AlertDialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogDescription>
+            This action cannot be undone. This will permanently delete{' '}
+            <span className="font-semibold">{employee.name}</span> from the database.
+            <br />
+            <br />
+            Note: The employee will be re-added during the next Notion sync if they still exist in Notion.
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel disabled={isDeleting}>Cancel</AlertDialogCancel>
+          <AlertDialogAction
+            onClick={handleDeleteEmployee}
+            disabled={isDeleting}
+            className="bg-red-600 hover:bg-red-700 text-white"
+          >
+            {isDeleting ? 'Deleting...' : 'Delete Employee'}
+          </AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+    </>
   );
 }

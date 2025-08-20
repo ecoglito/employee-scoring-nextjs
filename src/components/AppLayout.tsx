@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Home, LogOut, Shield, Users, Lock, Eye, Menu, X } from 'lucide-react';
+import { Home, LogOut, Shield, Users, Lock, Eye, Menu, X, Network } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';

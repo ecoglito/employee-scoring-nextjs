@@ -141,16 +141,18 @@ export async function DELETE(request: NextRequest) {
       return NextResponse.json({ error: 'Missing parameters' }, { status: 400 });
     }
 
-    await prisma.managerAssignment.delete({
+    const result = await prisma.managerAssignment.deleteMany({
       where: {
-        managerId_employeeId: {
-          managerId,
-          employeeId
-        }
+        managerId,
+        employeeId
       }
     });
 
-    return NextResponse.json({ success: true });
+    if (result.count === 0) {
+      return NextResponse.json({ error: 'Assignment not found' }, { status: 404 });
+    }
+
+    return NextResponse.json({ success: true, deleted: result.count });
   } catch (error) {
     console.error('Failed to delete assignment:', error);
     return NextResponse.json({ error: 'Failed to delete assignment' }, { status: 500 });

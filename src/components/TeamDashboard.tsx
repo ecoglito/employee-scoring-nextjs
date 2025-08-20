@@ -6,6 +6,7 @@ import { Users, Tag, Clock, Grid, Table, DollarSign } from 'lucide-react';
 import NotionEmployeeCard from '@/components/NotionEmployeeCard';
 import EmployeeTableView from '@/components/EmployeeTableView';
 import DetailedTeamWorldMap from '@/components/DetailedTeamWorldMap';
+import VisualOrgChart from '@/components/VisualOrgChart';
 import {
   Select,
   SelectContent,
@@ -35,7 +36,7 @@ const teamColors: Record<string, string> = {
 
 export default function TeamDashboard() {
   const { data: session } = useSession();
-  const { permissions, isExec, viewingAs } = useEffectivePermissions();
+  const { permissions, isExec, isManager, viewingAs } = useEffectivePermissions();
   const { permissions: actualPermissions } = usePermissions();
   const { employees: allEmployees, isLoading: loadingEmployees } = useEmployees();
   const { stats, isLoading: loadingStats } = useEmployeeStats();
@@ -330,6 +331,11 @@ export default function TeamDashboard() {
 
       {/* Global Team Map */}
       <DetailedTeamWorldMap employees={viewableEmployees} />
+
+      {/* Organization Visualization - Only for managers, execs, and admins */}
+      {(isExec || isManager) && (
+        <VisualOrgChart employees={allEmployees} />
+      )}
 
       {/* Team Breakdown */}
       {stats && (
